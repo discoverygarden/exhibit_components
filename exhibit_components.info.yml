@@ -1,0 +1,5 @@
+name: 'Exhibit Components'
+description: "Provides Single Directory Compoenents for use in exhibit content."
+type: module
+package: DGI
+core_version_requirement: ^10.3
