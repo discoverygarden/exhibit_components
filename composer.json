@@ -1,0 +1,8 @@
+{
+  "name": "discoverygarden/exhibit_components",
+  "type": "drupal-module",
+  "license": "GPL-3.0-or-later",
+  "require": {
+    "uikit/uikit": "^3"
+  }
+}
