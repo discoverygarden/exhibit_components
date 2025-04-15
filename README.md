@@ -1,4 +1,4 @@
-# exhibit_components
+# Exhibit Components
 Drupal module containing Single Directory Components for use in exhibit content.
 
 ### Libraries
