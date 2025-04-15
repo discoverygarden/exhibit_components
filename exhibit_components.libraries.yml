@@ -1,0 +1,12 @@
+uikit:
+  remote: https://github.com/uikit/uikit
+  version: 3.23.6
+  license:
+    name: MIT
+    url: https://github.com/uikit/uikit/blob/v3.23.6/LICENSE.md
+    gpl-compatible: true
+  js:
+    https://cdn.jsdelivr.net/npm/uikit@3.23.6/dist/js/uikit.min.js
+  css:
+    component:
+      https://cdn.jsdelivr.net/npm/uikit@3.23.6/dist/css/uikit.min.css
