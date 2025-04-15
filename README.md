@@ -1,18 +1,18 @@
 # Exhibit Components
 Drupal module containing Single Directory Components for use in exhibit content.
 
-### Libraries
+## Libraries
 By default, this module uses CDNs for the uikit js and css libraries,
 but it will use locally installed libraries when possible.
 
 Defaulting to CDNs is convenient for quickly installing and doing some preliminary testing,
 but it is not recommended to rely on CDNs; to install the uikit library locally, there are a couple options outlined here: 
 
-#### Option 1 - Download uikit library (optional installation)
+### Option 1 - Download uikit library (optional installation)
 1. Download (or clone) uikit library from github: https://github.com/uikit/uikit/releases/tag/v3.23.6
 2. Place uikit library in `<web root directory>/libraries/uikit`
 
-#### Option 2 - Composer require uikit library (optional installation)
+### Option 2 - Composer require uikit library (optional installation)
 1. Copy the following into your project's composer.json
 ```
 "repositories": [
