@@ -1,0 +1,25 @@
+name: HTML
+group: HTML
+description: HTML Body component
+props:
+  type: object
+  properties:
+    heading:
+      title: Heading
+      description: The title for the HTML text component.
+      examples:
+        - Join us at The Conference
+      type: string
+    dgiHtml:
+      title: HTML Body
+      type: string
+    description:
+      title: Description
+      description: HTML Body descriptive text, appears below the component.
+      type: string
+libraryOverrides:
+  css:
+    component:
+      https://cdn.jsdelivr.net/npm/uikit@3.23.6/dist/css/uikit.min.css: {}
+  js:
+    https://cdn.jsdelivr.net/npm/uikit@3.23.6/dist/js/uikit.min.js: { attributes: { defer: true } }
