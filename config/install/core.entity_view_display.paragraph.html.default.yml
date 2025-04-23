@@ -1,4 +1,3 @@
-uuid: 73a6c91f-abfd-402c-8258-116e0e947e73
 langcode: en
 status: true
 dependencies:
@@ -7,7 +6,25 @@ dependencies:
     - field.field.paragraph.html.field_title
     - paragraphs.paragraphs_type.html
   module:
+    - sdc_display
     - text
+third_party_settings:
+  sdc_display:
+    enabled: true
+    component:
+      machine_name: 'exhibit_components:html'
+      show_deprecated: null
+    mappings:
+      static:
+        props:
+          heading: ''
+          dgiHtml: ''
+          description: ''
+      dynamic:
+        props:
+          heading: field_title
+          dgiHtml: field_markup
+          description: field_description_standard
 id: paragraph.html.default
 targetEntityType: paragraph
 bundle: html
@@ -15,17 +32,17 @@ mode: default
 content:
   field_markup:
     type: text_default
-    label: above
+    label: visually_hidden
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
   field_title:
     type: basic_string
-    label: above
+    label: visually_hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 1
     region: content
 hidden:
   search_api_excerpt: true
