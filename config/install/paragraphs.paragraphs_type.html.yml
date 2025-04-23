@@ -1,0 +1,27 @@
+uuid: 0636a9f8-482b-4767-9f50-e205ffb59753
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+    - paragraphs_viewmode
+id: html
+label: HTML
+icon_uuid: null
+icon_default: null
+description: 'Provides an HTML formatted text field'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: true
+    available_layouts:
+      layout_onecol: 'One column'
+      layout_twocol: 'Two column'
+      layout_twocol_bricks: 'Two column bricks'
+      layout_threecol_25_50_25: 'Three column 25/50/25'
+      layout_threecol_33_34_33: 'Three column 33/34/33'
+  paragraphs_viewmode_behavior:
+    enabled: true
+    override_mode: default
+    override_available:
+      html_body_text: html_body_text
+    override_default: html_body_text

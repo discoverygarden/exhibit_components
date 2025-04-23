@@ -1,0 +1,65 @@
+uuid: 4c790578-680e-466d-a235-efcf9adb22b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.html_body
+    - field.storage.block_content.field_html_body
+    - paragraphs.paragraphs_type.html
+  module:
+    - entity_reference_revisions
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    use_entity_checkbox: false
+id: block_content.html_body.field_html_body
+field_name: field_html_body
+entity_type: block_content
+bundle: html_body
+label: 'HTML Body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      html: html
+    negate: 0
+    target_bundles_drag_drop:
+      faceted_subject:
+        weight: 12
+        enabled: false
+      hierarchical_geographic_subject:
+        weight: 13
+        enabled: false
+      html:
+        weight: 14
+        enabled: true
+      note:
+        weight: 15
+        enabled: false
+      origin_information:
+        weight: 16
+        enabled: false
+      part:
+        weight: 17
+        enabled: false
+      perspective_camera_settings:
+        weight: 18
+        enabled: false
+      record_information:
+        weight: 19
+        enabled: false
+      related_item:
+        weight: 20
+        enabled: false
+      series:
+        weight: 21
+        enabled: false
+      title:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions

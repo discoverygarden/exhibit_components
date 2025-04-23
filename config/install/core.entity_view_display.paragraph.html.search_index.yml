@@ -1,0 +1,24 @@
+uuid: 044bf353-299b-4db8-ae4e-6ed8c0960a2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.search_index
+    - field.field.paragraph.html.field_markup
+    - field.field.paragraph.html.field_title
+    - paragraphs.paragraphs_type.html
+id: paragraph.html.search_index
+targetEntityType: paragraph
+bundle: html
+mode: search_index
+content:
+  field_title:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  field_markup: true
+  search_api_excerpt: true

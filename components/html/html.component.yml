@@ -1,5 +1,5 @@
 name: HTML
-group: HTML
+group: DGI Components
 description: HTML Body component
 props:
   type: object
@@ -8,14 +8,10 @@ props:
       title: Heading
       description: The title for the HTML text component.
       examples:
-        - Join us at The Conference
+        - This is my HTML component heading
       type: string
     dgiHtml:
       title: HTML Body
-      type: string
-    description:
-      title: Description
-      description: HTML Body descriptive text, appears below the component.
       type: string
 libraryOverrides:
   css:

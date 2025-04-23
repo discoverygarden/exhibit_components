@@ -1,0 +1,11 @@
+uuid: ece94d34-e344-4fd3-bdab-1a46cd9e4d10
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.html_body_text
+label: 'HTML Body text'
+description: 'Formats body text using the UIKit and the HTML component.'
+targetEntityType: paragraph
+cache: true

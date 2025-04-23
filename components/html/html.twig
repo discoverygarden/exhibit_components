@@ -6,13 +6,13 @@
     <h3>{{ heading }}</h3>
   </div>
   {% endif %}
+
+  {% if dgiHtml is not empty %}
   <div class="dgi-html--body">
-    {% if dgiHtml is not empty %}
-      <div class="dgi-html--cta">
-        {{ dgiHtml }}
-      </div>
-    {% endif %}
+    {{ dgiHtml }}
   </div>
+  {% endif %}
+
   {% if description is not empty %}
   <div class="dgi-html--description">
     {{ description }}

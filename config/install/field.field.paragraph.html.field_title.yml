@@ -1,0 +1,24 @@
+uuid: 33993663-4e44-4e95-82d6-8b648bbfc386
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.html
+  module:
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.html.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: html
+label: Title
+description: 'Title of the part.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
