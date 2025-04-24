@@ -2,8 +2,8 @@
   "name": "discoverygarden/exhibit_components",
   "type": "drupal-module",
   "license": "GPL-3.0-or-later",
-"require": {
+  "require": {
     "drupal/layout_paragraphs": "^2.1",
     "drupal/sdc_display": "^2.0@beta"
-}
+  }
 }
