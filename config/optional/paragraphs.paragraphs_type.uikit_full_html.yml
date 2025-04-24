@@ -3,12 +3,11 @@ status: true
 dependencies:
   module:
     - layout_paragraphs
-    - paragraphs_viewmode
-id: html
-label: HTML
+id: uikit_full_html
+label: 'UIKit Full HTML'
 icon_uuid: null
 icon_default: null
-description: 'Provides an HTML formatted text field'
+description: ''
 behavior_plugins:
   layout_paragraphs:
     enabled: true
@@ -18,9 +17,3 @@ behavior_plugins:
       layout_twocol_bricks: 'Two column bricks'
       layout_threecol_25_50_25: 'Three column 25/50/25'
       layout_threecol_33_34_33: 'Three column 33/34/33'
-  paragraphs_viewmode_behavior:
-    enabled: true
-    override_mode: default
-    override_available:
-      html_body_text: html_body_text
-    override_default: html_body_text

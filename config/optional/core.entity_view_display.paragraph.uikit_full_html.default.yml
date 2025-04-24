@@ -2,10 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.paragraph.html_body_text
-    - field.field.paragraph.html.field_markup
-    - field.field.paragraph.html.field_title
-    - paragraphs.paragraphs_type.html
+    - field.field.paragraph.uikit_full_html.field_uikit_html_markup
+    - field.field.paragraph.uikit_full_html.field_uikit_title
+    - paragraphs.paragraphs_type.uikit_full_html
   module:
     - sdc_display
     - text
@@ -20,28 +19,27 @@ third_party_settings:
         props:
           heading: ''
           dgiHtml: ''
-          description: ''
       dynamic:
         props:
-          heading: field_title
-          dgiHtml: field_markup
-          description: field_description_standard
-id: paragraph.html.html_body_text
+          heading: field_uikit_title
+          dgiHtml: field_uikit_html_markup
+id: paragraph.uikit_full_html.default
 targetEntityType: paragraph
-bundle: html
-mode: html_body_text
+bundle: uikit_full_html
+mode: default
 content:
-  field_markup:
+  field_uikit_html_markup:
     type: text_default
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
-  field_title:
-    type: basic_string
+  field_uikit_title:
+    type: string
     label: visually_hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
     weight: 0
     region: content

@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.layout
+_core:
+  default_config_hash: jXocRfhZkEd95K4ULcLdd8qR51jTUYMjJD0vXB1ecNE
+id: paragraph.layout.default
+targetEntityType: paragraph
+bundle: layout
+mode: default
+content: {  }
+hidden:
+  search_api_excerpt: true

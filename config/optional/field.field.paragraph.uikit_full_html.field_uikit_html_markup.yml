@@ -2,20 +2,20 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_markup
+    - field.storage.paragraph.field_uikit_html_markup
     - filter.format.full_html
-    - paragraphs.paragraphs_type.html
+    - paragraphs.paragraphs_type.uikit_full_html
   module:
     - islandora_citations
     - text
 third_party_settings:
   islandora_citations:
     csl_field: {  }
-id: paragraph.html.field_markup
-field_name: field_markup
+id: paragraph.uikit_full_html.field_uikit_html_markup
+field_name: field_uikit_html_markup
 entity_type: paragraph
-bundle: html
-label: Markup
+bundle: uikit_full_html
+label: 'HTML markup'
 description: ''
 required: false
 translatable: false

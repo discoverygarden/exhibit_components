@@ -4,8 +4,8 @@ dependencies:
   module:
     - paragraphs
     - text
-id: paragraph.field_markup
-field_name: field_markup
+id: paragraph.field_uikit_html_markup
+field_name: field_uikit_html_markup
 entity_type: paragraph
 type: text_long
 settings: {  }

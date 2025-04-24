@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: html_body
-label: 'HTML Body'
-revision: false
-description: 'Supports UIKit-based component markup.'
