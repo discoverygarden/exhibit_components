@@ -1,0 +1,26 @@
+name: Slide
+group: DGI Components
+description: UIKit based slideshow 'Slide' component
+props:
+  type: object
+  properties:
+    title:
+      title: Auto Play interval
+      description: Set the interval in milliseconds between switching slides
+      examples:
+        - 6000 (six seconds)
+      type: string
+    description:
+      title: Descriptive text for the slideshow
+    image:
+      title: Auto Play interval
+      description: Set the interval in milliseconds between switching slides
+      examples:
+        - 6000 (six seconds)
+      type: string
+libraryOverrides:
+  css:
+    component:
+      https://cdn.jsdelivr.net/npm/uikit@3.23.6/dist/css/uikit.min.css: {}
+  js:
+    https://cdn.jsdelivr.net/npm/uikit@3.23.6/dist/js/uikit.min.js: { attributes: { defer: true } }
