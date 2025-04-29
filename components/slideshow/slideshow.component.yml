@@ -1,9 +1,14 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
 name: Slideshow
 group: DGI Components
 description: UIKit based slideshow component
 props:
   type: object
   properties:
+    label:
+      title: Label
+      description: The title of the slideshow
+      type: string
     animation:
       title: Animation
       description: The animation style to use for the slides
@@ -17,10 +22,9 @@ props:
         - True or False
       type: string
 slots:
-  slide:
-    title: Slideshow slide title
-    description: Descriptive text for the slide
-    image: The image media used as the slide.
+  slides:
+    title: Slide slot
+    description: Add slide slots here
 libraryOverrides:
   css:
     component:

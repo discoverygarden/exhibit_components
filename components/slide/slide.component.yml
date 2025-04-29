@@ -1,22 +1,23 @@
-name: Slide
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Slides
 group: DGI Components
-description: UIKit based slideshow 'Slide' component
+description: UIKit based slideshow 'Slides' component
 props:
   type: object
   properties:
-    title:
-      title: Auto Play interval
-      description: Set the interval in milliseconds between switching slides
-      examples:
-        - 6000 (six seconds)
-      type: string
-    description:
-      title: Descriptive text for the slideshow
+#    title:
+#      title: Title
+#      description: The slide title
+#      examples:
+#        - 6000 (six seconds)
+#      type: string
+#    description:
+#      title: Description
+#      description: Descriptive text for the slide
+#      type: string
     image:
-      title: Auto Play interval
-      description: Set the interval in milliseconds between switching slides
-      examples:
-        - 6000 (six seconds)
+      title: Slideshow Image
+      description: The image to use as the slideshow image.
       type: string
 libraryOverrides:
   css:
