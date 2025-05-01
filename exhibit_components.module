@@ -33,6 +33,6 @@ function exhibit_components_theme($existing, $type, $theme, $path) {
     'paragraph__uikit_full_html' => [
       'template' => 'paragraph--uikit-full-html',
       'base hook' => 'paragraph',
-    ]
+    ],
   ];
 }
