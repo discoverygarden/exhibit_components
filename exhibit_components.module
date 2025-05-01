@@ -24,3 +24,15 @@ function exhibit_components_library_info_alter(&$libraries, $module) {
     }
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function exhibit_components_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__uikit_full_html' => [
+      'template' => 'paragraph--uikit-full-html',
+      'base hook' => 'paragraph',
+    ]
+  ];
+}

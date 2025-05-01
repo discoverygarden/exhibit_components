@@ -6,23 +6,7 @@ dependencies:
     - field.field.paragraph.uikit_full_html.field_uikit_title
     - paragraphs.paragraphs_type.uikit_full_html
   module:
-    - sdc_display
     - text
-third_party_settings:
-  sdc_display:
-    enabled: true
-    component:
-      machine_name: 'exhibit_components:html'
-      show_deprecated: null
-    mappings:
-      static:
-        props:
-          heading: ''
-          dgiHtml: ''
-      dynamic:
-        props:
-          heading: field_uikit_title
-          dgiHtml: field_uikit_html_markup
 id: paragraph.uikit_full_html.default
 targetEntityType: paragraph
 bundle: uikit_full_html
