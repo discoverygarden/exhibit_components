@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: uikit_image_text_display
+label: 'UIKit Image and Text Display'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
