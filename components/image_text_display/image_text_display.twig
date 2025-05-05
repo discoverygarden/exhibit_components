@@ -1,0 +1,44 @@
+{# Markup for the image and text display component #}
+
+{# Variables #}
+{% set base_class = 'dgi-image-text-display' %}
+{% set alt_default = 'Image card display' %}
+{% set canvas_size = canvas_size|default('200') %}
+
+{# Div class arrays #}
+{% set card_classes = [
+  'uk-card',
+  'uk-card-' ~ card_style|default('default'),
+  'uk-card-small',
+  'uk-grid-collapse',
+  'uk-margin'
+] %}
+
+{% set image_container_classes = [
+  'uk-card-media-left',
+  'uk-cover-container',
+  'uk-width-auto@m'
+] %}
+
+<div {{ attributes.addClass(base_class) }}>
+  <div class="{{ card_classes|join(' ') }}" uk-grid>
+    {% if url is not empty %}
+      <div class="{{ image_container_classes|join(' ') }}">
+        <img src="{{ url }}" alt="{{ alt|default(alt_default) }}" uk-cover loading="lazy">
+        <canvas width="{{ canvas_size }}" height="{{ canvas_size }}"></canvas>
+      </div>
+    {% endif %}
+
+    <div class="uk-width-expand@m">
+      <div class="uk-card-body">
+        {% if heading is not empty %}
+          <h3 class="uk-card-title">{{ heading }}</h3>
+        {% endif %}
+
+        {% if summary is not empty %}
+          <p>{{ summary }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

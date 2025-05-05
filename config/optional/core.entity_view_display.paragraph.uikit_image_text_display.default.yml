@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uikit_image_text_display.field_uikit_heading
+    - field.field.paragraph.uikit_image_text_display.field_uikit_image
+    - field.field.paragraph.uikit_image_text_display.field_uikit_summary
+    - image.style.max_650x650
+    - paragraphs.paragraphs_type.uikit_image_text_display
+  module:
+    - media
+id: paragraph.uikit_image_text_display.default
+targetEntityType: paragraph
+bundle: uikit_image_text_display
+mode: default
+content:
+  field_uikit_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_uikit_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: max_650x650
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_uikit_summary:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true
