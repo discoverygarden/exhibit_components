@@ -7,13 +7,12 @@ props:
   properties:
     label:
       title: Label
-      description: The title of the slideshow
+      description: The title of the slideshow.
       type: string
     items:
       title: Items
-      description: An array of slider items. Each item has 'image' and 'content'
+      description: An array of slider items. Each item has 'image', 'title', 'content', 'alt', 'title_link' and 'slide_position'.
       type: array
-      default: []
 
 libraryOverrides:
   dependencies:
