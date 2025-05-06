@@ -1,29 +1,39 @@
+{# Markup for the slideshow component #}
+
+{% if not attributes %}
+  {% set attributes = create_attribute() %}
+{% endif %}
 
 {% set animation_style = animation %}
+{% set slideshow_classes = [
+  'slideshow',
+  'uk-position-relative',
+  'uk-visible-toggle',
+  'uk-light',
+] %}
+
+{% set attributes = attributes.addClass(slideshow_classes) %}
+{% set attributes = attributes.setAttribute('uk-slideshow', "ratio: 7:3; animation: push") %}
+{% set attributes = attributes.setAttribute('tabindex', "-1") %}
 
 {% if label is not empty %}
   <div class="dgi-slideshow--label">
     <h3>{{ label }}</h3>
   </div>
 {% endif %}
-<div class="slideshow uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="ratio: 7:3; animation: push">
-  <div class="uk-slideshow-items">
-{#   a {{ slides }} b#}
-    {% block slides %}
-    {% endblock %}
 
-{#    {% if slides is not empty %}#}
-{#      {{ slides }}#}
-{#    {% endif %}#}
-{#    <div>#}
-{#      <img src="https://picsum.photos/1800/1200" alt="" uk-cover>#}
-{#    </div>#}
-{#    <div>#}
-{#      <img src="https://picsum.photos/1800/1200" alt="" uk-cover>#}
-{#    </div>#}
-{#    <div>#}
-{#      <img src="https://picsum.photos/1800/1200" alt="" uk-cover>#}
-{#    </div>#}
+<div{{ attributes }}>
+  <div class="uk-slideshow-items">
+    {% for key, item in items %}
+      {% include 'exhibit_components:slide' with {
+        image: item.image,
+        title: item.title,
+        content: item.content,
+        alt: item.alt,
+        title_link: item.title_link,
+        slide_position: item.slide_position
+      } only %}
+    {% endfor %}
   </div>
   <a class="uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous uk-slideshow-item="previous"></a>
   <a class="uk-position-center-right uk-position-small uk-hidden-hover" href uk-slidenav-next uk-slideshow-item="next"></a>

@@ -5,23 +5,30 @@ description: UIKit based slideshow 'Slides' component
 props:
   type: object
   properties:
-#    title:
-#      title: Title
-#      description: The slide title
-#      examples:
-#        - 6000 (six seconds)
-#      type: string
-#    description:
-#      title: Description
-#      description: Descriptive text for the slide
-#      type: string
+    title:
+      title: Slide title
+      description: The slide title.
+      type: string
+    title_link:
+      title: Link the title to another page
+      description: Include a URL to link this slides title to another page
+      type: string
     image:
       title: Slideshow Image
       description: The image to use as the slideshow image.
       type: string
+    content:
+      title: Content
+      description: The text content to include in the slide
+      type: string
+    alt:
+      title: Alternative text
+      description: Alternative text for the image
+      type: string
+    slide_position:
+      title: Slide description position
+      description: The position of the slide description (Bottom, Right)
+      type: string
 libraryOverrides:
-  css:
-    component:
-      https://cdn.jsdelivr.net/npm/uikit@3.23.6/dist/css/uikit.min.css: {}
-  js:
-    https://cdn.jsdelivr.net/npm/uikit@3.23.6/dist/js/uikit.min.js: { attributes: { defer: true } }
+  dependencies:
+    - exhibit_components/uikit

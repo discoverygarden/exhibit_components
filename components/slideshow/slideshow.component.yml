@@ -9,56 +9,12 @@ props:
       title: Label
       description: The title of the slideshow
       type: string
-    animation:
-      title: Animation
-      description: The animation style to use for the slides
-      examples:
-        - Slide, Fade, Scale, Pull, Push
-      type: string
-    autoplay:
-      title: Auto Play
-      description: Enables autoplay for the slideshow
-      examples:
-        - True or False
-      type: boolean
-    infiniteScroll:
-      title: Infinite Scroll
-      description: Enable or disable infite scroll
-      examples:
-        - True or False
-      type: boolean
-    ratio:
-      title: Ratio
-      description: The slideshow always takes up the full width of its parent container. The height adapts according to the defined ratio. To change the default ratio of 16:9, just add the ratio option to the attribute. It's recommended to use the same ratio as the background images. For example, just use their width and height, like 1600:1200.
-      examples:
-        - 16:9, 7:3, etc
-      type: string
-    minMaxHeight:
-      title: Min/Max height
-      description: By default, the slideshow height adopts the defined ratio. A minimum or maximum height can be set using the min-height and max-height options.
-      examples:
-        - "min-height: 300, max-height: 600"
-      type: string
-    viewportHeight:
-      title: Viewport height
-      description: Adding the uk-height-viewport attribute from the Height component to the list of slideshow items will stretch the height to fill the whole viewport. You can set the min-height option to define a minimum height.
-      examples:
-        - "min: 300, min: 600, etc"
-      type: string
-    navigation:
-      title: Parallax animation
-      description: Instead of a step-by-step animation using navigation controls, the slideshow can use a stepless parallax animation based on its scroll position in the viewport.
-      examples:
-        - True or False
-      type: boolean
+    items:
+      title: Items
+      description: An array of slider items. Each item has 'image' and 'content'
+      type: array
+      default: []
 
-slots:
-  slides:
-    title: Slide slot
-    description: Add slide slots here
 libraryOverrides:
-  css:
-    component:
-      https://cdn.jsdelivr.net/npm/uikit@3.23.6/dist/css/uikit.min.css: {}
-  js:
-    https://cdn.jsdelivr.net/npm/uikit@3.23.6/dist/js/uikit.min.js: { attributes: { defer: true } }
+  dependencies:
+    - exhibit_components/uikit
