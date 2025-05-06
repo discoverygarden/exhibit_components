@@ -1,0 +1,25 @@
+{# Markup for the heading component #}
+
+{% set heading_classes = ['dgi-uikit-heading'] %}
+{% if alignment is not empty %}
+  {% set heading_classes = heading_classes|merge(['uk-text-' ~ alignment]) %}
+{% endif %}
+{% if divider %}
+  {% set heading_classes = heading_classes|merge(['uk-heading-divider']) %}
+{% endif %}
+{% if bullet %}
+  {% set heading_classes = heading_classes|merge(['uk-heading-bullet']) %}
+{% endif %}
+{% if line %}
+  {% set heading_classes = heading_classes|merge(['uk-heading-line']) %}
+{% endif %}
+
+<div {{ attributes.addClass('dgi-heading') }}>
+  {% if heading is not empty %}
+    <h{{ level }} {{ attributes.addClass(heading_classes) }}>
+      {% if line %}<span>{% endif %}
+      {{ heading }}
+      {% if line %}</span>{% endif %}
+    </h{{ level }}>
+  {% endif %}
+</div>

@@ -50,6 +50,17 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
+      {{ include('exhibit_components:heading',
+        {
+          heading: 'testing',
+          level: 1,
+          alignment: 'left',
+          divider: true,
+          line: true,
+          bullet: false
+        }
+      )}}
+        
       Content TBD
     {% endblock %}
   </div>
