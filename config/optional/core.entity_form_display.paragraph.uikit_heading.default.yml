@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.uikit_heading.field_heading_level
-    - field.field.paragraph.uikit_heading.field_heading_size
     - field.field.paragraph.uikit_heading.field_uikit_text_alignment
     - field.field.paragraph.uikit_heading.field_uikit_title
     - field.field.paragraph.uikit_heading.field_use_heading_bullet
@@ -21,12 +20,6 @@ content:
     region: content
     settings:
       placeholder: '1'
-    third_party_settings: {  }
-  field_heading_size:
-    type: options_select
-    weight: -197
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_uikit_text_alignment:
     type: options_buttons
