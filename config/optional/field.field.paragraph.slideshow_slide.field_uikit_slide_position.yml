@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_slide_position
+    - paragraphs.paragraphs_type.slideshow_slide
+  module:
+    - islandora_citations
+    - options
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.slideshow_slide.field_uikit_slide_position
+field_name: field_uikit_slide_position
+entity_type: paragraph
+bundle: slideshow_slide
+label: 'Content position'
+description: 'Where the descriptive content should be positioned in the slide (ex: bottom, right)'
+required: false
+translatable: false
+default_value:
+  -
+    value: uk-position-bottom
+default_value_callback: ''
+settings: {  }
+field_type: list_string
