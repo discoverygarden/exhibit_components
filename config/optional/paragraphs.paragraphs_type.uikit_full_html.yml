@@ -1,8 +1,6 @@
 langcode: en
 status: true
-dependencies:
-  module:
-    - layout_paragraphs
+dependencies: { }
 id: uikit_full_html
 label: 'UIKit Full HTML'
 icon_uuid: null
