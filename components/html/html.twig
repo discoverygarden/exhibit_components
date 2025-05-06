@@ -1,0 +1,15 @@
+{# Markup for the html component #}
+
+<div {{ attributes.addClass('dgi-html') }}>
+  {% if heading is not empty %}
+  <div class="dgi-html--heading">
+    <h3>{{ heading }}</h3>
+  </div>
+  {% endif %}
+
+  {% if dgiHtml is not empty %}
+  <div class="dgi-html--body">
+    {{ dgiHtml }}
+  </div>
+  {% endif %}
+</div>

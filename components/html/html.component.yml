@@ -1,0 +1,18 @@
+name: HTML
+group: DGI Components
+description: HTML Body component
+props:
+  type: object
+  properties:
+    heading:
+      title: Heading
+      description: The title for the HTML text component.
+      examples:
+        - This is my HTML component heading
+      type: string
+    dgiHtml:
+      title: HTML Body
+      type: string
+libraryOverrides:
+  dependencies:
+    - exhibit_components/uikit
