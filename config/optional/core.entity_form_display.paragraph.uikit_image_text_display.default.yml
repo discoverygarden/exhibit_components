@@ -1,14 +1,14 @@
+uuid: bcf72ecc-ae0e-4666-9e59-79340bd8a7c7
 langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.image_media_browser
     - field.field.paragraph.uikit_image_text_display.field_uikit_heading
     - field.field.paragraph.uikit_image_text_display.field_uikit_image
     - field.field.paragraph.uikit_image_text_display.field_uikit_summary
     - paragraphs.paragraphs_type.uikit_image_text_display
   module:
-    - entity_browser
+    - media_library
 id: paragraph.uikit_image_text_display.default
 targetEntityType: paragraph
 bundle: uikit_image_text_display
@@ -23,18 +23,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_uikit_image:
-    type: entity_browser_entity_reference
+    type: media_library_widget
     weight: 2
     region: content
     settings:
-      entity_browser: image_media_browser
-      field_widget_display: label
-      field_widget_edit: true
-      field_widget_remove: true
-      field_widget_replace: false
-      open: false
-      field_widget_display_settings: {  }
-      selection_mode: selection_append
+      media_types: {  }
     third_party_settings: {  }
   field_uikit_summary:
     type: string_textarea
