@@ -1,0 +1,25 @@
+name: Grid
+group: DGI Components
+description: Grid component
+props:
+  type: object
+  properties:
+    heading:
+      title: Heading
+      description: The title for the Grid component.
+      examples:
+        - This is my grid component heading
+      type: string
+    gap_modifier:
+      title: Gap modifier
+      description: The space between the grid elements.
+      examples:
+        - Small, medium, large, collapse (removes grid gap)
+      type: string
+    divider_modifier:
+      title: Divider modifier
+      description: Separate grid cells with lines
+      type: boolean
+libraryOverrides:
+  dependencies:
+    - exhibit_components/uikit

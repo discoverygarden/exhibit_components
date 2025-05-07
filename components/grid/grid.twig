@@ -1,0 +1,59 @@
+{# Markup for the grid component #}
+
+{% if not grid_attributes %}
+  {% set grid_attributes = create_attribute() %}
+{% endif %}
+
+{% set grid_classes = [
+  'uk-child-width-expand@s',
+  'uk-text-center',
+  gap_modifier ?? "",
+] %}
+
+{% set grid_attributes = grid_attributes.addClass(grid_classes) %}
+{% set grid_attributes = grid_attributes.setAttribute("uk-grid", "") %}
+
+{% if heading is not empty %}
+  <div class="dgi-grid--heading">
+    <h3>{{ heading }}</h3>
+  </div>
+{% endif %}
+
+<div{{ grid_attributes }}>
+  <div>
+    <div class="uk-card uk-card-default uk-card-body">Item</div>
+  </div>
+  <div>
+    <div class="uk-card uk-card-default uk-card-body">Item</div>
+  </div>
+  <div>
+    <div class="uk-card uk-card-default uk-card-body">Item</div>
+  </div>
+  <div>
+    <div class="uk-card uk-card-default uk-card-body">Item</div>
+  </div>
+{#  <div>#}
+{#    <div class="uk-card uk-card-default uk-card-body">Item</div>#}
+{#  </div>#}
+{#  <div>#}
+{#    <div class="uk-card uk-card-default uk-card-body">Item</div>#}
+{#  </div>#}
+{#  <div>#}
+{#    <div class="uk-card uk-card-default uk-card-body">Item</div>#}
+{#  </div>#}
+{#  <div>#}
+{#    <div class="uk-card uk-card-default uk-card-body">Item</div>#}
+{#  </div>#}
+{#  <div>#}
+{#    <div class="uk-card uk-card-default uk-card-body">Item</div>#}
+{#  </div>#}
+{#  <div>#}
+{#    <div class="uk-card uk-card-default uk-card-body">Item</div>#}
+{#  </div>#}
+{#  <div>#}
+{#    <div class="uk-card uk-card-default uk-card-body">Item</div>#}
+{#  </div>#}
+{#  <div>#}
+{#    <div class="uk-card uk-card-default uk-card-body">Item</div>#}
+{#  </div>#}
+</div>
