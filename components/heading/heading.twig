@@ -14,9 +14,9 @@
   {% set heading_classes = heading_classes|merge(['uk-heading-line']) %}
 {% endif %}
 
-<div {{ attributes.addClass('dgi-heading') }}>
+<div{{ attributes.addClass('dgi-heading') }}>
   {% if heading is not empty %}
-    <h{{ level }} {{ attributes.addClass(heading_classes) }}>
+    <h{{ level }}{{ attributes.addClass(heading_classes) }}>
       {% if line %}<span>{% endif %}
       {{ heading }}
       {% if line %}</span>{% endif %}

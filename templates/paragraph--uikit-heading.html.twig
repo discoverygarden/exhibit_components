@@ -50,18 +50,15 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ include('exhibit_components:heading',
-        {
-          heading: 'testing',
-          level: 1,
-          alignment: 'left',
-          divider: true,
-          line: true,
-          bullet: false
-        }
-      )}}
-        
-      Content TBD
+      {{ include('exhibit_components:heading', {
+        heading: 'testing',
+        level: 1,
+        alignment: 'left',
+        divider: true,
+        line: true,
+        bullet: false },
+        with_context = false)
+      }}
     {% endblock %}
   </div>
 {% endblock paragraph %}
