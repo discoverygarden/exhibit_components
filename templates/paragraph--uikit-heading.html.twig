@@ -50,6 +50,14 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
+      {#
+        The field values default to strings even if the field is number or
+        boolean, and twig doesn't appear to have nice typecasting options,
+        so multiplying by 1 is a way to cast to number, and comparing boolean
+        fields with `true` is a way to cast to boolean. Since we ship the config
+        for this paragraph and its fields in the same module as this template,
+        it should be safe to assume the field type.
+      #}
       {{ include('exhibit_components:heading', {
         heading: paragraph.field_uikit_title.value,
         level: paragraph.field_heading_level.value * 1,
