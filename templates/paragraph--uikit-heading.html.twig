@@ -51,12 +51,12 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {{ include('exhibit_components:heading', {
-        heading: 'testing',
-        level: 1,
-        alignment: 'left',
-        divider: true,
-        line: true,
-        bullet: false },
+        heading: paragraph.field_uikit_title.value,
+        level: paragraph.field_heading_level.value * 1,
+        alignment: paragraph.field_uikit_text_alignment.value|default('left'),
+        divider: paragraph.field_use_heading_divider.value == true,
+        line: paragraph.field_use_heading_line.value == true,
+        bullet: paragraph.field_use_heading_bullet.value == true },
         with_context = false)
       }}
     {% endblock %}
