@@ -38,5 +38,9 @@ function exhibit_components_theme($existing, $type, $theme, $path) {
       'template' => 'paragraph--uikit-quote',
       'base hook' => 'paragraph',
     ],
+    'paragraph__uikit_image_text_display' => [
+      'template' => 'paragraph--uikit-image-text-display',
+      'base hook' => 'paragraph',
+    ],
   ];
 }
