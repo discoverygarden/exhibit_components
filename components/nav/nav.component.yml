@@ -1,0 +1,13 @@
+name: Nav
+group: DGI Components
+description: Nav component
+props:
+  type: object
+  properties:
+    items:
+      title: Nav Items
+      description: The items for the navigation component.
+      type: array
+libraryOverrides:
+  dependencies:
+    - exhibit_components/uikit
