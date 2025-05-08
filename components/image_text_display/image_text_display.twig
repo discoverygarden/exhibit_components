@@ -2,7 +2,6 @@
 
 {# Variables #}
 {% set base_class = 'dgi-image-text-display' %}
-{% set alt_default = 'Image card display' %}
 {% set canvas_size = canvas_size|default('200') %}
 
 {# Div class arrays #}
@@ -24,7 +23,7 @@
   <div class="{{ card_classes|join(' ') }}" uk-grid>
     {% if url is not empty %}
       <div class="{{ image_container_classes|join(' ') }}">
-        <img src="{{ url }}" alt="{{ alt|default(alt_default) }}" uk-cover loading="lazy">
+        <img src="{{ url }}" alt="{{ alt }}" uk-cover loading="lazy">
         <canvas width="{{ canvas_size }}" height="{{ canvas_size }}"></canvas>
       </div>
     {% endif %}
