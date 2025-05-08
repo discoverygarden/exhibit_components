@@ -20,10 +20,6 @@ props:
       title: Divider modifier
       description: Separate grid cells with lines
       type: boolean
-    masonry:
-      title: Masonry style
-      description: If grid cells have different heights, set the masonry option to either pack or next to create a layout free of gaps.
-      type: string
     column_number_small:
       title: Small screen column count
       description: The number of columns to use on small screens. Affects device widths of 640px and larger. Grid columns will stack on smaller sizes.
