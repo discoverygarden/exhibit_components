@@ -1,0 +1,79 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_nav_paragraph
+    - paragraphs.paragraphs_type.uikit_nav
+    - paragraphs.paragraphs_type.uikit_nav_item
+  module:
+    - entity_reference_revisions
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    use_entity_checkbox: false
+id: paragraph.uikit_nav.field_uikit_nav_paragraph
+field_name: field_uikit_nav_paragraph
+entity_type: paragraph
+bundle: uikit_nav
+label: 'Nav Paragraph'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      uikit_nav_item: uikit_nav_item
+    negate: 0
+    target_bundles_drag_drop:
+      faceted_subject:
+        weight: 17
+        enabled: false
+      hierarchical_geographic_subject:
+        weight: 18
+        enabled: false
+      layout:
+        weight: 19
+        enabled: false
+      note:
+        weight: 20
+        enabled: false
+      origin_information:
+        weight: 21
+        enabled: false
+      part:
+        weight: 22
+        enabled: false
+      perspective_camera_settings:
+        weight: 23
+        enabled: false
+      record_information:
+        weight: 24
+        enabled: false
+      related_item:
+        weight: 25
+        enabled: false
+      series:
+        weight: 26
+        enabled: false
+      title:
+        weight: 27
+        enabled: false
+      uikit_full_html:
+        weight: 28
+        enabled: false
+      uikit_image_text_display:
+        weight: 29
+        enabled: false
+      uikit_nav:
+        weight: 30
+        enabled: false
+      uikit_nav_item:
+        weight: 31
+        enabled: true
+      uikit_quote:
+        weight: 32
+        enabled: false
+field_type: entity_reference_revisions
