@@ -1,0 +1,11 @@
+{# Markup for the quote component #}
+
+{# Variables #}
+{% set base_class = 'dgi-quote' %}
+
+<div {{ attributes.addClass(base_class) }}>
+  <blockquote cite="#">
+    <p class="uk-margin-remove">{{ quote }}</p>
+    <footer>{{ author }}</footer>
+  </blockquote>
+</div>
