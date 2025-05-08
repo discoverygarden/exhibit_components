@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_summary
+    - paragraphs.paragraphs_type.uikit_image_text_display
+  module:
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.uikit_image_text_display.field_uikit_summary
+field_name: field_uikit_summary
+entity_type: paragraph
+bundle: uikit_image_text_display
+label: Summary
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
