@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uikit_quote.field_uikit_author
+    - field.field.paragraph.uikit_quote.field_uikit_quote
+    - paragraphs.paragraphs_type.uikit_quote
+id: paragraph.uikit_quote.default
+targetEntityType: paragraph
+bundle: uikit_quote
+mode: default
+content:
+  field_uikit_author:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_uikit_quote:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

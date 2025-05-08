@@ -1,0 +1,48 @@
+name: Image and Text Display
+group: DGI Components
+description: Image and Text Display component
+props:
+  type: object
+  properties:
+    heading:
+      title: Heading
+      description: The title for the HTML text component.
+      examples:
+        - This is my HTML component heading
+      type: string
+    summary:
+      title: Summary
+      description: The summary for the HTML text component.
+      examples:
+        - This is my HTML component summary
+      type: string
+    url:
+      title: URL
+      description: The URL for the image to be displayed.
+      examples:
+        - https://example.com/image.jpg
+      type: string
+    alt:
+      title: Alt Text
+      description: The alt text for the image to be displayed.
+      examples:
+        - This is my HTML component alt text
+      type: string
+    card_style:
+      title: Card Style
+      description: The card style for the image to be displayed.
+      examples:
+        - 'default'
+        - 'primary'
+        - 'secondary'
+      type: string
+    canvas_size:
+      title: Canvas Size
+      description: The canvas size for the image to be displayed.
+      examples:
+        - '200'
+        - '300'
+      type: string
+libraryOverrides:
+  dependencies:
+    - exhibit_components/uikit
