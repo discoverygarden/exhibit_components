@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_grid_gap
+    - paragraphs.paragraphs_type.uikit_grid
+  module:
+    - islandora_citations
+    - options
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.uikit_grid.field_uikit_grid_gap
+field_name: field_uikit_grid_gap
+entity_type: paragraph
+bundle: uikit_grid
+label: 'Gap Modifier'
+description: 'The Grid component comes with a default gap that decreases automatically from a certain breakpoint, usually on a smaller desktop viewport width.'
+required: false
+translatable: false
+default_value:
+  -
+    value: uk-grid-small
+default_value_callback: ''
+settings: {  }
+field_type: list_string

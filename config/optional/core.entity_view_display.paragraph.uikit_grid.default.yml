@@ -1,0 +1,74 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uikit_grid.field_uikit_divider_modifier
+    - field.field.paragraph.uikit_grid.field_uikit_grid_col_lg
+    - field.field.paragraph.uikit_grid.field_uikit_grid_col_md
+    - field.field.paragraph.uikit_grid.field_uikit_grid_col_sm
+    - field.field.paragraph.uikit_grid.field_uikit_grid_col_xl
+    - field.field.paragraph.uikit_grid.field_uikit_grid_gap
+    - field.field.paragraph.uikit_grid.field_uikit_grid_title
+    - paragraphs.paragraphs_type.uikit_grid
+  module:
+    - options
+id: paragraph.uikit_grid.default
+targetEntityType: paragraph
+bundle: uikit_grid
+mode: default
+content:
+  field_uikit_divider_modifier:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_uikit_grid_col_lg:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_uikit_grid_col_md:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_uikit_grid_col_sm:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_uikit_grid_col_xl:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_uikit_grid_gap:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_uikit_grid_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

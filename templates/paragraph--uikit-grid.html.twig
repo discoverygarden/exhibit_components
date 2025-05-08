@@ -52,9 +52,15 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
 
+      {% set divider_modifier_value = paragraph.field_uikit_divider_modifier.value ? true : false %}
       {{ include('exhibit_components:grid', {
         heading: content.field_uikit_grid_title,
-        gap_modifier: paragraph.field_uikit_grid_gap.value},
+        gap_modifier: paragraph.field_uikit_grid_gap.value,
+        divider_modifier: divider_modifier_value,
+        column_number_small: paragraph.field_uikit_grid_col_sm.value,
+        column_number_medium: paragraph.field_uikit_grid_col_md.value,
+        column_number_large: paragraph.field_uikit_grid_col_lg.value,
+        column_number_extra_large: paragraph.field_uikit_grid_col_xl.value},
         with_context = false)
       }}
 
