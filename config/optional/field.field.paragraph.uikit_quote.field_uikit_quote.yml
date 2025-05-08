@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_quote
+    - paragraphs.paragraphs_type.uikit_quote
+  module:
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.uikit_quote.field_uikit_quote
+field_name: field_uikit_quote
+entity_type: paragraph
+bundle: uikit_quote
+label: Quote
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
