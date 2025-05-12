@@ -1,0 +1,36 @@
+
+
+{% if not attributes %}
+  {% set attributes = create_attribute() %}
+{% endif %}
+
+{% set slide_classes = [
+  'uk-overlay',
+  'uk-overlay-primary',
+  slide_position ?? 'uk-position-bottom',
+  'uk-text-center',
+  'uk-transition-slide-bottom'
+] %}
+
+{% set attributes = attributes.addClass(slide_classes) %}
+
+<div>
+  <img src="{{ image }}" alt="{{ alt }}" uk-cover>
+  {% if title or content %}
+    <div{{ attributes }}>
+
+      {% if title is not empty %}
+        {% if title_link is not empty %}
+          <h3 class="uk-margin-remove"><a title="{{ title }}" href="{{ title_link }}">{{ title }}</a></h3>
+        {% else %}
+          <h3 class="uk-margin-remove">{{ title }}</h3>
+        {% endif %}
+      {% endif %}
+
+      {% if content is not empty %}
+        <p class="uk-margin-remove">{{ content }}</p>
+      {% endif %}
+
+    </div>
+  {% endif %}
+</div>
