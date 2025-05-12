@@ -1,18 +1,12 @@
 {# Markup for the heading component #}
 
-{% set heading_classes = ['dgi-uikit-heading'] %}
-{% if alignment is not empty %}
-  {% set heading_classes = heading_classes|merge(['uk-text-' ~ alignment]) %}
-{% endif %}
-{% if divider %}
-  {% set heading_classes = heading_classes|merge(['uk-heading-divider']) %}
-{% endif %}
-{% if bullet %}
-  {% set heading_classes = heading_classes|merge(['uk-heading-bullet']) %}
-{% endif %}
-{% if line %}
-  {% set heading_classes = heading_classes|merge(['uk-heading-line']) %}
-{% endif %}
+{% set heading_classes = [
+  'dgi-uikit-heading',
+  (alignment ? 'uk-text-' ~ alignment : null),
+  (divider ? 'uk-heading-divider' : null),
+  (bullet ? 'uk-heading-bullet' : null),
+  (line ? 'uk-heading-line' : null)
+] %}
 
 <div{{ attributes.addClass('dgi-heading') }}>
   {% if heading is not empty %}
