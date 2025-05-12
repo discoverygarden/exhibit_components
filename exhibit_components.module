@@ -38,6 +38,10 @@ function exhibit_components_theme($existing, $type, $theme, $path) {
       'template' => 'paragraph--uikit-heading',
       'base hook' => 'paragraph',
     ],
+    'paragraph__uikit_slideshow' => [
+      'template' => 'paragraph--uikit-slideshow',
+      'base hook' => 'paragraph',
+    ],
     'paragraph__uikit_quote' => [
       'template' => 'paragraph--uikit-quote',
       'base hook' => 'paragraph',
