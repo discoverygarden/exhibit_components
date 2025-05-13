@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_use_heading_divider
+    - paragraphs.paragraphs_type.uikit_heading
+  module:
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.uikit_heading.field_use_heading_divider
+field_name: field_use_heading_divider
+entity_type: paragraph
+bundle: uikit_heading
+label: 'Use Heading Divider'
+description: 'Toggle on to use add a horizontal divider under the heading, as seen at https://getuikit.com/docs/heading#divider-modifier'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

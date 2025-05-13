@@ -1,0 +1,61 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uikit_heading.field_heading_level
+    - field.field.paragraph.uikit_heading.field_uikit_text_alignment
+    - field.field.paragraph.uikit_heading.field_uikit_title
+    - field.field.paragraph.uikit_heading.field_use_heading_bullet
+    - field.field.paragraph.uikit_heading.field_use_heading_divider
+    - field.field.paragraph.uikit_heading.field_use_heading_line
+    - paragraphs.paragraphs_type.uikit_heading
+id: paragraph.uikit_heading.default
+targetEntityType: paragraph
+bundle: uikit_heading
+mode: default
+content:
+  field_heading_level:
+    type: number
+    weight: -198
+    region: content
+    settings:
+      placeholder: '1'
+    third_party_settings: {  }
+  field_uikit_text_alignment:
+    type: options_buttons
+    weight: -193
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_uikit_title:
+    type: string_textfield
+    weight: -199
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_use_heading_bullet:
+    type: boolean_checkbox
+    weight: -195
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_use_heading_divider:
+    type: boolean_checkbox
+    weight: -196
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_use_heading_line:
+    type: boolean_checkbox
+    weight: -194
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

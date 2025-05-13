@@ -34,6 +34,10 @@ function exhibit_components_theme($existing, $type, $theme, $path) {
       'template' => 'paragraph--uikit-full-html',
       'base hook' => 'paragraph',
     ],
+    'paragraph__uikit_heading' => [
+      'template' => 'paragraph--uikit-heading',
+      'base hook' => 'paragraph',
+    ],
     'paragraph__uikit_slideshow' => [
       'template' => 'paragraph--uikit-slideshow',
       'base hook' => 'paragraph',

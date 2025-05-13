@@ -1,0 +1,72 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uikit_heading.field_heading_level
+    - field.field.paragraph.uikit_heading.field_uikit_text_alignment
+    - field.field.paragraph.uikit_heading.field_uikit_title
+    - field.field.paragraph.uikit_heading.field_use_heading_bullet
+    - field.field.paragraph.uikit_heading.field_use_heading_divider
+    - field.field.paragraph.uikit_heading.field_use_heading_line
+    - paragraphs.paragraphs_type.uikit_heading
+  module:
+    - options
+id: paragraph.uikit_heading.default
+targetEntityType: paragraph
+bundle: uikit_heading
+mode: default
+content:
+  field_heading_level:
+    type: number_unformatted
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_uikit_text_alignment:
+    type: list_key
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_uikit_title:
+    type: string
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_use_heading_bullet:
+    type: boolean
+    label: visually_hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_use_heading_divider:
+    type: boolean
+    label: visually_hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_use_heading_line:
+    type: boolean
+    label: visually_hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  search_api_excerpt: true

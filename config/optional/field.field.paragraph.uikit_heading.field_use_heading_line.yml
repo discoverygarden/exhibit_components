@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_use_heading_line
+    - paragraphs.paragraphs_type.uikit_heading
+  module:
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.uikit_heading.field_use_heading_line
+field_name: field_use_heading_line
+entity_type: paragraph
+bundle: uikit_heading
+label: 'Use Heading Line'
+description: 'Toggle on to have a horizontal line displayed beside the heading vertically centred with the heading text, as seen at https://getuikit.com/docs/heading#line-modifier'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

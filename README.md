@@ -1,6 +1,12 @@
 # Exhibit Components
 Drupal module containing Single Directory Components for use in exhibit content.
 
+## Intro
+Each component in the `components` directory is used by a paragraph template in the `templates` directory,
+and the necessary configuration for the paragraph entities and their fields should be included in this module's
+`config` directory. As long as you have a content type set up to use any of the included paragraphs, those
+paragraphs should get displayed using the relevant template and component.
+
 ## Libraries
 By default, this module uses CDNs for the uikit js and css libraries,
 but it will use locally installed libraries when possible.
