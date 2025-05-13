@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_text_alignment
+    - paragraphs.paragraphs_type.uikit_heading
+  module:
+    - islandora_citations
+    - options
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.uikit_heading.field_uikit_text_alignment
+field_name: field_uikit_text_alignment
+entity_type: paragraph
+bundle: uikit_heading
+label: 'UIKit text alignment'
+description: 'Surfacing the option to horizontally align text, as seen at https://getuikit.com/docs/text#text-alignment'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
