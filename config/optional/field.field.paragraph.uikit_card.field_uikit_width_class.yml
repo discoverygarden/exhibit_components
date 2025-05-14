@@ -1,0 +1,24 @@
+uuid: 0dc525a0-8c29-4c64-93ad-0e8e35835f78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_width_class
+    - paragraphs.paragraphs_type.uikit_card
+  module:
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.uikit_card.field_uikit_width_class
+field_name: field_uikit_width_class
+entity_type: paragraph
+bundle: uikit_card
+label: 'Width class modifier'
+description: 'Optionally include a width modifier if using the card outside a grid element to control its appearance on different screen sizes (Example: <em>uk-width-1-2@m</em>). See the <a href="https://getuikit.com/docs/width#responsive-width" title="Responsive card width">documentation</a> for more details.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
