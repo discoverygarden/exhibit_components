@@ -1,0 +1,24 @@
+uuid: 3325489a-b124-400d-bb55-f236325a9b03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_card_badge
+    - paragraphs.paragraphs_type.uikit_card
+  module:
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.uikit_card.field_uikit_card_badge
+field_name: field_uikit_card_badge
+entity_type: paragraph
+bundle: uikit_card
+label: Badge
+description: 'Optional text to include as a badge in the top right of the component.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

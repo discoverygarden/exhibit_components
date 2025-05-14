@@ -1,0 +1,24 @@
+uuid: 8a0029bd-d8d8-429d-8777-f3d08ed4a319
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_card_title_link
+    - paragraphs.paragraphs_type.uikit_card
+  module:
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.uikit_card.field_uikit_card_title_link
+field_name: field_uikit_card_title_link
+entity_type: paragraph
+bundle: uikit_card
+label: 'Title link'
+description: 'The location (or URL) to which the title should link.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

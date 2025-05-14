@@ -1,0 +1,35 @@
+uuid: 26319442-e55a-443f-8320-5d1191801fdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_card_media
+    - media.type.image
+    - paragraphs.paragraphs_type.uikit_card
+  module:
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+    use_entity_checkbox: false
+id: paragraph.uikit_card.field_uikit_card_media
+field_name: field_uikit_card_media
+entity_type: paragraph
+bundle: uikit_card
+label: Media
+description: "Optionally include an image in the card. When uploading media, you can select its placement (top, bottom, left, right) using the 'Media placement' field. If no media is uploaded, these settings do not need to be configured."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

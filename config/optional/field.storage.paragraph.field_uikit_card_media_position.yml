@@ -1,0 +1,33 @@
+uuid: 6c55ea95-e90b-4dd0-a0d8-079f1cf985ae
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_uikit_card_media_position
+field_name: field_uikit_card_media_position
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: uk-card-media-top
+      label: Top
+    -
+      value: uk-card-media-bottom
+      label: Bottom
+    -
+      value: uk-card-media-left
+      label: Left
+    -
+      value: uk-card-media-right
+      label: Right
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

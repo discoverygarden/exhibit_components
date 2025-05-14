@@ -1,0 +1,21 @@
+name: Quote
+group: DGI Components
+description: Quote component
+props:
+  type: object
+  properties:
+    quote:
+      title: Quote
+      description: The quote text.
+      examples:
+        - I am an inspirational quote.
+      type: string
+    author:
+      title: Author
+      description: The author of the quote.
+      examples:
+        - Chris MacDonald
+      type: string
+libraryOverrides:
+  dependencies:
+    - exhibit_components/uikit
