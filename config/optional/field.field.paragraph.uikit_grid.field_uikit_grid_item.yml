@@ -1,0 +1,82 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_grid_item
+    - paragraphs.paragraphs_type.uikit_card
+    - paragraphs.paragraphs_type.uikit_grid
+  module:
+    - entity_reference_revisions
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    use_entity_checkbox: false
+id: paragraph.uikit_grid.field_uikit_grid_item
+field_name: field_uikit_grid_item
+entity_type: paragraph
+bundle: uikit_grid
+label: 'Grid item'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      uikit_card: uikit_card
+    negate: 0
+    target_bundles_drag_drop:
+      faceted_subject:
+        weight: 18
+        enabled: false
+      hierarchical_geographic_subject:
+        weight: 19
+        enabled: false
+      layout:
+        weight: 20
+        enabled: false
+      note:
+        weight: 21
+        enabled: false
+      origin_information:
+        weight: 22
+        enabled: false
+      part:
+        weight: 23
+        enabled: false
+      perspective_camera_settings:
+        weight: 24
+        enabled: false
+      record_information:
+        weight: 25
+        enabled: false
+      related_item:
+        weight: 26
+        enabled: false
+      series:
+        weight: 27
+        enabled: false
+      slideshow_slide:
+        weight: 28
+        enabled: false
+      title:
+        weight: 29
+        enabled: false
+      uikit_card:
+        weight: 30
+        enabled: true
+      uikit_full_html:
+        weight: 31
+        enabled: false
+      uikit_grid:
+        weight: 32
+        enabled: false
+      uikit_image_text_display:
+        weight: 33
+        enabled: false
+      uikit_slideshow:
+        weight: 34
+        enabled: false
+field_type: entity_reference_revisions

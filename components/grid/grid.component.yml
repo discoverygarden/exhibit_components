@@ -36,6 +36,10 @@ props:
       title: Extra large sized screen column count
       description: The number of columns to use on extra large sized screens. Affects device widths of 1600px and larger.
       type: string
+    items:
+      title: Items
+      description: An array of items to render as a grid component.
+      type: array
 libraryOverrides:
   dependencies:
     - exhibit_components/uikit

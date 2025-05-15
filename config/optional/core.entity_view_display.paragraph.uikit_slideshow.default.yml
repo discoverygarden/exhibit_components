@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uikit_slideshow.field_uikit_slideshow_label
+    - field.field.paragraph.uikit_slideshow.field_uikit_slideshow_slide
+    - paragraphs.paragraphs_type.uikit_slideshow
+  module:
+    - entity_reference_revisions
+id: paragraph.uikit_slideshow.default
+targetEntityType: paragraph
+bundle: uikit_slideshow
+mode: default
+content:
+  field_uikit_slideshow_label:
+    type: string
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_uikit_slideshow_slide:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

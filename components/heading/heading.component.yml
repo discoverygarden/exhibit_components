@@ -1,0 +1,48 @@
+name: Heading
+group: DGI Components
+description: Heading component
+props:
+  type: object
+  properties:
+    heading:
+      title: Heading
+      description: The title for the Heading component.
+      examples:
+        - This is my component heading
+      type: string
+    level:
+      title: Heading level
+      description: The level at which this heading falls in the hierarchy.
+      type: integer
+      minimum: 1
+      maximum: 6
+      default: 1
+    divider:
+      title: Use heading divider
+      description: Whether or not to display horizontal divider under heading.
+      type: boolean
+      default: false
+    bullet:
+      title: Use heading bullet.
+      description: Whether or not to display a bullet marker before the heading.
+      type: boolean
+      default: false
+    line:
+      title: Use heading line
+      description: Whether or not to display vertically centered line beside the heading.
+      type: boolean
+      default: false
+    alignment:
+      title: Heading text alignment
+      description: Set text alignment of heading, default is left.
+      type:
+        - string
+        - 'null'
+      enum:
+        - 'left'
+        - 'right'
+        - 'center'
+
+libraryOverrides:
+  dependencies:
+    - exhibit_components/uikit

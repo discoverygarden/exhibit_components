@@ -8,9 +8,11 @@ dependencies:
     - field.field.paragraph.uikit_grid.field_uikit_grid_col_sm
     - field.field.paragraph.uikit_grid.field_uikit_grid_col_xl
     - field.field.paragraph.uikit_grid.field_uikit_grid_gap
+    - field.field.paragraph.uikit_grid.field_uikit_grid_item
     - field.field.paragraph.uikit_grid.field_uikit_grid_title
     - paragraphs.paragraphs_type.uikit_grid
   module:
+    - entity_reference_revisions
     - options
 id: paragraph.uikit_grid.default
 targetEntityType: paragraph
@@ -61,6 +63,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_uikit_grid_item:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 7
     region: content
   field_uikit_grid_title:
     type: string

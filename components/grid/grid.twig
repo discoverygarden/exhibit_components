@@ -26,73 +26,21 @@
 {% endif %}
 
 <div{{ grid_attributes }}>
-{#  <div>#}
-{#    <div class="uk-card uk-card-default uk-card-body">Item</div>#}
-{#  </div>#}
-{#  <div>#}
-{#    <div class="uk-card uk-card-default uk-card-body">Item</div>#}
-{#  </div>#}
-{#  <div>#}
-{#    <div class="uk-card uk-card-default uk-card-body">Item</div>#}
-{#  </div>#}
-{#  <div>#}
-{#    <div class="uk-card uk-card-default uk-card-body">Item</div>#}
-{#  </div>#}
-
-  <div>
-    <div class="uk-card uk-card-default uk-card-body">Item 1</div>
-  </div>
-  <div>
-    <div class="uk-card uk-card-default uk-card-body">Item 2</div>
-  </div>
-  <div>
-    <div class="uk-card uk-card-default uk-card-body">Item 3</div>
-  </div>
-  <div>
-    <div class="uk-card uk-card-default uk-card-body">Item 4</div>
-  </div>
-  <div>
-    <div class="uk-card uk-card-default uk-card-body">Item 5</div>
-  </div>
-  <div>
-    <div class="uk-card uk-card-default uk-card-body">Item 6</div>
-  </div>
-  <div>
-    <div class="uk-card uk-card-default uk-card-body">Item 7</div>
-  </div>
-  <div>
-    <div class="uk-card uk-card-default uk-card-body">Item 8</div>
-  </div>
-  <div>
-    <div class="uk-card uk-card-default uk-card-body">Item 9</div>
-  </div>
-
-
-{#  <div>#}
-{#    <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle" style="height: 100px">Item 1</div>#}
-{#  </div>#}
-{#  <div>#}
-{#    <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle" style="height: 150px">Item 2</div>#}
-{#  </div>#}
-{#  <div>#}
-{#    <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle" style="height: 300px">Item 3</div>#}
-{#  </div>#}
-{#  <div>#}
-{#    <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle" style="height: 120px">Item 4</div>#}
-{#  </div>#}
-{#  <div>#}
-{#    <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle" style="height: 180px">Item 5</div>#}
-{#  </div>#}
-{#  <div>#}
-{#    <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle" style="height: 250px">Item 6</div>#}
-{#  </div>#}
-{#  <div>#}
-{#    <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle" style="height: 140px">Item 7</div>#}
-{#  </div>#}
-{#  <div>#}
-{#    <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle" style="height: 210px">Item 8</div>#}
-{#  </div>#}
-{#  <div>#}
-{#    <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle" style="height: 200px">Item 9</div>#}
-{#  </div>#}
+  {% for key, item in items %}
+    <div>
+      {% include 'exhibit_components:card' with {
+        heading: item.heading,
+        size_modifier: item.size_modifier,
+        image: item.image,
+        image_alt: item.image_alt,
+        media_position: item.media_position,
+        badge: item.badge,
+        card_body: item.card_body,
+        width_modifier: item.width_modifier,
+        image_width: item.image_width,
+        image_height: item.image_height,
+        title_link: item.title_link
+      } only %}
+    </div>
+  {% endfor %}
 </div>

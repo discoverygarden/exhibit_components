@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: uikit_heading
+label: 'UIKit Heading'
+icon_uuid: null
+icon_default: null
+description: 'A Paragraph entity intended to be displayed as a Heading component based on the UIKit library: https://getuikit.com/docs/heading'
+behavior_plugins: {  }

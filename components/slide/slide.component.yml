@@ -1,0 +1,34 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Slides
+group: DGI Components
+description: UIKit based slideshow 'Slides' component
+props:
+  type: object
+  properties:
+    title:
+      title: Slide title
+      description: The slide title.
+      type: string
+    title_link:
+      title: Link the title to another page
+      description: Include a URL to link this slides title to another page
+      type: string
+    image:
+      title: Slideshow Image
+      description: The image to use as the slideshow image.
+      type: string
+    content:
+      title: Content
+      description: The text content to include in the slide
+      type: string
+    alt:
+      title: Alternative text
+      description: Alternative text for the image
+      type: string
+    slide_position:
+      title: Slide description position
+      description: The position of the slide description (Bottom, Right)
+      type: string
+libraryOverrides:
+  dependencies:
+    - exhibit_components/uikit

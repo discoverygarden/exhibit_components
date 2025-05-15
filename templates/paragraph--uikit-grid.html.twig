@@ -48,9 +48,48 @@
 ]
 %}
 
+{% set grid_items = []  %}
+
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
+      {% for key, item in paragraph.field_uikit_grid_item %}
+        {% set card_title = item.entity.field_uikit_card_title.value %}
+        {% set card_image_url = file_url(item.entity.field_uikit_card_media.entity.field_media_image.entity.uri.value) %}
+        {% set card_size_modifier = item.entity.field_uikit_size_modifier.value %}
+        {% set card_image_alt = item.entity.field_uikit_card_media.entity.field_media_image.alt ?? "" %}
+        {% set card_media_position = item.entity.field_uikit_card_media_position.value %}
+        {% set card_badge = item.entity.field_uikit_card_badge.value %}
+        {% set card_badge = item.entity.field_uikit_card_badge.value %}
+        {% set card_body = item.entity.field_uikit_card_body.value %}
+        {% set card_width_modifier = item.entity.field_uikit_width_class.value %}
+        {% set media_image = file_url(item.entity.field_uikit_card_media.entity.field_media_image.entity.uri.value) %}
+        {% set media_alt = item.entity.field_uikit_card_media.entity.field_media_image.alt ?? "" %}
+        {% set card_title_link = item.entity.field_uikit_card_title_link.value %}
+
+        {% set card_image_width = "" %}
+        {% set card_image_height = "" %}
+
+        {% if card_image_url is not empty %}
+          {% set card_image_width = item.entity.field_uikit_card_media.entity.field_media_image.0.width %}
+          {% set card_image_height = item.entity.field_uikit_card_media.entity.field_media_image.0.height %}
+        {% endif %}
+
+
+        {% set grid_items = grid_items|merge([{
+          'heading': card_title,
+          'size_modifier': card_size_modifier,
+          'image': card_image_url,
+          'image_alt': card_image_alt,
+          'media_position': card_media_position,
+          'badge': card_badge,
+          'card_body': card_body,
+          'width_modifier': card_width_modifier,
+          'image_width': card_image_width,
+          'image_height': card_image_height,
+          'title_link': card_title_link
+        }]) %}
+      {% endfor %}
 
       {% set divider_modifier_value = paragraph.field_uikit_divider_modifier.value ? true : false %}
       {{ include('exhibit_components:grid', {
@@ -60,7 +99,8 @@
         column_number_small: paragraph.field_uikit_grid_col_sm.value,
         column_number_medium: paragraph.field_uikit_grid_col_md.value,
         column_number_large: paragraph.field_uikit_grid_col_lg.value,
-        column_number_extra_large: paragraph.field_uikit_grid_col_xl.value},
+        column_number_extra_large: paragraph.field_uikit_grid_col_xl.value,
+        items: grid_items},
         with_context = false)
       }}
 

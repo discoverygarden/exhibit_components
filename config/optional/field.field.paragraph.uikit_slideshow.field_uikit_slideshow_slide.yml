@@ -1,0 +1,70 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_slideshow_slide
+    - paragraphs.paragraphs_type.slideshow_slide
+    - paragraphs.paragraphs_type.uikit_slideshow
+  module:
+    - entity_reference_revisions
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    use_entity_checkbox: false
+id: paragraph.uikit_slideshow.field_uikit_slideshow_slide
+field_name: field_uikit_slideshow_slide
+entity_type: paragraph
+bundle: uikit_slideshow
+label: Slides
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      slideshow_slide: slideshow_slide
+    negate: 0
+    target_bundles_drag_drop:
+      faceted_subject:
+        weight: 14
+        enabled: false
+      hierarchical_geographic_subject:
+        weight: 15
+        enabled: false
+      layout:
+        weight: 16
+        enabled: false
+      note:
+        weight: 17
+        enabled: false
+      origin_information:
+        weight: 18
+        enabled: false
+      part:
+        weight: 19
+        enabled: false
+      perspective_camera_settings:
+        weight: 20
+        enabled: false
+      record_information:
+        weight: 21
+        enabled: false
+      related_item:
+        weight: 22
+        enabled: false
+      series:
+        weight: 23
+        enabled: false
+      slideshow_slide:
+        weight: 24
+        enabled: true
+      title:
+        weight: 25
+        enabled: false
+      uikit_slideshow:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions
