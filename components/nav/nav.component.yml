@@ -8,6 +8,10 @@ props:
       title: Nav Items
       description: The items for the navigation component.
       type: array
+    auto_gen:
+      title: Auto Generate
+      description: Whether to auto-generate the navigation items.
+      type: boolean
 libraryOverrides:
   dependencies:
     - exhibit_components/uikit

@@ -53,8 +53,8 @@
     {% block content %}
       {% set nav_structure = [] %}
 
-      {% for paragraph in paragraph.field_uikit_nav_paragraph %}
-        {% set nav_entity = paragraph.entity %}
+      {% for child_paragraph in paragraph.field_uikit_nav_paragraph %}
+        {% set nav_entity = child_paragraph.entity %}
         {% set group_label = nav_entity.field_uikit_nav_label.value | default(null) %}
 
         {% if group_label %}
@@ -77,9 +77,9 @@
           }]) %}
         {% endif %}
       {% endfor %}
-
       {{ include('exhibit_components:nav', {
         items: nav_structure,
+        auto_gen: paragraph.field_uikit_auto_gen_headers.value == true,
       },
         with_context = false)
       }}

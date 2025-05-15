@@ -8,9 +8,13 @@
   (line ? 'uk-heading-line' : null)
 ] %}
 
+{# Generate a unique ID for each heading #}
+{% set id_pattern = '[^A-Za-z0-9_.-]' %}
+{% set heading_id = 'dgi-heading-' ~ heading|lower|replace({' ': '-', '_': '-'})|replace({(id_pattern): ''}, '', true)|clean_id %}
+
 <div{{ attributes.addClass('dgi-heading') }}>
   {% if heading is not empty %}
-    <h{{ level }}{{ attributes.addClass(heading_classes) }}>
+    <h{{ level }}{{ attributes.addClass(heading_classes) }} id="{{ heading_id }}">
       {% if line %}<span>{% endif %}
       {{ heading }}
       {% if line %}</span>{% endif %}
