@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.uikit_nav.field_uikit_auto_gen_headers
     - field.field.paragraph.uikit_nav.field_uikit_nav_paragraph
     - paragraphs.paragraphs_type.uikit_nav
   module:
@@ -11,6 +12,13 @@ targetEntityType: paragraph
 bundle: uikit_nav
 mode: default
 content:
+  field_uikit_auto_gen_headers:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_uikit_nav_paragraph:
     type: paragraphs
     weight: 0

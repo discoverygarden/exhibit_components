@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.uikit_nav.field_uikit_auto_gen_headers
     - field.field.paragraph.uikit_nav.field_uikit_nav_paragraph
     - paragraphs.paragraphs_type.uikit_nav
   module:
@@ -21,4 +22,5 @@ content:
     weight: 0
     region: content
 hidden:
+  field_uikit_auto_gen_headers: true
   search_api_excerpt: true
