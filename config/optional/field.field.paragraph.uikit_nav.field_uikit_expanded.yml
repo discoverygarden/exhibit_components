@@ -2,19 +2,19 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_uikit_auto_gen_headers
+    - field.storage.paragraph.field_uikit_expanded
     - paragraphs.paragraphs_type.uikit_nav
   module:
     - islandora_citations
 third_party_settings:
   islandora_citations:
     csl_field: {  }
-id: paragraph.uikit_nav.field_uikit_auto_gen_headers
-field_name: field_uikit_auto_gen_headers
+id: paragraph.uikit_nav.field_uikit_expanded
+field_name: field_uikit_expanded
 entity_type: paragraph
 bundle: uikit_nav
-label: 'Auto Generate Headers'
-description: 'A toggle to determine if the nav should be automatically populated with page content headers. When this option is selected, any nav items created below will not populate.'
+label: Expanded
+description: 'Determines whether or not the nav will be expanded by default, or if it requires clicking to reveal contents.'
 required: false
 translatable: false
 default_value: {  }

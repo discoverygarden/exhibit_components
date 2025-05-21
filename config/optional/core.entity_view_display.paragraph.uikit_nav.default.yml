@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.uikit_nav.field_uikit_auto_gen_headers
+    - field.field.paragraph.uikit_nav.field_uikit_expanded
     - field.field.paragraph.uikit_nav.field_uikit_nav_paragraph
     - paragraphs.paragraphs_type.uikit_nav
   module:
@@ -14,7 +15,7 @@ mode: default
 content:
   field_uikit_nav_paragraph:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -23,4 +24,5 @@ content:
     region: content
 hidden:
   field_uikit_auto_gen_headers: true
+  field_uikit_expanded: true
   search_api_excerpt: true
