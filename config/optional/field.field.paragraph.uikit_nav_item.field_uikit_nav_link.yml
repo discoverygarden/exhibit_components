@@ -15,7 +15,7 @@ field_name: field_uikit_nav_link
 entity_type: paragraph
 bundle: uikit_nav_item
 label: 'Nav Link'
-description: ''
+description: 'A URI and label to be defined that will live under the nav label.'
 required: false
 translatable: false
 default_value: {  }

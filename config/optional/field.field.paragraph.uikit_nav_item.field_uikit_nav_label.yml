@@ -14,7 +14,7 @@ field_name: field_uikit_nav_label
 entity_type: paragraph
 bundle: uikit_nav_item
 label: 'Nav Label'
-description: ''
+description: 'The label for the top level item for the nav.'
 required: false
 translatable: false
 default_value: {  }
