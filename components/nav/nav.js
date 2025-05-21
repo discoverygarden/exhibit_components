@@ -137,12 +137,12 @@
         const $navComponent = $dgiNav.first();
 
         if ($navComponent.length) {
-          const $targetUl = $navComponent.find('ul.uk-nav-default.uk-nav-divider');
+          const $targetUl = $navComponent.find('ul.uk-nav.uk-nav-divider');
           if ($targetUl.length) {
             const navHtml = buildUIKitNavList(hierarchy, true);
             $targetUl.empty().html(navHtml);
           } else {
-            console.warn('Target <ul class="uk-nav-default uk-nav-divider"> not found inside .dgi-nav component.');
+            console.warn('Target <ul class="uk-nav uk-nav-divider"> not found inside .dgi-nav component.');
           }
         } else {
           console.warn('Navigation component container .dgi-nav not found on the page.');

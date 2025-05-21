@@ -8,7 +8,7 @@
   {% if not auto_gen %}
     {% if items is defined and items is not empty %}
       <div class="uk-margin uk-width-expand@m">
-        <ul class="uk-nav-default uk-nav-divider" uk-nav>
+        <ul class="uk-nav uk-nav-divider" {{ expanded ?: create_attribute({'uk-nav': ''}) }}>
           {% for nav_entry in items %}
             <li class="uk-parent uk-nav-secondary">
               <a href="#"><div class="uk-text-emphasis">{{ nav_entry.label }}</div> <span uk-nav-parent-icon></span></a>
@@ -24,7 +24,7 @@
     {% endif %}
   {% else %}
     <div class="uk-margin uk-width-expand@m">
-      <ul class="uk-nav-default uk-nav-divider" uk-nav>
+      <ul class="uk-nav uk-nav-divider" {{ expanded ?: create_attribute({'uk-nav': ''}) }}>
         <li class="uk-parent uk-nav-secondary"></li>
       </ul>
     </div>

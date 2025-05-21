@@ -80,6 +80,7 @@
       {{ include('exhibit_components:nav', {
         items: nav_structure,
         auto_gen: paragraph.field_uikit_auto_gen_headers.value == true,
+        expanded: paragraph.field_uikit_expanded.value == true,
       },
         with_context = false)
       }}

@@ -12,6 +12,10 @@ props:
       title: Auto Generate
       description: Whether to auto-generate the navigation items.
       type: boolean
+    expanded:
+      title: Expanded
+      description: Whether the navigation is expanded or collapsed.
+      type: boolean
 libraryOverrides:
   dependencies:
     - exhibit_components/uikit
