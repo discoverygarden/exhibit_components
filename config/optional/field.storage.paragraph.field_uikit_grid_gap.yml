@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_uikit_grid_gap
+field_name: field_uikit_grid_gap
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: uk-grid-small
+      label: Small
+    -
+      value: uk-grid-medium
+      label: Medium
+    -
+      value: uk-grid-large
+      label: Large
+    -
+      value: uk-grid-collapse
+      label: Collapse
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

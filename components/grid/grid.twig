@@ -1,0 +1,46 @@
+{# Markup for the grid component #}
+
+{% if not grid_attributes %}
+  {% set grid_attributes = create_attribute() %}
+{% endif %}
+
+{% set grid_classes = [
+  'uk-child-width-expand@s',
+  'uk-text-center',
+  gap_modifier ?? "",
+  divider_modifier ? "uk-grid-divider" : "",
+  'uk-grid-match',
+  "uk-child-width-1-#{column_number_small}@s",
+  "uk-child-width-1-#{column_number_medium}@m",
+  "uk-child-width-1-#{column_number_large}@l",
+  "uk-child-width-1-#{column_number_extra_large}@xl"
+] %}
+
+{% set grid_attributes = grid_attributes.addClass(grid_classes) %}
+{% set grid_attributes = grid_attributes.setAttribute("uk-grid", "") %}
+
+{% if heading is not empty %}
+  <div class="dgi-grid--heading">
+    <h3>{{ heading }}</h3>
+  </div>
+{% endif %}
+
+<div{{ grid_attributes }}>
+  {% for key, item in items %}
+    <div>
+      {% include 'exhibit_components:card' with {
+        heading: item.heading,
+        size_modifier: item.size_modifier,
+        image: item.image,
+        image_alt: item.image_alt,
+        media_position: item.media_position,
+        badge: item.badge,
+        card_body: item.card_body,
+        width_modifier: item.width_modifier,
+        image_width: item.image_width,
+        image_height: item.image_height,
+        title_link: item.title_link
+      } only %}
+    </div>
+  {% endfor %}
+</div>

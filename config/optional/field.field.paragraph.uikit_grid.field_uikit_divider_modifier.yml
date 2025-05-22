@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_divider_modifier
+    - paragraphs.paragraphs_type.uikit_grid
+  module:
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.uikit_grid.field_uikit_divider_modifier
+field_name: field_uikit_divider_modifier
+entity_type: paragraph
+bundle: uikit_grid
+label: 'Divider modifier'
+description: 'Add the <code>.uk-grid-divider</code> class to separate grid cells with lines. This class can be combined with the gap modifiers. As soon as the grid stacks, the divider lines will become horizontal.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,150 @@
+{# Markup for the card component #}
+
+{% if not attributes %}
+  {% set attributes = create_attribute() %}
+{% endif %}
+
+{% set card_classes = [
+  'uk-card',
+  'uk-card-default',
+  image ? '' : 'uk-card-body',
+  size_modifier,
+  'uk-card-hover',
+  width_modifier
+] %}
+
+{% set attributes = attributes.addClass(card_classes) %}
+
+{% if image is not empty and (media_position == "uk-card-media-left" or media_position == "uk-card-media-right") %}
+  {% set left_right_media_body_classes = "uk-grid-collapse uk-child-width-1-2@s uk-grid uk-margin" %}
+  {% set attributes = attributes.addClass(left_right_media_body_classes) %}
+{% endif %}
+
+<div{{ attributes }}>
+
+  {% if image is empty %}
+    {% if badge is not empty %}
+      <div class="uk-card-badge uk-label">{{ badge }}</div>
+    {% endif %}
+
+    {% if heading is not empty %}
+      {% if title_link is not empty %}
+        <h3 class="uk-card-title"><a href="{{ title_link }}" title="{{ heading }}">{{ heading }}</a></h3>
+      {% else %}
+        <h3 class="uk-card-title">{{ heading }}</h3>
+      {% endif %}
+    {% endif %}
+
+    {% if image is not empty %}
+      <img src="{{ image }}" alt="{{ alt }}"/>
+    {% endif %}
+
+    {% if card_body is not empty %}
+      {{ card_body }}
+    {% endif %}
+  {% else %}
+
+    {% if media_position == "uk-card-media-top" or media_position is empty %}
+      <div class="uk-card-media-top">
+        <img src="{{ image }}" alt="{{ image_alt }}" width="100%" height="{{ image_height }}" style="max-height:50vh;object-fit:cover"/>
+      </div>
+      {% if card_body is not empty or heading is not empty %}
+        <div class="uk-card-body">
+          {% if badge is not empty %}
+            <div class="uk-card-badge uk-label">{{ badge }}</div>
+          {% endif %}
+          {% if heading is not empty %}
+            {% if title_link is not empty %}
+              <h3 class="uk-card-title"><a href="{{ title_link }}" title="{{ heading }}">{{ heading }}</a></h3>
+            {% else %}
+              <h3 class="uk-card-title">{{ heading }}</h3>
+            {% endif %}
+          {% endif %}
+          {% if card_body is not empty %}
+            {{ card_body }}
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endif %}
+
+    {% if media_position == "uk-card-media-bottom" %}
+      {% if card_body is not empty or heading is not empty %}
+        <div class="uk-card-body">
+          {% if badge is not empty %}
+            <div class="uk-card-badge uk-label">{{ badge }}</div>
+          {% endif %}
+          {% if heading is not empty %}
+            {% if title_link is not empty %}
+              <h3 class="uk-card-title"><a href="{{ title_link }}" title="{{ heading }}">{{ heading }}</a></h3>
+            {% else %}
+              <h3 class="uk-card-title">{{ heading }}</h3>
+            {% endif %}
+          {% endif %}
+          {% if card_body is not empty %}
+            {{ card_body }}
+          {% endif %}
+        </div>
+      {% endif %}
+      <div class="{{ media_position }}">
+        <img src="{{ image }}" alt="{{ image_alt }}" width="100%" height="{{ image_height }}" style="max-height:50vh;object-fit:cover"/>
+      </div>
+    {% endif %}
+
+    {% if media_position == "uk-card-media-left" %}
+      <div class="{{ media_position }} uk-cover-container">
+        <img src="{{ image }}" alt="{{ image_alt }}" style="object-fit:cover" uk-cover/>
+        <canvas width="100%" height="{{ image_height }}"></canvas>
+      </div>
+
+      {% if card_body is not empty or heading is not empty %}
+        <div>
+          <div class="uk-card-body">
+            {% if badge is not empty %}
+              <div class="uk-card-badge uk-label">{{ badge }}</div>
+            {% endif %}
+            {% if heading is not empty %}
+              {% if title_link is not empty %}
+                <h3 class="uk-card-title"><a href="{{ title_link }}" title="{{ heading }}">{{ heading }}</a></h3>
+              {% else %}
+                <h3 class="uk-card-title">{{ heading }}</h3>
+              {% endif %}
+            {% endif %}
+            {% if card_body is not empty %}
+              {{ card_body }}
+            {% endif %}
+          </div>
+        </div>
+
+      {% endif %}
+    {% endif %}
+
+    {% if media_position == "uk-card-media-right" %}
+      <div class="{{ media_position }} uk-flex-last@s uk-cover-container">
+        <img src="{{ image }}" alt="{{ image_alt }}" style="object-fit:cover" uk-cover/>
+        <canvas width="100%" height="{{ image_height }}"></canvas>
+      </div>
+      {% if card_body is not empty or heading is not empty %}
+        <div class="uk-first-column">
+          <div class="uk-card-body">
+            {% if badge is not empty %}
+              <div class="uk-card-badge uk-label">{{ badge }}</div>
+            {% endif %}
+            {% if heading is not empty %}
+              {% if title_link is not empty %}
+                <h3 class="uk-card-title"><a href="{{ title_link }}" title="{{ heading }}">{{ heading }}</a></h3>
+              {% else %}
+                <h3 class="uk-card-title">{{ heading }}</h3>
+              {% endif %}
+            {% endif %}
+            {% if card_body is not empty %}
+              {{ card_body }}
+            {% endif %}
+          </div>
+        </div>
+
+      {% endif %}
+    {% endif %}
+  {% endif %}
+
+</div>
+

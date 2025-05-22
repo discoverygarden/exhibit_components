@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_grid_col_lg
+    - paragraphs.paragraphs_type.uikit_grid
+  module:
+    - islandora_citations
+    - options
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.uikit_grid.field_uikit_grid_col_lg
+field_name: field_uikit_grid_col_lg
+entity_type: paragraph
+bundle: uikit_grid
+label: 'Grid column count (Large)'
+description: 'The number of columns to use on large-sized screens. Affects device widths between 1200px and 1600px.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 5
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

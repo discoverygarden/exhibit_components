@@ -1,0 +1,55 @@
+name: Card
+group: DGI Components
+description: UIKit Card component
+props:
+  type: object
+  properties:
+    heading:
+      title: Heading
+      description: The title for the Card component.
+      examples:
+        - This is my Card component heading
+      type: string
+    card_body:
+      title: Card body
+      description: Body text to use in the card. Supports basic HTML elements.
+      type: string
+    size_modifier:
+      title: Size Modifier
+      description: You can apply different size modifiers to cards that will decrease or increase their padding.
+      type: string
+    image:
+      title: Card image
+      description: The image to use in the card. This is not strictly required.
+      type: string
+    image_alt:
+      title: Image alt text
+      description: Text to be displayed if the image cannot be loaded
+      type: string
+    media_position:
+      title: Image alt text
+      description: Text to be displayed if the image cannot be loaded
+      type: string
+    badge:
+      title: Badge
+      description: Optional text to include as a badge in the top right of the component
+      type: string
+    width_modifier:
+      title: Width modifier
+      description: Optionally include a width modifier class, typically used when the card is not included in a grid.
+      type: string
+    image_width:
+      title: Image width
+      description: The width of the image if the image is included.
+      type: string
+    image_height:
+      title: Image height
+      description: The height of the image if the image is included.
+      type: string
+    title_link:
+      title: Title link
+      description: The location (or URL) to which the title should link.
+      type: string
+libraryOverrides:
+  dependencies:
+    - exhibit_components/uikit
