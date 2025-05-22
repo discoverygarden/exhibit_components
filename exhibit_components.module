@@ -76,17 +76,17 @@ function exhibit_components_theme_registry_alter(&$theme_registry) {
   $extension = '.html.twig';
   $module_path = \Drupal::service('extension.path.resolver')->getPath('module', 'exhibit_components');
   $files = \Drupal::service('file_system')->scanDirectory($module_path . '/templates', '/' . preg_quote($extension) . '$/');
-
   $fs = \Drupal::service('file_system');
 
   foreach ($files as $file) {
-    $template = $fs->basename($file->filename, $extension);
-    $theme    = str_replace('-', '_', $template);
-    $__expt = explode('__', $theme, 2);
-    $base_theme = empty($__expt[0]) ? null : $__expt[0];
-    $specific = empty($__expt[1]) ? null : $__expt[1];
+    $template    = $fs->basename($file->filename, $extension);
+    $theme       = str_replace('-', '_', $template);
+    $__expt      = explode('__', $theme, 2);
+    $base_theme  = empty($__expt[0]) ? NULL : $__expt[0];
+    $specific    = empty($__expt[1]) ? NULL : $__expt[1];
+
     if (!empty($specific) && isset($theme_registry[$base_theme])) {
-      $theme_info = array(
+      $theme_info = [
         'template' => $template,
         'path' => $fs->dirname($file->uri),
         'render element' => $theme_registry[$base_theme]['render element'],
@@ -94,7 +94,7 @@ function exhibit_components_theme_registry_alter(&$theme_registry) {
         'type' => 'module',
         'theme path' => $module_path,
         'preprocess functions' => $theme_registry[$base_theme]['preprocess functions'],
-      );
+      ];
 
       $theme_registry[$theme] = $theme_info;
     }
