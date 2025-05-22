@@ -79,11 +79,11 @@ function exhibit_components_theme_registry_alter(&$theme_registry) {
   $fs = \Drupal::service('file_system');
 
   foreach ($files as $file) {
-    $template    = $fs->basename($file->filename, $extension);
-    $theme       = str_replace('-', '_', $template);
-    $__expt      = explode('__', $theme, 2);
-    $base_theme  = empty($__expt[0]) ? NULL : $__expt[0];
-    $specific    = empty($__expt[1]) ? NULL : $__expt[1];
+    $template   = $fs->basename($file->filename, $extension);
+    $theme      = str_replace('-', '_', $template);
+    $__expt     = explode('__', $theme, 2);
+    $base_theme = empty($__expt[0]) ? NULL : $__expt[0];
+    $specific   = empty($__expt[1]) ? NULL : $__expt[1];
 
     if (!empty($specific) && isset($theme_registry[$base_theme])) {
       $theme_info = [
