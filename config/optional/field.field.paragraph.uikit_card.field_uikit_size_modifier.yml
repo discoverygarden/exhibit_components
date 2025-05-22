@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_size_modifier
+    - paragraphs.paragraphs_type.uikit_card
+  module:
+    - islandora_citations
+    - options
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.uikit_card.field_uikit_size_modifier
+field_name: field_uikit_size_modifier
+entity_type: paragraph
+bundle: uikit_card
+label: 'Size Modifier'
+description: "You can apply different size modifiers to cards that will decrease or increase their padding. Defaults to 'Large'."
+required: true
+translatable: false
+default_value:
+  -
+    value: uk-card-large
+default_value_callback: ''
+settings: {  }
+field_type: list_string

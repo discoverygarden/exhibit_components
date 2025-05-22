@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_grid_col_sm
+    - paragraphs.paragraphs_type.uikit_grid
+  module:
+    - islandora_citations
+    - options
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.uikit_grid.field_uikit_grid_col_sm
+field_name: field_uikit_grid_col_sm
+entity_type: paragraph
+bundle: uikit_grid
+label: 'Grid column count (Small)'
+description: 'The number of columns to use on small screens. Affects device widths from 640px to 960px. Grid columns will stack on smaller sizes.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

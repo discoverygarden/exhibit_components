@@ -1,0 +1,45 @@
+name: Grid
+group: DGI Components
+description: Grid component
+props:
+  type: object
+  properties:
+    heading:
+      title: Heading
+      description: The title for the Grid component.
+      examples:
+        - This is my grid component heading
+      type: string
+    gap_modifier:
+      title: Gap modifier
+      description: The space between the grid elements.
+      examples:
+        - Small, medium, large, collapse (removes grid gap)
+      type: string
+    divider_modifier:
+      title: Divider modifier
+      description: Separate grid cells with lines
+      type: boolean
+    column_number_small:
+      title: Small screen column count
+      description: The number of columns to use on small screens. Affects device widths of 640px and larger. Grid columns will stack on smaller sizes.
+      type: string
+    column_number_medium:
+      title: Medium sized screen column count
+      description: The number of columns to use on medium sized screens. Affects device widths of 960px and larger.
+      type: string
+    column_number_large:
+      title: Large sized screen column count
+      description: The number of columns to use on Large sized screens. Affects device widths of 1200px and larger.
+      type: string
+    column_number_extra_large:
+      title: Extra large sized screen column count
+      description: The number of columns to use on extra large sized screens. Affects device widths of 1600px and larger.
+      type: string
+    items:
+      title: Items
+      description: An array of items to render as a grid component.
+      type: array
+libraryOverrides:
+  dependencies:
+    - exhibit_components/uikit

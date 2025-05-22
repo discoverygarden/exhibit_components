@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_grid_col_md
+    - paragraphs.paragraphs_type.uikit_grid
+  module:
+    - islandora_citations
+    - options
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.uikit_grid.field_uikit_grid_col_md
+field_name: field_uikit_grid_col_md
+entity_type: paragraph
+bundle: uikit_grid
+label: 'Grid column count (Medium)'
+description: 'The number of columns to use on medium-sized screens. Affects device widths between 960px and 1200px.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 3
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

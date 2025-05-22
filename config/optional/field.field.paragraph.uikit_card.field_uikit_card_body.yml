@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_card_body
+    - filter.format.plain_text
+    - paragraphs.paragraphs_type.uikit_card
+  module:
+    - islandora_citations
+    - text
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.uikit_card.field_uikit_card_body
+field_name: field_uikit_card_body
+entity_type: paragraph
+bundle: uikit_card
+label: 'Card body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - plain_text
+field_type: text_long
