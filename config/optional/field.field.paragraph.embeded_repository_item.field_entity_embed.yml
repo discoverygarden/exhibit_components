@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_entity_embed
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.embeded_repository_item
+  module:
+    - islandora_citations
+    - text
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.embeded_repository_item.field_entity_embed
+field_name: field_entity_embed
+entity_type: paragraph
+bundle: embeded_repository_item
+label: 'Entity embed'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long
