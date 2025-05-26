@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_nav_label
+    - paragraphs.paragraphs_type.uikit_nav_item
+  module:
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.uikit_nav_item.field_uikit_nav_label
+field_name: field_uikit_nav_label
+entity_type: paragraph
+bundle: uikit_nav_item
+label: 'Nav Label'
+description: 'The label for the top level item for the nav.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

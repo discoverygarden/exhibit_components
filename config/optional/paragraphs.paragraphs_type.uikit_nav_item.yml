@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: uikit_nav_item
+label: 'UIKit Nav Item'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

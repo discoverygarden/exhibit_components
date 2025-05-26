@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.uikit_nav_item.field_uikit_nav_label
+    - field.field.paragraph.uikit_nav_item.field_uikit_nav_link
+    - paragraphs.paragraphs_type.uikit_nav_item
+  module:
+    - link
+id: paragraph.uikit_nav_item.default
+targetEntityType: paragraph
+bundle: uikit_nav_item
+mode: default
+content:
+  field_uikit_nav_label:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_uikit_nav_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

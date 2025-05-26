@@ -54,6 +54,10 @@ function exhibit_components_theme($existing, $type, $theme, $path) {
       'template' => 'paragraph--uikit-image-text-display',
       'base hook' => 'paragraph',
     ],
+    'paragraph__uikit_nav' => [
+      'template' => 'paragraph--uikit-nav',
+      'base hook' => 'paragraph',
+    ],
     'paragraph__uikit_card' => [
       'template' => 'paragraph--uikit-card',
       'base hook' => 'paragraph',

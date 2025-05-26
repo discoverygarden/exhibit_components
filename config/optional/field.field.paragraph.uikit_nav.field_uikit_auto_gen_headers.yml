@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_uikit_auto_gen_headers
+    - paragraphs.paragraphs_type.uikit_nav
+  module:
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: paragraph.uikit_nav.field_uikit_auto_gen_headers
+field_name: field_uikit_auto_gen_headers
+entity_type: paragraph
+bundle: uikit_nav
+label: 'Auto Generate Headers'
+description: 'A toggle to determine if the nav should be automatically populated with page content headers. When this option is selected, any nav items created below will not populate.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
