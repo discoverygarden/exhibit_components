@@ -126,7 +126,7 @@ third_party_settings:
         id: ''
         description: ''
 _core:
-  default_config_hash: AUD0qyaFHBoXd-qf4TBs-XRwu-kzs5N0EvV_kGPLzWE
+  default_config_hash: Zt9MHHhFQ_16JhJ7_hQaRI6BcxUmCW4SYYKKnfnNicA
 id: node.islandora_object.entity_embed
 targetEntityType: node
 bundle: islandora_object
@@ -134,7 +134,7 @@ mode: entity_embed
 content:
   did_image:
     type: media_thumbnail
-    label: visually_hidden
+    label: hidden
     settings:
       image_link: ''
       image_style: ''
@@ -145,14 +145,14 @@ content:
     region: content
   field_abstract:
     type: basic_string
-    label: visually_hidden
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
   field_model:
     type: entity_reference_label
-    label: visually_hidden
+    label: hidden
     settings:
       link: false
     third_party_settings: {  }
