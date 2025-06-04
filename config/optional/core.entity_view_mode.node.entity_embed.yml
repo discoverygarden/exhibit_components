@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: hX37qgqa-UoK3fACtPBNAHS46K3A9DuA11VTHO8FEiw
+id: node.entity_embed
+label: 'Entity Embed'
+description: ''
+targetEntityType: node
+cache: true
