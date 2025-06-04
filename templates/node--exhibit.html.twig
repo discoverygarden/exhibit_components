@@ -92,7 +92,6 @@
   {% set banner_summery = node.body.value %}
   {% set banner_color_summery = node.field_color_mode.value %}
 
-{#  {{ content|without('field_example') }}#}
   {% if banner_image is not empty %}
     {{ include('exhibit_components:banner', {
       banner_image: banner_image,
@@ -112,9 +111,5 @@
       {{ content }}
     </div>
   {% endif %}
-
-
-
-
 </article>
 

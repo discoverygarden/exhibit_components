@@ -4,22 +4,6 @@
   {% set attributes = create_attribute() %}
 {% endif %}
 
-{#{% set card_classes = [#}
-{#  'uk-card',#}
-{#  'uk-card-default',#}
-{#  image ? '' : 'uk-card-body',#}
-{#  size_modifier,#}
-{#  'uk-card-hover',#}
-{#  width_modifier#}
-{#] %}#}
-
-{#{% set attributes = attributes.addClass(card_classes) %}#}
-
-{#{% if image is not empty and (media_position == "uk-card-media-left" or media_position == "uk-card-media-right") %}#}
-{#  {% set left_right_media_body_classes = "uk-grid-collapse uk-child-width-1-2@s uk-grid uk-margin" %}#}
-{#  {% set attributes = attributes.addClass(left_right_media_body_classes) %}#}
-{#{% endif %}#}
-
 <div class="uk-cover-container uk-height-medium uk-padding uk-padding-remove-left uk-padding-remove-right uk-padding-remove-top">
   <div>
     <img style="opacity:.3" src="{{ banner_image }}" alt="{{ banner_alt_text }}" uk-cover>
