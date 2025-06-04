@@ -1,4 +1,4 @@
-# UIKit Card Component
+# UIKit inspired Banner Component
 
 ## Introduction
-Adds a UIKit based SDC Card component.
+Adds a UIKit based SDC banner component.
