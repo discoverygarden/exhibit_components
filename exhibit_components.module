@@ -62,5 +62,45 @@ function exhibit_components_theme($existing, $type, $theme, $path) {
       'template' => 'paragraph--uikit-card',
       'base hook' => 'paragraph',
     ],
+    'node__islandora_object__entity_embed=' => [
+      'template' => 'node--islandora-object--entity-embed',
+      'base hook' => 'node',
+    ],
   ];
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ *
+ * Node view mode templates are not being picked up constantly when
+ * overridden from the module directory.
+ */
+function exhibit_components_theme_registry_alter(&$theme_registry) {
+
+  $extension = '.html.twig';
+  $module_path = \Drupal::service('extension.path.resolver')->getPath('module', 'exhibit_components');
+  $files = \Drupal::service('file_system')->scanDirectory($module_path . '/templates', '/' . preg_quote($extension) . '$/');
+  $fs = \Drupal::service('file_system');
+
+  foreach ($files as $file) {
+    $template   = $fs->basename($file->filename, $extension);
+    $theme      = str_replace('-', '_', $template);
+    $__expt     = explode('__', $theme, 2);
+    $base_theme = empty($__expt[0]) ? NULL : $__expt[0];
+    $specific   = empty($__expt[1]) ? NULL : $__expt[1];
+
+    if (!empty($specific) && isset($theme_registry[$base_theme])) {
+      $theme_info = [
+        'template' => $template,
+        'path' => $fs->dirname($file->uri),
+        'render element' => $theme_registry[$base_theme]['render element'],
+        'base hook' => $base_theme,
+        'type' => 'module',
+        'theme path' => $module_path,
+        'preprocess functions' => $theme_registry[$base_theme]['preprocess functions'],
+      ];
+
+      $theme_registry[$theme] = $theme_info;
+    }
+  }
 }
