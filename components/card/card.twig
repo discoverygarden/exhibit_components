@@ -92,8 +92,8 @@
 
     {% if media_position == "uk-card-media-left" %}
       <div class="{{ media_position }} uk-cover-container">
-        <img src="{{ image }}" alt="{{ image_alt }}" style="object-fit:cover" uk-cover/>
-        <canvas width="100%" height="{{ image_height }}"></canvas>
+        <img src="{{ image }}" alt="{{ image_alt }}" style="max-height:50vh;object-fit:cover" uk-cover/>
+        <canvas width="100%" height="{{ image_height }}" style="max-height:50vh;object-fit:cover"></canvas>
       </div>
 
       {% if card_body is not empty or heading is not empty %}
@@ -120,8 +120,8 @@
 
     {% if media_position == "uk-card-media-right" %}
       <div class="{{ media_position }} uk-flex-last@s uk-cover-container">
-        <img src="{{ image }}" alt="{{ image_alt }}" style="object-fit:cover" uk-cover/>
-        <canvas width="100%" height="{{ image_height }}"></canvas>
+        <img src="{{ image }}" alt="{{ image_alt }}" style="max-height:50vh;object-fit:cover" uk-cover/>
+        <canvas width="100%" height="{{ image_height }}" style="max-height:50vh;object-fit:cover"></canvas>
       </div>
       {% if card_body is not empty or heading is not empty %}
         <div class="uk-first-column">

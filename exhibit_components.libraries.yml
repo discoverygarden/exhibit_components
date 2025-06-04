@@ -10,3 +10,10 @@ uikit:
   css:
     component:
       https://cdn.jsdelivr.net/npm/uikit@3.23.6/dist/css/uikit.min.css: {}
+dgi_two_column:
+  version: 1.x
+  css:
+    theme:
+      layouts/dgi_two_column/dgi_two_column.css: {}
+  dependencies:
+    - core/jquery

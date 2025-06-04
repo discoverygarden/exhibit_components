@@ -1,0 +1,14 @@
+dgi_two_column:
+  label: 'Exhibit two column'
+  path: layouts/dgi_two_column
+  template: layout--dgi-two-column
+  library: exhibit_components/dgi_two_column
+  category: 'Columns: 2'
+  default_region: second
+  icon_map:
+    - [first, second]
+  regions:
+    first:
+      label: 'Sidebar'
+    second:
+      label: 'Main content'
