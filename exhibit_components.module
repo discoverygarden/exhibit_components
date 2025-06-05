@@ -70,6 +70,10 @@ function exhibit_components_theme($existing, $type, $theme, $path) {
       'template' => 'node--islandora-object--entity-embed',
       'base hook' => 'node',
     ],
+    'node__exhibit__card' => [
+      'template' => 'node--exhibit--card',
+      'base hook' => 'node',
+    ],
   ];
 }
 
