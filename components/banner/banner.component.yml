@@ -1,0 +1,29 @@
+name: Banner
+group: DGI Components
+description: UIKit Cover based banner component
+props:
+  type: object
+  properties:
+    banner_image:
+      title: Banner image
+      description: The url to the banner image
+      type: string
+    banner_alt_text:
+      title: Banner alt text
+      description: The alt text for the banner image
+      type: string
+    banner_title:
+      title: Banner title
+      description: The banner title
+      type: string
+    banner_summary:
+      title: Banner summary
+      description: The summary text to include in the banner
+      type: string
+    banner_color_mode:
+      title: Banner color mode
+      description: Lighten or darken the text as it appears over the banner to increase visibility.
+      type: string
+libraryOverrides:
+  dependencies:
+    - exhibit_components/uikit

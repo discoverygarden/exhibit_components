@@ -62,6 +62,10 @@ function exhibit_components_theme($existing, $type, $theme, $path) {
       'template' => 'paragraph--uikit-card',
       'base hook' => 'paragraph',
     ],
+    'node__exhibit=' => [
+      'template' => 'node--exhibit',
+      'base hook' => 'node',
+    ],
     'node__islandora_object__entity_embed=' => [
       'template' => 'node--islandora-object--entity-embed',
       'base hook' => 'node',

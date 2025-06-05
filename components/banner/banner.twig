@@ -1,0 +1,16 @@
+{# Markup for the banner component #}
+
+{% if not attributes %}
+  {% set attributes = create_attribute() %}
+{% endif %}
+
+<div class="uk-cover-container uk-height-medium uk-padding uk-padding-remove-left uk-padding-remove-right uk-padding-remove-top">
+  <div>
+    <img style="opacity:.3" src="{{ banner_image }}" alt="{{ banner_alt_text }}" uk-cover>
+  </div>
+  <div class="{{ banner_color_mode }} uk-padding uk-cover-container">
+    <h2 class="uk-text-bold">{{ banner_title }}</h2>
+    <p class="uk-text-normal">{{ banner_summery }}</p>
+  </div>
+</div>
+
