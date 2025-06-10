@@ -51,12 +51,15 @@
 ]
 %}
 
+{#paragraph.fields.field_uikit_title_link.value#}
+
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {{ include('exhibit_components:quote', {
         quote: paragraph.fields.field_uikit_quote.value,
-        author: paragraph.fields.field_uikit_author.value },
+        author: paragraph.fields.field_uikit_author.value,
+        link: paragraph.fields.field_uikit_title_link.value},
         with_context = false)
       }}
     {% endblock %}

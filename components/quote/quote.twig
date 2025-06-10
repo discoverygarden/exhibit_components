@@ -6,6 +6,10 @@
 <div {{ attributes.addClass(base_class) }}>
   <blockquote cite="#">
     <p class="uk-margin-remove">{{ quote }}</p>
-    <footer>{{ author }}</footer>
+    {% if link is not empty %}
+      <footer><a href="{{ link }}" title="Resource representing {{ author }}" aria-label="Resource representing {{ author }}" rel="nofollow" target="_blank">{{ author }}</a></footer>
+    {% else %}
+      <footer>{{ author }}</footer>
+    {% endif %}
   </blockquote>
 </div>

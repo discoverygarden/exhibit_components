@@ -46,7 +46,7 @@
 
     {% if media_position == "uk-card-media-top" or media_position is empty %}
       <div class="uk-card-media-top">
-        <img src="{{ image }}" alt="{{ image_alt }}" width="100%" height="{{ image_height }}" style="max-height:50vh;object-fit:cover"/>
+        <img src="{{ image }}" alt="{{ image_alt }}" width="100%" height="139px" style="height:50vh;max-height:250px;object-fit:cover"/>
       </div>
       {% if card_body is not empty or heading is not empty %}
         <div class="uk-card-body">
@@ -86,7 +86,7 @@
         </div>
       {% endif %}
       <div class="{{ media_position }}">
-        <img src="{{ image }}" alt="{{ image_alt }}" width="100%" height="{{ image_height }}" style="max-height:50vh;object-fit:cover"/>
+        <img src="{{ image }}" alt="{{ image_alt }}" width="100%" height="{{ image_height }}" style="height:50vh;max-height:250px;object-fit:cover"/>
       </div>
     {% endif %}
 

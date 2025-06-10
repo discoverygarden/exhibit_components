@@ -16,6 +16,12 @@ props:
       examples:
         - Chris MacDonald
       type: string
+    link:
+      title: Link
+      description: A linked resource representing the title, if any.
+      examples:
+        - 'http://www.google.ca'
+      type: string
 libraryOverrides:
   dependencies:
     - exhibit_components/uikit
