@@ -50,6 +50,16 @@ props:
       title: Title link
       description: The location (or URL) to which the title should link.
       type: string
+    image_width_class:
+      title: Image width class
+      description: An optional uk-width-* class for the image when positioned in left or right of card.
+      type: string
+      default: uk-width-1-2@s
+    body_width_class:
+      title: Body width class
+      description: An optional uk-width-* class for the body of the card when positioned in left or right of card.
+      type: string
+      default: uk-width-1-2@s
 libraryOverrides:
   dependencies:
     - exhibit_components/uikit
