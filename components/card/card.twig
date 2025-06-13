@@ -13,10 +13,24 @@
   width_modifier
 ] %}
 
+{% set media_classes = [
+  media_position,
+  image_width_class,
+]|join(' ') %}
+
+{% set card_body_classes = [
+  body_width_class,
+]|join(' ') %}
+
 {% set attributes = attributes.addClass(card_classes) %}
 
 {% if image is not empty and (media_position == "uk-card-media-left" or media_position == "uk-card-media-right") %}
-  {% set left_right_media_body_classes = "uk-grid-collapse uk-child-width-1-2@s uk-grid uk-margin" %}
+  {% set left_right_media_body_classes = [
+    'uk-grid-collapse',
+    'uk-child-width-expand',
+    'uk-grid',
+    'uk-margin'
+  ] %}
   {% set attributes = attributes.addClass(left_right_media_body_classes) %}
 {% endif %}
 
@@ -85,20 +99,20 @@
           {% endif %}
         </div>
       {% endif %}
-      <div class="{{ media_position }}">
+      <div class="{{ media_classes }}">
         <img src="{{ image }}" alt="{{ image_alt }}" width="100%" height="{{ image_height }}" style="max-height:50vh;object-fit:cover"/>
       </div>
     {% endif %}
 
     {% if media_position == "uk-card-media-left" %}
-      <div class="{{ media_position }} uk-cover-container">
+      <div class="{{ media_classes }} uk-cover-container">
         <img src="{{ image }}" alt="{{ image_alt }}" style="max-height:50vh;object-fit:cover" uk-cover/>
         <canvas width="100%" height="{{ image_height }}" style="max-height:50vh;object-fit:cover"></canvas>
       </div>
 
       {% if card_body is not empty or heading is not empty %}
         <div>
-          <div class="uk-card-body">
+          <div class="uk-card-body {{ card_body_classes }}">
             {% if badge is not empty %}
               <div class="uk-card-badge uk-label">{{ badge }}</div>
             {% endif %}
@@ -119,12 +133,12 @@
     {% endif %}
 
     {% if media_position == "uk-card-media-right" %}
-      <div class="{{ media_position }} uk-flex-last@s uk-cover-container">
+      <div class="{{ media_classes }} uk-flex-last@s uk-cover-container">
         <img src="{{ image }}" alt="{{ image_alt }}" style="max-height:50vh;object-fit:cover" uk-cover/>
         <canvas width="100%" height="{{ image_height }}" style="max-height:50vh;object-fit:cover"></canvas>
       </div>
       {% if card_body is not empty or heading is not empty %}
-        <div class="uk-first-column">
+        <div class="uk-first-column {{ card_body_classes }}">
           <div class="uk-card-body">
             {% if badge is not empty %}
               <div class="uk-card-badge uk-label">{{ badge }}</div>
