@@ -79,6 +79,11 @@
   <div{{ attributes.addClass(classes) }}>
     {% set media_image = file_url(node.field_banner_image.entity.field_media_image_1.entity.uri.value) %}
     {% set media_alt = node.field_banner_image.entity.field_media_image_1.alt ?? "" %}
+    {#  Support pulling image from 'image' and 'local image resource'#}
+    {% if media_image is empty %}
+      {% set media_image = file_url(node.field_banner_image.entity.field_media_image.entity.uri.value) %}
+      {% set media_alt = node.field_banner_image.entity.field_media_image.alt ?? "" %}
+    {% endif %}
     {% set media_width = "" %}
     {% set media_height = "" %}
 
