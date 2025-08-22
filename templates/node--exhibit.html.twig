@@ -79,37 +79,38 @@
 
 <article{{ attributes.addClass(classes) }}>
 
-  {{ title_prefix }}
-  {% if label and not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
-
   {% set banner_image = file_url(node.field_banner_image.entity.field_media_image_1.entity.uri.value) %}
   {% set banner_alt_text = node.field_banner_image.entity.field_media_image_1.alt ?? "" %}
+
+  {#  Support pulling banner image from 'image' and 'local image resource'#}
+  {% if banner_image is empty %}
+    {% set banner_image = file_url(node.field_banner_image.entity.field_media_image.entity.uri.value) %}
+    {% set banner_alt_text = node.field_banner_image.entity.field_media_image.alt ?? "" %}
+  {% endif %}
+
   {% set banner_summary = node.body.value %}
   {% set banner_color_summary = node.field_color_mode.value %}
 
+  {#  Exclude title and summary from being printed in the banner, as it will be printed on the node page proper.#}
   {% if banner_image is not empty %}
     {{ include('exhibit_components:banner', {
       banner_image: banner_image,
       banner_alt_text: banner_alt_text,
-      banner_title: label,
-      banner_summary: banner_summary,
+      banner_title: "",
+      banner_summary: "",
       banner_color_mode: banner_color_summary
     },
       with_context = false)
     }}
-
-    <div{{ content_attributes.addClass('content') }}>
-      {{ content|without('field_banner_image')|without('body') }}
-    </div>
-  {% else %}
-    <div{{ content_attributes.addClass('content') }}>
-      {{ content }}
-    </div>
   {% endif %}
-</article>
 
+  <div{{ content_attributes.addClass('content').addClass('exhibit-container') }}>
+    {% if label %}
+      {{ title_prefix }}
+      <h1{{ title_attributes }}>{{ label }}</h1>
+      {{ title_suffix }}
+    {% endif %}
+
+    {{ content|without('field_banner_image') }}
+  </div>
+</article>
