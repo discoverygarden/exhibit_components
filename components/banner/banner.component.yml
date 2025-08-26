@@ -24,6 +24,11 @@ props:
       title: Banner color mode
       description: Lighten or darken the text as it appears over the banner to increase visibility.
       type: string
+    banner_opacity:
+      title: Banner opacity
+      description: The banner opacity, defaults to .3
+      type: string
+      default: ".3"
 libraryOverrides:
   dependencies:
     - exhibit_components/uikit

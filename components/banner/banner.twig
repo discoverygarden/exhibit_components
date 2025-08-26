@@ -7,7 +7,7 @@
 <div class="uk-cover-container uk-height-medium uk-padding uk-padding-remove-left uk-padding-remove-right uk-padding-remove-top">
   {% if banner_image is not empty %}
     <div>
-      <img style="opacity:.3" src="{{ banner_image }}" alt="{{ banner_alt_text }}" uk-cover>
+      <img style="opacity:{{ banner_opacity|default('.3') }}" src="{{ banner_image }}" alt="{{ banner_alt_text }}" uk-cover>
     </div>
   {% endif %}
 
