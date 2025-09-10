@@ -1,0 +1,11 @@
+/**
+ * Override some uikit css styling.
+ */
+
+/**
+ * The uikit css sets the color to #f0506e but we don't want to change the color
+ * for em tags.
+ */
+em {
+  color: inherit !important;
+}
