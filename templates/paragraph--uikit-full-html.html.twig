@@ -56,7 +56,7 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {{ include('exhibit_components:html', {
-        heading: paragraph.field_uikit_title.value|raw,
+        heading: paragraph.field_uikit_title.value|default(''),
         dgiHtml: content.field_uikit_html_markup },
         with_context = false)
       }}
