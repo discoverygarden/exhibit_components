@@ -76,4 +76,3 @@ function exhibit_components_theme($existing, $type, $theme, $path) {
     ],
   ];
 }
-
