@@ -1,0 +1,105 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.exhibit.body
+    - field.field.node.exhibit.field_banner_caption
+    - field.field.node.exhibit.field_banner_image
+    - field.field.node.exhibit.field_color_mode
+    - field.field.node.exhibit.field_copyright_information
+    - field.field.node.exhibit.field_display_in_exhibits_list
+    - field.field.node.exhibit.field_exhibit_content
+    - field.field.node.exhibit.field_exhibit_creator
+    - field.field.node.exhibit.field_tags
+    - field.field.node.exhibit.field_weight
+    - node.type.exhibit
+  module:
+    - text
+    - user
+id: node.exhibit.teaser
+targetEntityType: node
+bundle: exhibit
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  display_media_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  display_media_entity_view_2:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  display_media_service_file:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  display_media_thumbnail:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  openseadragon_media_evas_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  openseadragon_media_evas_entity_view_2:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  openseadragon_media_evas_service_file:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  pdfjs_media_evas_entity_view_1:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  pdfjs_media_evas_entity_view_2:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  pdfjs_media_evas_service_file:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  addtoany: true
+  did_image: true
+  display_media_extracted_text: true
+  display_media_extracted_text_search_api: true
+  field_banner_caption: true
+  field_banner_image: true
+  field_color_mode: true
+  field_copyright_information: true
+  field_display_in_exhibits_list: true
+  field_exhibit_content: true
+  field_exhibit_creator: true
+  field_tags: true
+  field_weight: true
+  langcode: true
+  paged_content_text_entity_view_1: true
+  paged_content_text_page_text_eva_search_api: true
+  search_api_excerpt: true

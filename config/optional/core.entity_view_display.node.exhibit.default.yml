@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.card
+    - facets.facet.tags_taxonomy_term_name
     - field.field.node.exhibit.body
     - field.field.node.exhibit.field_banner_caption
     - field.field.node.exhibit.field_banner_image
@@ -13,54 +13,88 @@ dependencies:
     - field.field.node.exhibit.field_exhibit_creator
     - field.field.node.exhibit.field_tags
     - field.field.node.exhibit.field_weight
-    - image.style.solr_grid_thumbnail
+    - image.style.representative_object_image_formatter
     - node.type.exhibit
   module:
+    - entity_reference_facet_link
+    - layout_paragraphs
     - media
-    - smart_trim
+    - text
     - user
-id: node.exhibit.card
+id: node.exhibit.default
 targetEntityType: node
 bundle: exhibit
-mode: card
+mode: default
 content:
+  addtoany:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
   body:
-    type: smart_trim
+    type: text_default
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_banner_caption:
+    type: basic_string
     label: hidden
-    settings:
-      trim_length: 200
-      trim_type: chars
-      trim_suffix: ''
-      wrap_output: false
-      wrap_class: trimmed
-      more:
-        display_link: false
-        target_blank: false
-        link_trim_only: false
-        class: more-link
-        text: More
-        aria_label: 'Read more about [node:title]'
-      summary_handler: trim
-      trim_options:
-        text: true
-        trim_zero: false
-        replace_tokens: false
+    settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
   field_banner_image:
     type: media_thumbnail
-    label: above
+    label: visually_hidden
     settings:
       image_link: ''
-      image_style: solr_grid_thumbnail
+      image_style: representative_object_image_formatter
       image_loading:
         attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
+  field_copyright_information:
+    type: text_default
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_exhibit_content:
+    type: layout_paragraphs_builder
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: ''
+      preview_view_mode: default
+      form_display_mode: default
+      nesting_depth: 0
+      require_layouts: 1
+      empty_message: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_exhibit_creator:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_tags:
+    type: entity_reference_facet_link
+    label: above
+    settings:
+      facet: tags_taxonomy_term_name
+      target: label
+    third_party_settings: {  }
+    weight: 5
+    region: content
 hidden:
-  addtoany: true
   did_image: true
   display_media_entity_view_1: true
   display_media_entity_view_2: true
@@ -68,13 +102,8 @@ hidden:
   display_media_extracted_text_search_api: true
   display_media_service_file: true
   display_media_thumbnail: true
-  field_banner_caption: true
   field_color_mode: true
-  field_copyright_information: true
   field_display_in_exhibits_list: true
-  field_exhibit_content: true
-  field_exhibit_creator: true
-  field_tags: true
   field_weight: true
   langcode: true
   links: true
