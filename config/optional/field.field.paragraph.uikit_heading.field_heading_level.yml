@@ -4,25 +4,21 @@ dependencies:
   config:
     - field.storage.paragraph.field_heading_level
     - paragraphs.paragraphs_type.uikit_heading
-  module:
-    - islandora_citations
-third_party_settings:
-  islandora_citations:
-    csl_field: {  }
+third_party_settings: {  }
 id: paragraph.uikit_heading.field_heading_level
 field_name: field_heading_level
 entity_type: paragraph
 bundle: uikit_heading
 label: 'Heading Level'
-description: 'The hierarchical level of the heading; must be 1, 2, 3, 4, 5, or 6. 1 being the top level and 6 being the deepest level of nesting available.'
+description: 'The hierarchical level of the heading; must be 2, 3, 4, 5, or 6. 1 being the top level reserved for the page title, and 6 being the deepest level of nesting available.'
 required: true
 translatable: false
 default_value:
   -
-    value: 1
+    value: 2
 default_value_callback: ''
 settings:
-  min: 1
+  min: 2
   max: 6
   prefix: ''
   suffix: ''

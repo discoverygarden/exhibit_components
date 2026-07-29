@@ -4,11 +4,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_uikit_auto_gen_headers
     - paragraphs.paragraphs_type.uikit_nav
-  module:
-    - islandora_citations
-third_party_settings:
-  islandora_citations:
-    csl_field: {  }
+third_party_settings: {  }
 id: paragraph.uikit_nav.field_uikit_auto_gen_headers
 field_name: field_uikit_auto_gen_headers
 entity_type: paragraph

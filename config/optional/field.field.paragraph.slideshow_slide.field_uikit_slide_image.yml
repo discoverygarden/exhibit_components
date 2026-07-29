@@ -5,12 +5,7 @@ dependencies:
     - field.storage.paragraph.field_uikit_slide_image
     - media.type.image
     - paragraphs.paragraphs_type.slideshow_slide
-  module:
-    - islandora_citations
-third_party_settings:
-  islandora_citations:
-    csl_field: {  }
-    use_entity_checkbox: false
+third_party_settings: {  }
 id: paragraph.slideshow_slide.field_uikit_slide_image
 field_name: field_uikit_slide_image
 entity_type: paragraph

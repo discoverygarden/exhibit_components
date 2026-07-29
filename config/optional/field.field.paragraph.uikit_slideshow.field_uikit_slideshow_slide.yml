@@ -7,10 +7,7 @@ dependencies:
     - paragraphs.paragraphs_type.uikit_slideshow
   module:
     - entity_reference_revisions
-    - islandora_citations
-third_party_settings:
-  islandora_citations:
-    use_entity_checkbox: false
+third_party_settings: {  }
 id: paragraph.uikit_slideshow.field_uikit_slideshow_slide
 field_name: field_uikit_slideshow_slide
 entity_type: paragraph

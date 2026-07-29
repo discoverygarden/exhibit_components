@@ -109,8 +109,6 @@ third_party_settings:
         formatter: closed
         description: 'These fields are used to determine what exhibits to display in which order in the Exhibits page view.'
         required_fields: true
-_core:
-  default_config_hash: nTFnldsKXgEgbcLOVMCwhaVUMP6ajF_os1AFvcGCVeQ
 id: node.exhibit.default
 targetEntityType: node
 bundle: exhibit

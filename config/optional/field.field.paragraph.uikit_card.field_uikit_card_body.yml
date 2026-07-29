@@ -6,11 +6,8 @@ dependencies:
     - filter.format.plain_text
     - paragraphs.paragraphs_type.uikit_card
   module:
-    - islandora_citations
     - text
-third_party_settings:
-  islandora_citations:
-    csl_field: {  }
+third_party_settings: {  }
 id: paragraph.uikit_card.field_uikit_card_body
 field_name: field_uikit_card_body
 entity_type: paragraph

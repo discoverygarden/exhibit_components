@@ -5,11 +5,8 @@ dependencies:
     - field.storage.paragraph.field_uikit_nav_link
     - paragraphs.paragraphs_type.uikit_nav_item
   module:
-    - islandora_citations
     - link
-third_party_settings:
-  islandora_citations:
-    csl_field: {  }
+third_party_settings: {  }
 id: paragraph.uikit_nav_item.field_uikit_nav_link
 field_name: field_uikit_nav_link
 entity_type: paragraph

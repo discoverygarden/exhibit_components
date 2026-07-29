@@ -125,8 +125,6 @@ third_party_settings:
         classes: metadata
         id: ''
         description: ''
-_core:
-  default_config_hash: Zt9MHHhFQ_16JhJ7_hQaRI6BcxUmCW4SYYKKnfnNicA
 id: node.islandora_object.entity_embed
 targetEntityType: node
 bundle: islandora_object

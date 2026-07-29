@@ -5,12 +5,7 @@ dependencies:
     - field.storage.node.field_tags
     - node.type.exhibit
     - taxonomy.vocabulary.tags
-  module:
-    - islandora_citations
-third_party_settings:
-  islandora_citations:
-    csl_field: {  }
-    use_entity_checkbox: false
+third_party_settings: {  }
 id: node.exhibit.field_tags
 field_name: field_tags
 entity_type: node

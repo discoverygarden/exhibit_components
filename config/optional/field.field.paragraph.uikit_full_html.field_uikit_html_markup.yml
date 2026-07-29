@@ -6,11 +6,8 @@ dependencies:
     - filter.format.full_html
     - paragraphs.paragraphs_type.uikit_full_html
   module:
-    - islandora_citations
     - text
-third_party_settings:
-  islandora_citations:
-    csl_field: {  }
+third_party_settings: {  }
 id: paragraph.uikit_full_html.field_uikit_html_markup
 field_name: field_uikit_html_markup
 entity_type: paragraph

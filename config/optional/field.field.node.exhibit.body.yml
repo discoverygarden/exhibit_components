@@ -6,11 +6,8 @@ dependencies:
     - filter.format.exhibit_basic_html
     - node.type.exhibit
   module:
-    - islandora_citations
     - text
-third_party_settings:
-  islandora_citations:
-    csl_field: {  }
+third_party_settings: {  }
 id: node.exhibit.body
 field_name: body
 entity_type: node

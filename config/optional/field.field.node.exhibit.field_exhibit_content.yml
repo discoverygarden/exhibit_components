@@ -10,10 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.uikit_heading
   module:
     - entity_reference_revisions
-    - islandora_citations
-third_party_settings:
-  islandora_citations:
-    use_entity_checkbox: false
+third_party_settings: {  }
 id: node.exhibit.field_exhibit_content
 field_name: field_exhibit_content
 entity_type: node

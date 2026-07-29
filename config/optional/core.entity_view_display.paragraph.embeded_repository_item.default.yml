@@ -6,8 +6,6 @@ dependencies:
     - paragraphs.paragraphs_type.embeded_repository_item
   module:
     - text
-_core:
-  default_config_hash: zSA3p0KBU34kEEJ0hiQchMthzvRO3XXkJ23fnPj_kbE
 id: paragraph.embeded_repository_item.default
 targetEntityType: paragraph
 bundle: embeded_repository_item

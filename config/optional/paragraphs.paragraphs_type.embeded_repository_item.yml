@@ -1,8 +1,6 @@
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: zykJxwOv58WMoKs4zQUlOE1y6tcMHq-imo9WnbMvz1U
 id: embeded_repository_item
 label: 'Embedded repository item'
 icon_uuid: null

@@ -3,8 +3,6 @@ status: true
 dependencies:
   config:
     - paragraphs.paragraphs_type.layout
-_core:
-  default_config_hash: v1jbgTkJzvM9L2ehX5ZYKpboc9oYfLsWJhw13Q7-jZk
 id: paragraph.layout.default
 targetEntityType: paragraph
 bundle: layout

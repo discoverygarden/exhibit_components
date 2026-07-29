@@ -7,11 +7,8 @@ dependencies:
     - filter.format.full_html
     - node.type.exhibit
   module:
-    - islandora_citations
     - text
-third_party_settings:
-  islandora_citations:
-    csl_field: {  }
+third_party_settings: {  }
 id: node.exhibit.field_copyright_information
 field_name: field_copyright_information
 entity_type: node
