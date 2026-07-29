@@ -1,0 +1,103 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exhibit_content
+    - node.type.exhibit
+    - paragraphs.paragraphs_type.embeded_repository_item
+    - paragraphs.paragraphs_type.layout
+    - paragraphs.paragraphs_type.uikit_full_html
+    - paragraphs.paragraphs_type.uikit_heading
+  module:
+    - entity_reference_revisions
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    use_entity_checkbox: false
+id: node.exhibit.field_exhibit_content
+field_name: field_exhibit_content
+entity_type: node
+bundle: exhibit
+label: 'Exhibit Elements'
+description: 'Use this field to add a layout for the exhibit and then add content within columns/rows.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      layout: layout
+      embeded_repository_item: embeded_repository_item
+      uikit_full_html: uikit_full_html
+      uikit_heading: uikit_heading
+    negate: 0
+    target_bundles_drag_drop:
+      embeded_repository_item:
+        weight: 23
+        enabled: true
+      faceted_subject:
+        weight: 12
+        enabled: false
+      hierarchical_geographic_subject:
+        weight: 13
+        enabled: false
+      layout:
+        weight: 14
+        enabled: true
+      note:
+        weight: 15
+        enabled: false
+      origin_information:
+        weight: 16
+        enabled: false
+      part:
+        weight: 17
+        enabled: false
+      perspective_camera_settings:
+        weight: 18
+        enabled: false
+      record_information:
+        weight: 19
+        enabled: false
+      related_item:
+        weight: 20
+        enabled: false
+      series:
+        weight: 21
+        enabled: false
+      slideshow_slide:
+        weight: 32
+        enabled: false
+      title:
+        weight: 22
+        enabled: false
+      uikit_card:
+        weight: 34
+        enabled: false
+      uikit_full_html:
+        weight: 35
+        enabled: true
+      uikit_grid:
+        weight: 36
+        enabled: false
+      uikit_heading:
+        weight: 37
+        enabled: true
+      uikit_image_text_display:
+        weight: 38
+        enabled: false
+      uikit_nav:
+        weight: 39
+        enabled: false
+      uikit_nav_item:
+        weight: 40
+        enabled: false
+      uikit_quote:
+        weight: 41
+        enabled: false
+      uikit_slideshow:
+        weight: 42
+        enabled: false
+field_type: entity_reference_revisions

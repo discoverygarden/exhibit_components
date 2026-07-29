@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_image
+    - media.type.image
+    - media.type.local_image_resource
+    - node.type.exhibit
+  module:
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+    use_entity_checkbox: false
+id: node.exhibit.field_banner_image
+field_name: field_banner_image
+entity_type: node
+bundle: exhibit
+label: 'Banner Image'
+description: "To ensure the image displays correctly across the banner, it will be automatically resized and cropped to the standard dimensions of 1200px in width and 400px in height. To maintain the best possible quality and ensure your subject is centred, consider uploading an image that already matches these dimensions or has a similar aspect ratio. If no image is uploaded, your exhibit will not have a banner.\r\n\r\n\r\n\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      local_image_resource: local_image_resource
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

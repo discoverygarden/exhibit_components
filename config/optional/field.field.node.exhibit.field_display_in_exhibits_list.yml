@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_in_exhibits_list
+    - node.type.exhibit
+  module:
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: node.exhibit.field_display_in_exhibits_list
+field_name: field_display_in_exhibits_list
+entity_type: node
+bundle: exhibit
+label: 'Display in exhibits list'
+description: 'When toggled on, this exhibit will be listed in the Exhibits view; otherwise, the only way to find this exhibit would be if it is linked from somewhere else, such as another exhibit.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Display
+  off_label: Hide
+field_type: boolean

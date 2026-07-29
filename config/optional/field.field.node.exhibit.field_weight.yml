@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.exhibit
+  module:
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: node.exhibit.field_weight
+field_name: field_weight
+entity_type: node
+bundle: exhibit
+label: Weight
+description: 'Indicates the order of a resource in a collection of resources. Lower number weights get displayed above higher numbers.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

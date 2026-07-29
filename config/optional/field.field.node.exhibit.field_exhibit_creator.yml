@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exhibit_creator
+    - node.type.exhibit
+  module:
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: node.exhibit.field_exhibit_creator
+field_name: field_exhibit_creator
+entity_type: node
+bundle: exhibit
+label: 'Authored By'
+description: 'Enter the person or organization responsible for the exhibit creation.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

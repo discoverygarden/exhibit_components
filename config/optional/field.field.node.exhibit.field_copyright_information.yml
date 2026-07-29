@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_copyright_information
+    - filter.format.basic_html
+    - filter.format.full_html
+    - node.type.exhibit
+  module:
+    - islandora_citations
+    - text
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+id: node.exhibit.field_copyright_information
+field_name: field_copyright_information
+entity_type: node
+bundle: exhibit
+label: 'Copyright Information'
+description: 'Provide copyright information for the items featured in the exhibit using this field.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Exhibit use must be accompanied with the attribution:<br>Hosted by the Florida Department of State Division of Library and Information Services.'
+    format: basic_html
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - full_html
+field_type: text

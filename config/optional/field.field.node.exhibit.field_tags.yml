@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.exhibit
+    - taxonomy.vocabulary.tags
+  module:
+    - islandora_citations
+third_party_settings:
+  islandora_citations:
+    csl_field: {  }
+    use_entity_checkbox: false
+id: node.exhibit.field_tags
+field_name: field_tags
+entity_type: node
+bundle: exhibit
+label: Tags
+description: 'Enter tags to help others find this content in search results. Existing tag names will autocomplete. Enter multiple tags separated by commas.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:filter_existing_terms'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference
