@@ -9,3 +9,11 @@
 em {
   color: inherit !important;
 }
+
+/**
+ * The uikit css sets the uk-text-meta color to a grey too light to pass wcag
+ * contrast criteria, so let's use a darker grey.
+ */
+.uk-text-meta {
+  color: #575757;
+}
