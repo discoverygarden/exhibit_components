@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Exhibit Content Basic HTML'
+format: exhibit_content_basic_html
+weight: 0
+filters: {  }

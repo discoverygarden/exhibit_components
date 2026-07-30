@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.exhibit_basic_html
+  module:
+    - ckeditor5
+format: exhibit_basic_html
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - bold
+      - italic
+      - '|'
+      - link
+      - textPartLanguage
+  plugins:
+    ckeditor5_language:
+      language_list: all
+image_upload:
+  status: false

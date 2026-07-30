@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_uikit_html_markup
+    - filter.format.exhibit_content_basic_html
     - filter.format.full_html
     - paragraphs.paragraphs_type.uikit_full_html
   module:
@@ -20,5 +21,6 @@ default_value: {  }
 default_value_callback: ''
 settings:
   allowed_formats:
+    - exhibit_content_basic_html
     - full_html
 field_type: text_long

@@ -1,0 +1,30 @@
+uuid: 604ba5df-9941-45ed-ac8d-1d7179cfed1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_respository_item
+    - node.type.islandora_object
+    - paragraphs.paragraphs_type.embeded_repository_item
+third_party_settings: {  }
+id: paragraph.embeded_repository_item.field_respository_item
+field_name: field_respository_item
+entity_type: paragraph
+bundle: embeded_repository_item
+label: 'Repository Item'
+description: 'Select an existing item to embed from the repository, including repository items, compound objects, and collections.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      islandora_object: islandora_object
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
