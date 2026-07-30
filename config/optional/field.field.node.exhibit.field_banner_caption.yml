@@ -3,7 +3,10 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_banner_caption
+    - filter.format.exhibit_content_basic_html
     - node.type.exhibit
+  module:
+    - text
 third_party_settings: {  }
 id: node.exhibit.field_banner_caption
 field_name: field_banner_caption
@@ -15,5 +18,7 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string_long
+settings:
+  allowed_formats:
+    - exhibit_content_basic_html
+field_type: text_long
