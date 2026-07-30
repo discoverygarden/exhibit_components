@@ -17,3 +17,11 @@ em {
 .uk-text-meta {
   color: #575757;
 }
+
+/**
+ * Custom utility class to set width to fit content, since uikit width classes
+ * don't cover this.
+ */
+.dg-width-fit-content {
+  width: fit-content;
+}
