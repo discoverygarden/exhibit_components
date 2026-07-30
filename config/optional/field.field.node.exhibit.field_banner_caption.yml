@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_banner_caption
-    - filter.format.exhibit_content_basic_html
+    - filter.format.exhibit_basic_html
     - node.type.exhibit
   module:
     - text
@@ -20,5 +20,5 @@ default_value: {  }
 default_value_callback: ''
 settings:
   allowed_formats:
-    - exhibit_content_basic_html
+    - exhibit_basic_html
 field_type: text_long
