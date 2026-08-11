@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_embedded_caption
+    - paragraphs.paragraphs_type.embeded_repository_item
+third_party_settings: {  }
+id: paragraph.embeded_repository_item.field_embedded_caption
+field_name: field_embedded_caption
+entity_type: paragraph
+bundle: embeded_repository_item
+label: Caption
+description: 'Enter a caption to describe the embedded repository item in plain text.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

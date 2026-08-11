@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_caption
+    - filter.format.exhibit_basic_html
+    - node.type.exhibit
+  module:
+    - text
+third_party_settings: {  }
+id: node.exhibit.field_banner_caption
+field_name: field_banner_caption
+entity_type: node
+bundle: exhibit
+label: 'Banner Caption'
+description: 'Use this field if you would like to display additional information about the content of the banner image.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - exhibit_basic_html
+field_type: text_long

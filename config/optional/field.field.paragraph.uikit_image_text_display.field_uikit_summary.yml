@@ -4,11 +4,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_uikit_summary
     - paragraphs.paragraphs_type.uikit_image_text_display
-  module:
-    - islandora_citations
-third_party_settings:
-  islandora_citations:
-    csl_field: {  }
+third_party_settings: {  }
 id: paragraph.uikit_image_text_display.field_uikit_summary
 field_name: field_uikit_summary
 entity_type: paragraph

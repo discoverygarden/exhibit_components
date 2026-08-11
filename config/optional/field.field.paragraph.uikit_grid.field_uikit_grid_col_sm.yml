@@ -5,11 +5,8 @@ dependencies:
     - field.storage.paragraph.field_uikit_grid_col_sm
     - paragraphs.paragraphs_type.uikit_grid
   module:
-    - islandora_citations
     - options
-third_party_settings:
-  islandora_citations:
-    csl_field: {  }
+third_party_settings: {  }
 id: paragraph.uikit_grid.field_uikit_grid_col_sm
 field_name: field_uikit_grid_col_sm
 entity_type: paragraph

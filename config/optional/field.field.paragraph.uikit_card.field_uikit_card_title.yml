@@ -4,11 +4,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_uikit_card_title
     - paragraphs.paragraphs_type.uikit_card
-  module:
-    - islandora_citations
-third_party_settings:
-  islandora_citations:
-    csl_field: {  }
+third_party_settings: {  }
 id: paragraph.uikit_card.field_uikit_card_title
 field_name: field_uikit_card_title
 entity_type: paragraph

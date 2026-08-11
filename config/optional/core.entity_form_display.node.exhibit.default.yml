@@ -1,0 +1,235 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.exhibit.body
+    - field.field.node.exhibit.field_banner_caption
+    - field.field.node.exhibit.field_banner_image
+    - field.field.node.exhibit.field_color_mode
+    - field.field.node.exhibit.field_copyright_information
+    - field.field.node.exhibit.field_display_in_exhibits_list
+    - field.field.node.exhibit.field_exhibit_content
+    - field.field.node.exhibit.field_exhibit_creator
+    - field.field.node.exhibit.field_tags
+    - field.field.node.exhibit.field_weight
+    - node.type.exhibit
+  module:
+    - field_group
+    - layout_paragraphs
+    - media_library
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_banner:
+      children:
+        - field_banner_image
+        - field_banner_caption
+      label: Banner
+      region: content
+      parent_name: group_content
+      weight: 21
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
+        direction: horizontal
+        width_breakpoint: 640
+    group_content:
+      children:
+        - group_exhibit_data
+        - group_banner
+        - group_exhibits_browse_display
+      label: 'Content Tabs'
+      region: content
+      parent_name: ''
+      weight: 5
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        direction: horizontal
+        width_breakpoint: 640
+    group_exhibit_data:
+      children:
+        - title
+        - body
+        - field_exhibit_content
+        - group_exhibit_footer
+      label: Content
+      region: content
+      parent_name: group_content
+      weight: 20
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_exhibit_footer:
+      children:
+        - field_exhibit_creator
+        - field_tags
+      label: 'Exhibit Footer'
+      region: content
+      parent_name: group_exhibit_data
+      weight: 27
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        description: ''
+        required_fields: true
+    group_exhibits_browse_display:
+      children:
+        - field_weight
+        - field_display_in_exhibits_list
+      label: 'Exhibits Browse Display'
+      region: content
+      parent_name: group_content
+      weight: 22
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: 'These fields are used to determine what exhibits to display in which order in the Exhibits page view.'
+        required_fields: true
+id: node.exhibit.default
+targetEntityType: node
+bundle: exhibit
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 22
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_banner_caption:
+    type: string_textarea
+    weight: 12
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_banner_image:
+    type: media_library_widget
+    weight: 11
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_display_in_exhibits_list:
+    type: boolean_checkbox
+    weight: 29
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_exhibit_content:
+    type: layout_paragraphs
+    weight: 26
+    region: content
+    settings:
+      view_mode: default
+      preview_view_mode: default
+      form_display_mode: default
+      nesting_depth: 0
+      require_layouts: 1
+      empty_message: ''
+    third_party_settings: {  }
+  field_exhibit_creator:
+    type: string_textfield
+    weight: 25
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tags:
+    type: entity_reference_autocomplete_tags
+    weight: 26
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_weight:
+    type: number
+    weight: 28
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 21
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  field_color_mode: true
+  field_copyright_information: true
+  promote: true
+  simple_sitemap: true
+  sticky: true

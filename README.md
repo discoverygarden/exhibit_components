@@ -47,6 +47,29 @@ but it is not recommended to rely on CDNs; to install the uikit library locally,
 ```
 3. Require the library: `composer require library/uikit`
 
+## Optional Config Notes
+
+### Browse Exhibits View
+
+The included `config/optional/views.view.exhibits.yml` does not create a menu
+link for the `/exhibits` path, because that would add a dependency on a given
+menu. Therefore, if you would like to use that view page and have it included
+in some menu, you can edit the view at `<your-site.com>/admin/structure/views/view/exhibits/edit/page_1`
+assuming you have the dependencies to allow that view to be imported when
+enabling this module.
+
+### Exhibit Content Type
+
+TODO: Fill this out
+
+### UIKit Paragraphs and Components
+
+TODO: Fill this out
+
+### Exhibit Text Formats
+
+TODO: Fill this out
+
 ## Maintainers/Sponsors
 
 Current maintainers:

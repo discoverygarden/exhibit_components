@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.exhibit_content_basic_html
+  module:
+    - ckeditor5
+format: exhibit_content_basic_html
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - bold
+      - italic
+      - underline
+      - link
+      - bulletedList
+      - numberedList
+      - blockQuote
+      - horizontalLine
+      - textPartLanguage
+  plugins:
+    ckeditor5_language:
+      language_list: all
+    ckeditor5_list:
+      properties:
+        reversed: true
+        startIndex: true
+        styles: false
+      multiBlock: true
+image_upload:
+  status: false

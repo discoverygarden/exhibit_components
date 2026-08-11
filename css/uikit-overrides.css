@@ -9,3 +9,19 @@
 em {
   color: inherit !important;
 }
+
+/**
+ * The uikit css sets the uk-text-meta color to a grey too light to pass wcag
+ * contrast criteria, so let's use a darker grey.
+ */
+.uk-text-meta {
+  color: #575757;
+}
+
+/**
+ * Custom utility class to set width to fit content, since uikit width classes
+ * don't cover this.
+ */
+.dg-width-fit-content {
+  width: fit-content;
+}

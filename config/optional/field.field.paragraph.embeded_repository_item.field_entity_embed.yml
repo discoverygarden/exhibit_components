@@ -6,13 +6,8 @@ dependencies:
     - filter.format.full_text_embed
     - paragraphs.paragraphs_type.embeded_repository_item
   module:
-    - islandora_citations
     - text
-third_party_settings:
-  islandora_citations:
-    csl_field: {  }
-_core:
-  default_config_hash: CAacOtOYmoGzcmyw_49TiVMi3uoRRigYDGoXl0T0FjY
+third_party_settings: {  }
 id: paragraph.embeded_repository_item.field_entity_embed
 field_name: field_entity_embed
 entity_type: paragraph

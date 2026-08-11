@@ -99,7 +99,17 @@
       banner_title: "",
       banner_summary: "",
       banner_color_mode: banner_color_summary,
-      banner_opacity: "1"
+      banner_opacity: "1",
+      banner_caption: content.field_banner_caption|default(""),
+      banner_caption_classes: [
+        'uk-text-meta',
+        'uk-text-italic',
+        'uk-text-right',
+        'uk-padding-small',
+        'uk-padding-remove-top',
+        'uk-margin-auto-left',
+        'dg-width-fit-content'
+      ]
     },
       with_context = false)
     }}
@@ -112,6 +122,6 @@
       {{ title_suffix }}
     {% endif %}
 
-    {{ content|without('field_banner_image') }}
+    {{ content|without('field_banner_image', 'field_banner_caption') }}
   </div>
 </article>

@@ -4,6 +4,9 @@
   {% set attributes = create_attribute() %}
 {% endif %}
 
+{% if banner_caption is not empty %}
+  <figure>
+{% endif %}
 <div class="uk-cover-container uk-height-medium uk-padding uk-padding-remove-left uk-padding-remove-right uk-padding-remove-top">
   {% if banner_image is not empty %}
     <div>
@@ -22,3 +25,7 @@
     </div>
   {% endif %}
 </div>
+{% if banner_caption is not empty %}
+  <figcaption class="{{ banner_caption_classes|safe_join(' ') }}">{{ banner_caption }}</figcaption>
+  </figure>
+{% endif %}

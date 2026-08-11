@@ -5,12 +5,7 @@ dependencies:
     - field.storage.paragraph.field_uikit_image
     - media.type.image
     - paragraphs.paragraphs_type.uikit_image_text_display
-  module:
-    - islandora_citations
-third_party_settings:
-  islandora_citations:
-    csl_field: {  }
-    use_entity_checkbox: false
+third_party_settings: {  }
 id: paragraph.uikit_image_text_display.field_uikit_image
 field_name: field_uikit_image
 entity_type: paragraph

@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_entity_reference_display_m
+    - paragraphs.paragraphs_type.embeded_repository_item
+  module:
+    - entity_reference_display
+third_party_settings: {  }
+id: paragraph.embeded_repository_item.field_entity_reference_display_m
+field_name: field_entity_reference_display_m
+entity_type: paragraph
+bundle: embeded_repository_item
+label: 'Entity reference display mode'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: entity_embed_medium
+default_value_callback: ''
+settings:
+  exclude:
+    entity_embed_large: entity_embed_large
+    entity_embed_medium: entity_embed_medium
+    entity_embed_small: entity_embed_small
+  negate: true
+field_type: entity_reference_display

@@ -4,11 +4,7 @@ dependencies:
   config:
     - field.storage.paragraph.field_use_heading_bullet
     - paragraphs.paragraphs_type.uikit_heading
-  module:
-    - islandora_citations
-third_party_settings:
-  islandora_citations:
-    csl_field: {  }
+third_party_settings: {  }
 id: paragraph.uikit_heading.field_use_heading_bullet
 field_name: field_use_heading_bullet
 entity_type: paragraph

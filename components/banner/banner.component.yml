@@ -29,6 +29,18 @@ props:
       description: The banner opacity, defaults to .3
       type: string
       default: ".3"
+    banner_caption:
+      title: Banner caption
+      description: A caption displayed under the banner.
+      type: string
+      default: ''
+    banner_caption_classes:
+      title: Banner caption classes
+      description: CSS classes to add to the caption, such as 'uk-align-right'.
+      type: array
+      items:
+        type: string
+      default: []
 libraryOverrides:
   dependencies:
     - exhibit_components/uikit

@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - filter.format.exhibit_basic_html
+    - node.type.exhibit
+  module:
+    - text
+third_party_settings: {  }
+id: node.exhibit.body
+field_name: body
+entity_type: node
+bundle: exhibit
+label: 'Exhibit description'
+description: 'Describe the exhibit and its content, context, and purpose. Limited to 1,000 characters (with spaces).'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats:
+    - exhibit_basic_html
+field_type: text_with_summary

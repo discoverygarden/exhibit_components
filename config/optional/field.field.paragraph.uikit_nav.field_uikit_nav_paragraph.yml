@@ -7,10 +7,7 @@ dependencies:
     - paragraphs.paragraphs_type.uikit_nav_item
   module:
     - entity_reference_revisions
-    - islandora_citations
-third_party_settings:
-  islandora_citations:
-    use_entity_checkbox: false
+third_party_settings: {  }
 id: paragraph.uikit_nav.field_uikit_nav_paragraph
 field_name: field_uikit_nav_paragraph
 entity_type: paragraph

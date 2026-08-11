@@ -2,23 +2,36 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.embeded_repository_item.field_entity_embed
+    - field.field.paragraph.embeded_repository_item.field_embedded_caption
+    - field.field.paragraph.embeded_repository_item.field_entity_reference_display_m
+    - field.field.paragraph.embeded_repository_item.field_respository_item
     - paragraphs.paragraphs_type.embeded_repository_item
   module:
-    - text
-_core:
-  default_config_hash: zSA3p0KBU34kEEJ0hiQchMthzvRO3XXkJ23fnPj_kbE
+    - entity_reference_display
 id: paragraph.embeded_repository_item.default
 targetEntityType: paragraph
 bundle: embeded_repository_item
 mode: default
 content:
-  field_entity_embed:
-    type: text_default
-    label: above
-    settings: {  }
+  field_embedded_caption:
+    type: string
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_respository_item:
+    type: entity_reference_display_default
+    label: visually_hidden
+    settings:
+      view_mode: entity_embed_large
+      link: false
+      display_field: null
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  field_entity_embed: true
+  field_entity_reference_display_m: true
   search_api_excerpt: true

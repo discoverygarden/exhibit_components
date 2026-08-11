@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - search_api.index.default_solr_index
-    - system.menu.dgi-header-without-about
   module:
     - search_api
 id: exhibits
@@ -239,15 +238,7 @@ display:
     display_options:
       display_extenders: {  }
       path: exhibits
-      menu:
-        type: normal
-        title: Exhibits
-        description: 'Search exhibits from this site.'
-        weight: 2
-        expanded: false
-        menu_name: dgi-header-without-about
-        parent: ''
-        context: '0'
+      menu: {  }
     cache_metadata:
       max-age: -1
       contexts:
