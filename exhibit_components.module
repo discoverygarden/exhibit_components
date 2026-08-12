@@ -17,10 +17,14 @@ function exhibit_components_library_info_alter(&$libraries, $module) {
     $uikit_css = $library_file_finder->find('uikit/dist/css/uikit.min.css');
     if ($uikit_js && $uikit_css) {
       unset($libraries['uikit']['js']);
+      // Stash the overrides we have in uikit/css/theme.
+      $uikit_css_overrides = $libraries['uikit']['css']['theme'];
       unset($libraries['uikit']['css']);
       unset($libraries['uikit']['version']);
       $libraries['uikit']['js']['/' . $uikit_js] = ['minified' => TRUE];
       $libraries['uikit']['css']['component']['/' . $uikit_css] = ['minified' => TRUE];
+      // Include the overrides we have.
+      $libraries['uikit']['css']['theme'] = $uikit_css_overrides;
     }
   }
 }
