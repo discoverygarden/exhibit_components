@@ -1,9 +1,17 @@
 {
-  "name": "discoverygarden/exhibit_components",
-  "type": "drupal-module",
-  "license": "GPL-3.0-or-later",
-  "require": {
-    "drupal/layout_paragraphs": "^2.1",
-    "drupal/embed": "^1.4"
-  }
+    "name": "discoverygarden/exhibit_components",
+    "description": "Drupal module containing Single Directory Components for use in exhibit content.",
+    "type": "drupal-module",
+    "keywords": ["Drupal", "Islandora", "Exhibits"],
+    "homepage": "https://github.com/discoverygarden/exhibit_components",
+    "license": "GPL-3.0-or-later",
+    "require": {
+        "drupal/layout_paragraphs": "^2.1",
+        "drupal/embed": "^1.4"
+    },
+    "suggest": {
+        "drupal/smart_trim": "^2.3",
+        "drupal/islandora": "^2",
+        "drupal/field_group": "^4"
+    }
 }
