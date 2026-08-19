@@ -75,7 +75,7 @@ enabling this module.
 
 TODO: Fill this out
 
-### UIKit Paragraphs and Components
+### Included Single Directory Components
 
 This module provides Single Directory Components based on UIKit, and in
 `/templates` there are twig templates that allow the Paragraph types and
@@ -84,23 +84,139 @@ components. You could create your own custom templates to make use of those
 components if you cannot (or prefer not to) use the fields and Paragraphs
 in the optional config.
 
-For info on just the components, see the README.md files in each of the
-components in the `components` directory of this module.
+For info on just the components, see each of the components in the `components`
+directory of this module. The README.md files in each component might be
+sparse, but should at least include a link to relevant sections of UIKit's
+documentation.
 
-Here is an overview of the Paragraphs included in optional config:
+### Included Paragraph Types
 
-- Embedded Repository Item
-- Section (`layout`)
-- Slideshow Slide
-- UIKit Card
-- UIKit Full HTML
-- UIKit Grid
-- UIKit Heading
-- UIKit Image and Text Display
-- UIKit Nav
-- UIKit Nav Item
-- UIKit Quote
-- UIKit Slideshow
+The Paragraph types, Exhibit content type, and dependencies in the optional
+config in this module are provided as examples and are kept as optional to
+provide the freedom to ignore any or all of the configurations while still
+being able to make use of the single directory components in your own custom
+templates. If you would like to use the Paragraph types directly or as
+reference to make your own, this section gives an overview.
+
+#### Embedded Repository Item (`embeded_repository_item`)
+- A Paragraph type that allows for embedding a repository item, specifying
+an image style for the item's thumbnail that links to the item, and setting
+an optional caption to display under the thumbnail.
+- This does not make use of any included components or UIKit styling, and is
+not expected to be usable outside of the Islandora ecosystem, but could be used
+as a reference to make something similar if desired.
+- By default, this Paragraph is configured to just use `field_entity_embed`
+which is a formatted text field using the `full_html_embed` text format which
+allows the configuration for this Paragraph type to be imported even if the
+`islandora_object` node bundle required by `field_repository_item` is not
+present.
+- If the dependencies for the other fields are met, you can configure them
+at `<yoursite.com>/admin/structure/paragraphs_type/embeded_repository_item/form-display`
+and `<yoursite.com>/admin/structure/paragraphs_type/embeded_repository_item/display`
+by disabling `field_entity_embed` and instead using `field_repository_item`,
+`field_embedded_caption`, and `field_entity_reference_display_m`.
+- The only thing available to `field_entity_embed` that isn't available
+with the other fields, is setting the alignment of the embedded item. Using
+`field_entity_embed` allows you to set alignment to left, center, or right,
+while using the other fields just aligns the item to center.
+
+#### Section (`layout`)
+- By default, only a single column layout is enabled, but more can be used
+if available at `<yoursite.com>/admin/structure/paragraphs_type/layout`.
+- This kind of Paragraph is like a display container for other Paragraph
+types, and allows Exhibit content creators/editors to drag entire sections of
+content to reorder information as desired.
+- No special template, component, or UIKit styling associated with this one.
+
+#### UIKit Slideshow (`uikit_slideshow`) & Slideshow Slide (`slideshow_slide`)
+- The UIKit Slideshow Paragraph can have a label and multiple Slideshow Slide
+Paragraphs.
+- Slideshow Slide Paragraphs can each have:
+  - text content (optional)
+  - an image (required)
+  - specified position (defaults to title and text on bottom)
+  - a title (required)
+  - title link (optional if you would like the title to link somewhere)
+- Related twig template: `templates/paragraph--uiki-slideshow.html.twig`
+- Related components:
+  - `components/slide`
+  - `components/slideshow`
+
+#### UIKit Card (`uikit_card`)
+- A Paragraph type to display information using [UIKit's Card component](
+  https://getuikit.com/docs/card) styling with fields included for:
+  - title (required)
+  - title link (optional if you would like the title to link somewhere)
+  - card body (optional text content)
+  - size modifier (to choose to render as a large or small card)
+  - image (optional image media)
+  - media position (where to position image if included)
+  - badge (optional text to display as a badge in the top right)
+  - width class modifier (optional, could be any class, but intended to allow
+  use of UIKit's [responsive width](
+  https://getuikit.com/docs/width#responsive-width) classes.)
+- Related twig template: `templates/paragraph--uikit-card.html.twig`
+- Related component: `components/card`
+
+#### UIKit Full HTML (`uikit_full_html`)
+- A Paragraph type with a title field and an HTML markup field. The template
+for this Paragraph type included in this module uses the `html` single
+directory component which attaches the uikit library so those styles can be
+applied to this Paragraph type.
+- By default, the text format configured for the `field_uikit_html_markup`
+field is pretty restricted to keep things simple, but you can add options and
+styles to that format or configure a different text format with more element
+options and styles to take advantage of the CSS classes from the UIKit
+library.
+- Related twig template: `templates/paragraph--uikit-full-html.html.twig`
+- Related component: `components/html`
+
+#### UIKit Grid (`uikit_grid`)
+- A Paragraph type to display a grid of UIKit Card Paragraphs.
+- Each UIKit Grid Paragraph can include:
+  - title (optional)
+  - gap modifier (see [UIKit's gap modifier documentation](
+    https://getuikit.com/docs/grid#gap-modifiers))
+  - divider modifier toggle (whether to include lines between items)
+  - grid column counts for various breakpoints (number of columns, options
+  are 1 to 6)
+    - small, device widths from 640px to 960px. Grid columns will stack on
+    smaller sizes.  (defaults to 1)
+    - medium, device widths between 960px and 1200px (defaults to 3)
+    - large, device widths between 1200px and 1600px (defaults to 5)
+    - extra large, device widths larger than 1600px (defaults to 6)
+  - as many UIKit Card grid items as you want to add
+- Related twig template: `templates/paragraph--uikit-grid.html.twig`
+- Related components:
+  - `components/grid`
+  - `components/card`
+
+#### UIKit Heading (`uikit_heading`)
+- A Paragraph type just for Heading elements that can make use of [UIKit's
+Heading styles](https://getuikit.com/docs/heading), like the option to
+include a divider, bullet styling, and a line modifier.
+- Related twig template: `templates/paragraph--uikit-heading.html.twig`
+- Related component: `components/heading`
+
+#### UIKit Image and Text Display (`uikit_image_text_display`)
+- A Paragraph type that is essentially a more simple/minimal kind of card
+display that only has fields for a title, text content, and an image, with
+no extra fields to add any styling or links.
+- Related twig template: `templates/paragraph--uiki-image-text-display.html.twig`
+- Related component: `components/image_text_display`
+
+#### UIKit Nav (`uikit_nav`) & UIKit Nav Item (`uikit_nav_item`)
+- A Paragraph type to include one or more expandable lists of links. These
+links could be entered manually, or autogenerated based on UIKit Heading
+Paragraphs present on the same page to make a table of contents.
+- Related twig template: `templates/paragraph--uikit-nav.html.twig`
+- Related component: `components/nav`
+
+#### UIKit Quote (`uikit_quote`)
+- A Paragraph type for very basic blockquote styling that includes an author
+and the text being quoted.
+- Related twig template: `templates/paragraph--uikit-quote.html.twig`
+- Related component: `components/quote`
 
 ### Exhibit Text Formats
 
@@ -132,6 +248,14 @@ disable and/or remove these:
   either the Entity Reference field (`field_respository_item`) or the Formatted
   Text field (`field_entity_embed`), and this format is intended for use in
   `field_entity_embed`.
+  - If you would like to minimize the use of different Paragraphs in favour of
+  one HTML formatted text field, you could use this text format in the
+  `uikit_full_html` Paragraph's `field_uikit_html_markup` field, and as long as
+  you are comfortable working with HTML source editing you could use that one
+  Paragraph type to accomplish almost the same results as all the other types
+  since the twig template provided for that Paragraph type uses a component
+  that includes the UIKit library which allows you to take advantage of many
+  CSS classes.
 
 ## Maintainers/Sponsors
 

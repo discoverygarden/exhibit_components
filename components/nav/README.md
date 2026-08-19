@@ -3,7 +3,9 @@
 ## Introduction
 
 Adds a SDC Nav component which supports UIKit markup and classes.
-https://getuikit.com/docs/nav
+
+Relevant UIKit documentation:
+- [Nav component](https://getuikit.com/docs/nav)
 
 ## Features & Usage
 

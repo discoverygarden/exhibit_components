@@ -2,7 +2,9 @@
 
 ## Introduction
 Adds a SDC Heading component which supports UIKit markup and classes.
-https://getuikit.com/docs/heading
+
+Relevant UIKit documentation:
+- [Heading component](https://getuikit.com/docs/heading)
 
 ## Features & Usage
 Configuration is included with the `exhibit_components` module that houses
