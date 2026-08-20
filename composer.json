@@ -1,17 +1,19 @@
 {
     "name": "discoverygarden/exhibit_components",
-    "description": "Drupal module containing Single Directory Components for use in exhibit content.",
+    "description": "Drupal module containing Single Directory Components and optional Exhibit content type.",
     "type": "drupal-module",
     "keywords": ["Drupal", "Islandora", "Exhibits"],
     "homepage": "https://github.com/discoverygarden/exhibit_components",
     "license": "GPL-3.0-or-later",
-    "require": {
-        "drupal/layout_paragraphs": "^2.1",
-        "drupal/embed": "^1.4"
-    },
     "suggest": {
-        "drupal/smart_trim": "^2.3",
         "drupal/islandora": "^2",
-        "drupal/field_group": "^4"
+        "drupal/field_group": "^4",
+        "drupal/paragraphs": "^1",
+        "drupal/layout_paragraphs": "^2.1",
+        "drupal/entity_embed": "^1.7",
+        "drupal/entity_browser": "^2",
+        "drupal/entity_reference_display": "^2",
+        "drupal/entity_reference_revisions": "^1",
+        "drupal/smart_trim": "^2.3"
     }
 }

@@ -17,10 +17,7 @@ label: 'Copyright Information'
 description: 'Provide copyright information for the items featured in the exhibit using this field.'
 required: false
 translatable: false
-default_value:
-  -
-    value: 'Exhibit use must be accompanied with the attribution:<br>Hosted by the Florida Department of State Division of Library and Information Services.'
-    format: basic_html
+default_value: {  }
 default_value_callback: ''
 settings:
   allowed_formats:

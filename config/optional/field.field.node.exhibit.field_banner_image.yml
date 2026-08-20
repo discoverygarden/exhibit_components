@@ -4,7 +4,6 @@ dependencies:
   config:
     - field.storage.node.field_banner_image
     - media.type.image
-    - media.type.local_image_resource
     - node.type.exhibit
 third_party_settings: {  }
 id: node.exhibit.field_banner_image
@@ -22,7 +21,6 @@ settings:
   handler_settings:
     target_bundles:
       image: image
-      local_image_resource: local_image_resource
     sort:
       field: _none
       direction: ASC

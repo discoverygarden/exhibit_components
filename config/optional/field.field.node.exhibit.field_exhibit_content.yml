@@ -6,8 +6,16 @@ dependencies:
     - node.type.exhibit
     - paragraphs.paragraphs_type.embeded_repository_item
     - paragraphs.paragraphs_type.layout
+    - paragraphs.paragraphs_type.slideshow_slide
+    - paragraphs.paragraphs_type.uikit_card
     - paragraphs.paragraphs_type.uikit_full_html
+    - paragraphs.paragraphs_type.uikit_grid
     - paragraphs.paragraphs_type.uikit_heading
+    - paragraphs.paragraphs_type.uikit_image_text_display
+    - paragraphs.paragraphs_type.uikit_nav
+    - paragraphs.paragraphs_type.uikit_nav_item
+    - paragraphs.paragraphs_type.uikit_quote
+    - paragraphs.paragraphs_type.uikit_slideshow
   module:
     - entity_reference_revisions
 third_party_settings: {  }
@@ -72,29 +80,29 @@ settings:
         enabled: false
       uikit_card:
         weight: 34
-        enabled: false
+        enabled: true
       uikit_full_html:
         weight: 35
         enabled: true
       uikit_grid:
         weight: 36
-        enabled: false
+        enabled: true
       uikit_heading:
         weight: 37
         enabled: true
       uikit_image_text_display:
         weight: 38
-        enabled: false
+        enabled: true
       uikit_nav:
         weight: 39
-        enabled: false
+        enabled: true
       uikit_nav_item:
         weight: 40
         enabled: false
       uikit_quote:
         weight: 41
-        enabled: false
+        enabled: true
       uikit_slideshow:
         weight: 42
-        enabled: false
+        enabled: true
 field_type: entity_reference_revisions

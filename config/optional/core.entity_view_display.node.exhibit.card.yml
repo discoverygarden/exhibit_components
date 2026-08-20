@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.exhibit.body
     - field.field.node.exhibit.field_banner_caption
     - field.field.node.exhibit.field_banner_image
-    - field.field.node.exhibit.field_color_mode
     - field.field.node.exhibit.field_copyright_information
     - field.field.node.exhibit.field_display_in_exhibits_list
     - field.field.node.exhibit.field_exhibit_content
@@ -60,16 +59,7 @@ content:
     weight: 0
     region: content
 hidden:
-  addtoany: true
-  did_image: true
-  display_media_entity_view_1: true
-  display_media_entity_view_2: true
-  display_media_extracted_text: true
-  display_media_extracted_text_search_api: true
-  display_media_service_file: true
-  display_media_thumbnail: true
   field_banner_caption: true
-  field_color_mode: true
   field_copyright_information: true
   field_display_in_exhibits_list: true
   field_exhibit_content: true
@@ -78,12 +68,4 @@ hidden:
   field_weight: true
   langcode: true
   links: true
-  openseadragon_media_evas_entity_view_1: true
-  openseadragon_media_evas_entity_view_2: true
-  openseadragon_media_evas_service_file: true
-  paged_content_text_entity_view_1: true
-  paged_content_text_page_text_eva_search_api: true
-  pdfjs_media_evas_entity_view_1: true
-  pdfjs_media_evas_entity_view_2: true
-  pdfjs_media_evas_service_file: true
   search_api_excerpt: true

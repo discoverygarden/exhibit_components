@@ -4,7 +4,12 @@ type: module
 package: DGI
 core_version_requirement: ^11.2
 dependencies:
+  - drupal:media
+  - drupal:user
   - drupal:media_library
-  - embed:embed
-  - layout_paragraphs:layout_paragraphs
   - drupal:text
+  - drupal:options
+  - drupal:link
+  - drupal:editor
+  - drupal:ckeditor5
+  - drupal:views

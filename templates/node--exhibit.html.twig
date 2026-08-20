@@ -89,7 +89,6 @@
   {% endif %}
 
   {% set banner_summary = node.body.value %}
-  {% set banner_color_summary = node.field_color_mode.value %}
 
   {#  Exclude title and summary from being printed in the banner, as it will be printed on the node page proper.#}
   {% if banner_image is not empty %}
@@ -98,7 +97,7 @@
       banner_alt_text: banner_alt_text,
       banner_title: "",
       banner_summary: "",
-      banner_color_mode: banner_color_summary,
+      banner_color_mode: "",
       banner_opacity: "1",
       banner_caption: content.field_banner_caption|default(""),
       banner_caption_classes: [

@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.entity_embed
+    - node.type.islandora_object
+  module:
+    - media
+    - user
+  enforced:
+    module: {  }
+id: node.islandora_object.entity_embed
+targetEntityType: node
+bundle: islandora_object
+mode: entity_embed
+content:
+  did_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

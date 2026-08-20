@@ -2,6 +2,7 @@
 Drupal module containing Single Directory Components for use in exhibit content.
 
 ## Intro
+
 Each component in the `components` directory is used by a Paragraph template in
 the `templates` directory, and the necessary configuration for the Paragraph
 entities and their fields should be included in this module's `config/optional`
@@ -11,12 +12,56 @@ and component. Configuration for an Exhibit content type is included in
 `config/optional` as well, but the Paragraphs and components can be used in
 your own custom content type if you prefer.
 
+You can also use this module just for the single directory components, which is
+why all the included configuration is in `config/optional` and the module
+dependencies in those config files are listed as `suggested` in `composer.json`
+instead of `required`.
+
 ## Requirements
 
 Technically, this could be used outside the Islandora ecosystem; however, you
 would miss out on some included components unless you do some custom work to
-set up your own Paragraph templates. This is why `drupal/islandora` is only
-suggested in `composer.json` instead of being a hard requirement.
+set up your own Paragraph templates. This is why `drupal/islandora` and other
+modules are only suggested in `composer.json` instead of being a hard
+requirement.
+
+### Modules required to get included 'optional' configurations
+
+If all of these modules are installed and enabled, then all of the optional
+config included in this module should be imported and available for you to use
+and modify to your liking.
+
+- [islandora](https://www.drupal.org/project/islandora)
+  - Anything relating to embedding repository items in exhibit components is
+  expecting those repository items to be islandora objects.
+- [field_group](https://www.drupal.org/project/field_group)
+  - The configuration for the Exhibit node type's form uses field groups to
+  organize things.
+- [paragraphs](https://www.drupal.org/project/paragraphs)
+  - Paragraph entities are primarily what this module uses as building blocks
+  for content to use the included single directory components.
+- [layout_paragraphs](https://www.drupal.org/project/layout_paragraphs)
+  - The section of the Exhibit node type's form for adding sections and
+  components uses layout paragraphs to provide a simplified way to set layouts
+  for each exhibit and a nice draggable UI to reorganize components. This is
+  not only in the form view, but also in the view display to allow users with
+  permissions to edit exhibits to make modifications to the exhibit components
+  and layout with the visual context of the actual exhibit page and not just
+  form in the admin theme.
+- [entity_embed](https://www.drupal.org/project/entity_embed)
+  - Necessary to embed entities like repository items in formatted text fields.
+- [entity_browser](https://www.drupal.org/project/entity_browser)
+  - Used to setup UI to browse repository items to embed.
+- [entity_reference_display](https://www.drupal.org/project/entity_reference_display)
+  - This is what allows for selecting a display mode for embedded repository
+  items.
+- [entity_reference_revisions](https://www.drupal.org/project/entity_reference_revisions)
+  - This provides a display format that is used for displaying rendered
+  entities.
+- [smart_trim](https://www.drupal.org/project/smart_trim)
+  - This is used for the Exhibit note type's 'card' view mode to reliably trim
+  the description field and strip HTML so formatted text doesn't distort the
+  card's appearance.
 
 ## Libraries
 By default, this module uses CDNs for the uikit js and css libraries,
@@ -63,17 +108,68 @@ uikit library locally, there are a couple options outlined here:
 
 ### Browse Exhibits View
 
-The included `config/optional/views.view.exhibits.yml` does not create a menu
-link for the `/exhibits` path, because that would add a dependency on a given
-menu. Therefore, if you would like to use that view page and have it included
-in some menu, you can edit the view at
-`<your-site.com>/admin/structure/views/view/exhibits/edit/page_1`
+The included `config/optional/views.view.browse_exhibits.yml` does not create a
+menu link for the `/exhibits` path, because that would add a dependency on a
+given menu. Therefore, if you would like to use that view page and have it
+included in some menu, you can edit the view at
+`<your-site.com>/admin/structure/views/view/browse_exhibits/edit/page_1`
 assuming you have the dependencies to allow that view to be imported when
 enabling this module.
 
 ### Exhibit Content Type
 
-TODO: Fill this out
+The provided Exhibit content type is a node bundle type configured with fields
+that are expected by the included `templates/node--exhibit.html.twig` and
+`templates/node--exhibit--card.html.twig` and make use of the single directory
+components and the UIKit library.
+
+Here is an overview of the included fields and expected usage:
+
+- Title (`title`)
+  - The same as any other node title
+- Exhibit description (`body`)
+  - A formatted text area with summary, displays under the title on the exhibit
+  page, and a trimmed output is used in the exhibit card preview view mode when
+  browsing exhibits at `<yoursite.com>/exhibits`.
+- Exhibit Elements (`field_exhibit_content`)
+  - An entity reference field using Layout Paragraphs where you can add a
+  layout section, and add Paragraphs inside each section. See 'Included
+  Paragraph Types' for an overview of the kinds of Paragraphs and components
+  provided for use here.
+- Authored By (`field_exhibit_creator`)
+  - This is different from the base node 'Authored by' field that uses `uid`.
+  Instead of being tied to a user account, this is a simple text field for
+  giving credit to the exhibit creator, and could list multiple people if it
+  was a collaborative process.
+- Tags (`field_tags`)
+  - A field to include taxonomy terms. Displaying as a facet link to find other
+  exhibit nodes with the same tag is recommended; however, to avoid making the
+  included configuration dependent on a specific facet and solr index, the
+  included config has this displaying as just a link to the taxonomy term
+  entity.
+  - This could be used to categorise however you
+  like; from time periods, to locations, to general themes. Too many tags could
+  negate their utility, so do take care in deciding what taxonomy terms get
+  created and how they should be used.
+- Banner Image (`field_banner_image`)
+  - An entity reference field for Media entities to be used as a full-width
+  banner across the top of the exhibit page. Also used as the thumbnail for
+  the card preview view mode of the exhibit.
+- Banner Caption (`field_banner_caption`)
+  - A formatted text field used to display a `<figcaption>` under the banner
+  image. Provided in case you chose a banner image that is not simply
+  decorative.
+- Weight (`field_weight`)
+  - An integer that, if populated, is used to inform the sort order in the
+  view for browsing exhibits, `views.view.browse_exhibits.yml`.
+- Display in exhibits list (`field_display_in_exhibits_list`)
+  - A boolean field to set whether or not to include the exhibit in the results
+  of the view for browsing exhibits.
+- Copyright Information (`field_copyright_information`)
+  - A formatted text field to display copyright information at the bottom of
+  the exhibit. If the information is consistent for any exhibits created in
+  your site, you could simplify the data entry for this by setting a default
+  value and optionally omitting the field from the form display.
 
 ### Included Single Directory Components
 
@@ -271,6 +367,12 @@ Sponsor:
 ## Development
 
 If you would like to contribute to this module, create an issue, pull request, or contact discoverygarden.
+
+This was initially put together for a specific site setup, and an attempt has
+been made to organize and document the included components and configurations
+to allow this to be useful outside that specific context. If you decide to use
+this and notice some holes in the documentation, please feel free to submit a
+pull request with corrections/additions.
 
 ## License
 GPL-3.0-or-later
