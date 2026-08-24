@@ -117,7 +117,8 @@ function _exhibit_components_get_image_uri_and_alt(array $media_thumb_field) : a
     $item = $image['#item'];
     if (($entity = $item->entity) && empty($item->uri)) {
       $file_uri = $entity->getFileUri();
-    } else {
+    }
+    else {
       $file_uri = $item->uri;
     }
     if (!empty($image['#image_style'])) {
