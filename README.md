@@ -155,6 +155,8 @@ Here is an overview of the included fields and expected usage:
   - An entity reference field for Media entities to be used as a full-width
   banner across the top of the exhibit page. Also used as the thumbnail for
   the card preview view mode of the exhibit.
+  - The preprocessing in this module expects this field to be displayed using
+  the `media_thumbnail` formatter.
 - Banner Caption (`field_banner_caption`)
   - A formatted text field used to display a `<figcaption>` under the banner
   image. Provided in case you chose a banner image that is not simply
