@@ -25,7 +25,7 @@ set up your own Paragraph templates. This is why `drupal/islandora` and other
 modules are only suggested in `composer.json` instead of being a hard
 requirement.
 
-### Modules required to get included 'optional' configurations
+### Contrib Modules required to get included 'optional' configurations
 
 If all of these modules are installed and enabled, then all of the optional
 config included in this module should be imported and available for you to use
