@@ -10,8 +10,8 @@ dependencies:
   module:
     - entity_embed
     - node
-label: 'Embeded repository item'
-id: node
+label: 'Embedded repository item'
+id: repository_item
 type_id: entity
 type_settings:
   entity_type: node

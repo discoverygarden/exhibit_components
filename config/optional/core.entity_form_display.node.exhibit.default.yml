@@ -79,6 +79,7 @@ third_party_settings:
       children:
         - field_exhibit_creator
         - field_tags
+        - field_copyright_information
       label: 'Exhibit Footer'
       region: content
       parent_name: group_exhibit_data
