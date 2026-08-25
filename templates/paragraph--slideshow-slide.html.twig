@@ -1,11 +1,11 @@
 {#
 /**
  * @file
- * Default template for the card paragraph type SDC.
+ * Default template for the slideshow paragraph type SDC.
  *
  * Available custom preprocessed variables:
- * - card_media: An associative array with uri and alt elements. Empty if
- *   field_uikit_card_media isn't using 'media_thumbnail' formatter.
+ * - slide_image: An associative array with uri and alt elements. Empty if
+ *   field_uikit_slide_image isn't using 'media_thumbnail' formatter.
  *   - uri: The uri for the image using the configured image style.
  *   - alt: The alt text for the image.
  *
@@ -54,39 +54,26 @@
 ]
 %}
 
-{% block paragraph %}
+{% block content_block %}
   <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {% if card_media is not empty %}
-        {% set media_image = file_url(card_media.uri) %}
-        {% set media_alt = card_media.alt ?? "" %}
-      {% else %}
-        {% set media_image = file_url(paragraph.field_uikit_card_media.entity.field_media_image.entity.uri.value) %}
-        {% set media_alt = paragraph.field_uikit_card_media.entity.field_media_image.alt ?? "" %}
-      {% endif %}
-      {% set media_width = "" %}
-      {% set media_height = "" %}
-
-      {% if media_image is not empty %}
-        {% set media_width = paragraph.field_uikit_card_media.entity.field_media_image.0.width %}
-        {% set media_height = paragraph.field_uikit_card_media.entity.field_media_image.0.height %}
-      {% endif %}
-
-      {{ include('exhibit_components:card', {
-        heading: paragraph.field_uikit_card_title.value,
-        size_modifier: paragraph.field_uikit_size_modifier.value,
-        image: media_image,
-        image_alt: media_alt,
-        media_position: paragraph.field_uikit_card_media_position.value,
-        badge: paragraph.field_uikit_card_badge.value,
-        card_body: paragraph.field_uikit_card_body.value,
-        width_modifier: paragraph.field_uikit_width_class.value,
-        image_width: media_width,
-        image_height: media_height,
-        title_link: paragraph.field_uikit_card_title_link.value
-        },
-        with_context = false)
-      }}
-    {% endblock %}
+    {% if slide_image is not empty %}
+      {% set slide_image_url = file_url(slide_image.uri) %}
+      {% set slide_image_alt = slide_image.alt ?? '' %}
+    {% else %}
+      {% set slide_image_url = file_url(paragraph.field_uikit_slide_image.entity.field_media_image.entity.uri.value) %}
+      {% set slide_image_alt = paragraph.field_uikit_slide_image.entity.field_media_image.alt %}
+    {% endif %}
+    {% set slide_description = paragraph.field_uikit_slide_content.value %}
+    {% set slide_title = paragraph.field_uikit_slide_title.value %}
+    {% set slide_title_link = paragraph.field_uikit_slide_title_link.value %}
+    {% set slide_position = paragraph.field_uikit_slide_position.value %}
+    {% include 'exhibit_components:slide' with {
+      'image': slide_image_url,
+      'content': slide_description,
+      'title': slide_title,
+      'alt': slide_image_alt,
+      'title_link': slide_title_link,
+      'slide_position': slide_position
+    } only %}
   </div>
-{% endblock paragraph %}
+{% endblock content_block %}

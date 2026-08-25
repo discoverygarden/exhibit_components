@@ -4,10 +4,9 @@
  * Theme override to display a node.
  *
  * Available custom preprocessed variables:
- * - banner_image_uri: The uri for the field_banner_image using the configured
- *   image style.
- * - banner_image_alt: The alt text for the image referenced by
- *   field_banner_image.
+ * - banner_image: An associative array with uri and alt elements
+ *   - uri: The uri for the banner image using the configured image style.
+ *   - alt: The alt text for the banner image.
  *
  * Available variables:
  * - node: The node entity with limited access to object properties and methods.
@@ -83,8 +82,8 @@
 {% block content %}
 
   <div{{ attributes.addClass(classes) }}>
-    {% set media_image = file_url(banner_image_uri) %}
-    {% set media_alt = banner_image_alt ?? "" %}
+    {% set media_image = file_url(banner_image.uri) %}
+    {% set media_alt = banner_image.alt ?? "" %}
 
     {% set media_width = "" %}
     {% set media_height = "" %}

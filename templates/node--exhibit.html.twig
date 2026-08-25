@@ -4,10 +4,9 @@
  * Theme override to display a node.
  *
  * Available custom preprocessed variables:
- * - banner_image_uri: The uri for the field_banner_image using the configured
- *   image style.
- * - banner_image_alt: The alt text for the image referenced by
- *   field_banner_image.
+ * - banner_image: An associative array with uri and alt elements
+ *   - uri: The uri for the banner image using the configured image style.
+ *   - alt: The alt text for the banner image.
  *
  * Available node variables:
  * - node: The node entity with limited access to object properties and methods.
@@ -87,14 +86,11 @@
 
   {% block banner_block %}
 
-    {% set banner_image = file_url(banner_image_uri) %}
-    {% set banner_alt_text = banner_image_alt ?? "" %}
-
     {#  Exclude title and summary from being printed in the banner, as it will be printed on the node page proper.#}
     {% if banner_image is not empty %}
       {{ include('exhibit_components:banner', {
-        banner_image: banner_image,
-        banner_alt_text: banner_alt_text,
+        banner_image: banner_image.uri,
+        banner_alt_text: banner_image.alt,
         banner_title: "",
         banner_summary: "",
         banner_color_mode: "",

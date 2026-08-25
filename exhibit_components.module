@@ -36,6 +36,10 @@ function exhibit_components_library_info_alter(&$libraries, $module) {
  */
 function exhibit_components_theme($existing, $type, $theme, $path) {
   return [
+    'paragraph__slideshow_slide' => [
+      'template' => 'paragraph--slideshow-slide',
+      'base hook' => 'paragraph',
+    ],
     'paragraph__uikit_full_html' => [
       'template' => 'paragraph--uikit-full-html',
       'base hook' => 'paragraph',
@@ -89,8 +93,34 @@ function exhibit_components_theme($existing, $type, $theme, $path) {
 function exhibit_components_preprocess_node__exhibit(&$variables) : void {
   $banner_image_field = $variables['content']['field_banner_image'] ?? [];
   $banner_image_vars = _exhibit_components_get_image_uri_and_alt($banner_image_field);
-  $variables['banner_image_uri'] = $banner_image_vars['uri'];
-  $variables['banner_image_alt'] = $banner_image_vars['alt'];
+  $variables['banner_image'] = $banner_image_vars;
+}
+
+/**
+ * Implements hook_preprocess_node__BUNDLE().
+ */
+function exhibit_components_preprocess_paragraph__uikit_card(&$variables) : void {
+  $image_field = $variables['content']['field_uikit_card_media'] ?? [];
+  $image_vars = _exhibit_components_get_image_uri_and_alt($image_field);
+  $variables['card_media'] = $image_vars;
+}
+
+/**
+ * Implements hook_preprocess_node__BUNDLE().
+ */
+function exhibit_components_preprocess_paragraph__uikit_image_text_display(&$variables) : void {
+  $image_field = $variables['content']['field_uikit_image'] ?? [];
+  $image_vars = _exhibit_components_get_image_uri_and_alt($image_field);
+  $variables['card_image'] = $image_vars;
+}
+
+/**
+ * Implements hook_preprocess_node__BUNDLE().
+ */
+function exhibit_components_preprocess_paragraph__slideshow_slide(&$variables) : void {
+  $image_field = $variables['content']['field_uikit_slide_image'] ?? [];
+  $image_vars = _exhibit_components_get_image_uri_and_alt($image_field);
+  $variables['slide_image'] = $image_vars;
 }
 
 /**
@@ -102,13 +132,10 @@ function exhibit_components_preprocess_node__exhibit(&$variables) : void {
  *
  * @return array
  *   An array with a 'uri' key and an 'alt' key. Populated if expected values
- *   exist, or empty strings if values cannot be found for the given field.
+ *   exist, or an empty array if values cannot be found for the given field.
  */
 function _exhibit_components_get_image_uri_and_alt(array $media_thumb_field) : array {
-  $to_return = [
-    'uri' => '',
-    'alt' => '',
-  ];
+  $to_return = [];
 
   $image = $media_thumb_field[0] ?? [];
   $image_formatter = $media_thumb_field['#formatter'] ?? '';

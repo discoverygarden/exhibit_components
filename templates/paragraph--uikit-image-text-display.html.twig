@@ -3,6 +3,12 @@
  * @file
  * Default template for the image and text display paragraph type SDC.
  *
+ * Available custom preprocessed variables:
+ * - card_image: An associative array with uri and alt elements. Empty if
+ *   field_uikit_image isn't using 'media_thumbnail' formatter.
+ *   - uri: The uri for the image using the configured image style.
+ *   - alt: The alt text for the image.
+ *
  * Available variables:
  * - paragraph: Full paragraph entity.
  *   Only method names starting with "get", "has", or "is" and a few common
@@ -50,14 +56,20 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
+      {% if card_image is not empty %}
+        {% set image_uri = file_url(card_image.uri) %}
+        {% set image_alt = card_image.alt ?? "" %}
+      {% else %}
+        {% set image_uri = file_url(paragraph.field_uikit_image.entity.field_media_image.entity.uri.value) %}
+        {% set image_alt = paragraph.field_uikit_image.entity.field_media_image.alt ?? "" %}
+      {% endif %}
       {# In the future, figure out card style, etc, while here. #}
       {{ include('exhibit_components:image_text_display', {
         heading: paragraph.fields.field_uikit_heading.value,
         summary: paragraph.fields.field_uikit_summary.value,
-        url: file_url(paragraph.field_uikit_image.entity.field_media_image.entity.uri.value),
-        alt: paragraph.field_uikit_image.entity.field_media_image.alt|default('Image card display') },
-        with_context = false)
-      }}
+        url: image_uri,
+        alt: image_alt|default('Image card display')
+      }, with_context = false) }}
     {% endblock %}
   </div>
 {% endblock paragraph %}
