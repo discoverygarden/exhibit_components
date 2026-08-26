@@ -3,11 +3,13 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.embeded_repository_item.field_embedded_caption
+    - field.field.paragraph.embeded_repository_item.field_entity_embed
     - field.field.paragraph.embeded_repository_item.field_entity_reference_display_m
     - field.field.paragraph.embeded_repository_item.field_respository_item
     - paragraphs.paragraphs_type.embeded_repository_item
   module:
     - entity_reference_display
+    - text
 id: paragraph.embeded_repository_item.default
 targetEntityType: paragraph
 bundle: embeded_repository_item
@@ -21,6 +23,13 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_entity_embed:
+    type: text_default
+    label: above
+    settings: { }
+    third_party_settings: { }
+    weight: 2
+    region: content
   field_respository_item:
     type: entity_reference_display_default
     label: visually_hidden
@@ -32,6 +41,5 @@ content:
     weight: 0
     region: content
 hidden:
-  field_entity_embed: true
   field_entity_reference_display_m: true
   search_api_excerpt: true

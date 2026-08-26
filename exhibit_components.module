@@ -47,6 +47,35 @@ function exhibit_components_form_alter(&$form, FormStateInterface $form_state, $
 }
 
 /**
+ * Implements hook_preprocess_node__BUNDLE().
+ *
+ * Relevant when using the embedded repository item functionality in exhibits.
+ */
+function exhibit_components_preprocess_node__islandora_object(&$variables) {
+
+  // Denote all embed displays for modificaiton.
+  $entity_displays = [
+    'entity_embed_small',
+    'entity_embed_medium',
+    'entity_embed_large',
+  ];
+
+  // Hide the display_submitted & label rendering for these view modes (used in
+  // entity embed).
+  if (in_array($variables['view_mode'], $entity_displays)) {
+    $variables['display_submitted'] = FALSE;
+    unset($variables['label']);
+  }
+
+  // Ensure display submitted is hidden in the thumbnail view mode. This is
+  // already done in the dgi front end theme, but when using this view mode
+  // anywhere else it is still present.
+  if (in_array($variables['view_mode'], ['thumbnail'])) {
+    $variables['display_submitted'] = FALSE;
+  }
+}
+
+/**
  * Implements hook_theme().
  */
 function exhibit_components_theme($existing, $type, $theme, $path) {
