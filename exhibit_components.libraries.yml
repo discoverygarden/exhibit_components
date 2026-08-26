@@ -19,3 +19,7 @@ dgi_two_column:
       layouts/dgi_two_column/dgi_two_column.css: {}
   dependencies:
     - core/jquery
+content_browser_overrides:
+  css:
+    theme:
+      css/content_browser.view.css: {}

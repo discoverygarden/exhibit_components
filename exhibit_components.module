@@ -5,6 +5,7 @@
  * Hook implementations for Exhibit Components module.
  */
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\image\Entity\ImageStyle;
 
 /**
@@ -28,6 +29,20 @@ function exhibit_components_library_info_alter(&$libraries, $module) {
       // Include the overrides we have.
       $libraries['uikit']['css']['theme'] = $uikit_css_overrides;
     }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Add content_browser styling where relevant.
+ */
+function exhibit_components_form_alter(&$form, FormStateInterface $form_state, $form_id) : void {
+  if ($form_id == 'entity_browser_browse_content_form' ||
+    $form_id == 'entity_browser_browse_content_iframe_form') {
+    // Attach library to fix styling similarly to how content_browser used to.
+    $form['#attached']['library'][] = 'exhibit_components/content_browser';
+    $form['#attributes']['class'][] = 'customized-content-browser-form';
   }
 }
 
