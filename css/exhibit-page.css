@@ -1,0 +1,42 @@
+/**
+ * Exhibit page styling.
+ */
+body.page-node-type-exhibit .main-container section.main-page-content {
+  padding: 0;
+}
+
+.paragraph--type--embeded-repository-item {
+  text-align: center;
+}
+
+.paragraph--type--embeded-repository-item img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+article.exhibit .exhibit-container {
+  margin: 0 7rem;
+}
+
+.paragraph--type--uikit-full-html .align-center .field--item img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.paragraph--type--uikit-full-html .align-center figcaption {
+  text-align: center;
+}
+
+article.exhibit div.field--name-field-exhibit-creator,
+article.exhibit div.field--name-field-tags {
+  margin: 1.5rem 0;
+}
+
+article.exhibit .field--name-field-copyright-information {
+  margin: 1.5rem 0;
+}
+
+article.exhibit .field--name-field-copyright-information .field--item,
+article.exhibit .field--name-field-copyright-information .field--label {
+  text-align: center;
+}
