@@ -1,5 +1,29 @@
 # Exhibit Components
+
+![](https://github.com/discoverygarden/dgi_migrate/actions/workflows/lint.yml/badge.svg)
+![](https://github.com/discoverygarden/dgi_migrate/actions/workflows/semver.yml/badge.svg)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 Drupal module containing Single Directory Components for use in exhibit content.
+
+## Table of Contents
+
+- [Intro](#intro)
+- [Installation](#installation)
+- [Requirements](#requirements)
+  - [Contrib Modules required to get included 'optional' configs](#contrib-modules-required-to-get-included-optional-configurations)
+- [Libraries](#libraries)
+- [Usage](#usage)
+- [Included Single Directory Components](#included-single-directory-components)
+- [Configuration](#configuration)
+- [Optional Config Notes](#optional-config-notes)
+  - [Browse Exhibits View](#browse-exhibits-view)
+  - [Exhibit Content Type](#exhibit-content-type)
+  - [Included Paragraph types](#included-paragraph-types)
+  - [Exhibit Text Formats](#exhibit-text-formats)
+- [Maintainers/Sponsors](#maintainerssponsors)
+- [Development](#development)
+- [License](#license)
 
 ## Intro
 
@@ -121,6 +145,14 @@ uikit library locally, there are a couple options outlined here:
 }
 ```
 3. Require the library: `composer require library/uikit`
+
+## Usage
+
+If you have all the 'suggested' contrib modules installed and enabled, and all
+the optional config gets imported when enabling this module, you should be able
+to start creating exhibit content by going to `<yoursite.com>/node/add/exhibit`
+which will have a form where you can fill out the fields as described in
+[Exhibit Content Type](#exhibit-content-type).
 
 ## Included Single Directory Components
 
