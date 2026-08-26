@@ -2,24 +2,24 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.entity_embed
+    - core.entity_view_mode.node.entity_embed_medium
+    - image.style.medium
     - node.type.islandora_object
   module:
     - media
     - user
-  enforced:
-    module: {  }
-id: node.islandora_object.entity_embed
+third_party_settings: {  }
+id: node.islandora_object.entity_embed_medium
 targetEntityType: node
 bundle: islandora_object
-mode: entity_embed
+mode: entity_embed_medium
 content:
   did_image:
     type: media_thumbnail
-    label: hidden
+    label: visually_hidden
     settings:
-      image_link: ''
-      image_style: ''
+      image_link: content
+      image_style: medium
       image_loading:
         attribute: lazy
     third_party_settings: {  }
