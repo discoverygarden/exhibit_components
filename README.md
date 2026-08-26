@@ -17,6 +17,24 @@ why all the included configuration is in `config/optional` and the module
 dependencies in those config files are listed as `suggested` in `composer.json`
 instead of `required`.
 
+## Installation
+
+Install as you would normally install a contributed Drupal module. For further
+information, see
+[Installing Drupal Modules](https://www.drupal.org/docs/extending-drupal/installing-modules).
+
+If installing with composer and if you would like to install all the suggested
+modules noted in the composer.json:
+```
+composer require discoverygarden/exhibit_components:^1 drupal/islandora:^2 drupal/field_group:^4 drupal/paragraphs:^2.1 drupal/layout_paragraphs:^2 drupal/entity_embed:^1.7 drupal/entity_browser:^2 drupal/entity_reference_display:^2 drupal/entity_reference_revisions:^1 drupal/smart_trim:^2
+```
+
+To ensure all the suggested dependencies are enabled before enabling this
+module, so you can get all the optional config imported:
+```
+drush en islandora paragraphs layout_paragraphs field_group entity_embed entity_browser entity_reference_display entity_reference_revisions smart_trim
+```
+
 ## Requirements
 
 Technically, this could be used outside the Islandora ecosystem; however, you
@@ -104,6 +122,25 @@ uikit library locally, there are a couple options outlined here:
 ```
 3. Require the library: `composer require library/uikit`
 
+## Included Single Directory Components
+
+This module provides Single Directory Components based on UIKit, and in
+`/templates` there are twig templates that allow the Paragraph types and
+the Exhibit node bundle in optional config to be displayed using these
+components. You could create your own custom templates to make use of those
+components if you cannot (or prefer not to) use the fields and Paragraphs
+in the optional config.
+
+For info on just the components, see each of the components in the `components`
+directory of this module. The README.md files in each component might be
+sparse, but should at least include a link to relevant sections of UIKit's
+documentation.
+
+## Configuration
+
+This module has no dedicated settings form; however it does include many
+optional config files that can be modified to your liking after being imported.
+
 ## Optional Config Notes
 
 ### Browse Exhibits View
@@ -172,20 +209,6 @@ Here is an overview of the included fields and expected usage:
   the exhibit. If the information is consistent for any exhibits created in
   your site, you could simplify the data entry for this by setting a default
   value and optionally omitting the field from the form display.
-
-### Included Single Directory Components
-
-This module provides Single Directory Components based on UIKit, and in
-`/templates` there are twig templates that allow the Paragraph types and
-the Exhibit node bundle in optional config to be displayed using these
-components. You could create your own custom templates to make use of those
-components if you cannot (or prefer not to) use the fields and Paragraphs
-in the optional config.
-
-For info on just the components, see each of the components in the `components`
-directory of this module. The README.md files in each component might be
-sparse, but should at least include a link to relevant sections of UIKit's
-documentation.
 
 ### Included Paragraph Types
 
