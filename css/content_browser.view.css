@@ -1,0 +1,67 @@
+/**
+ * @file content_browser.view.css
+ *
+ * Mostly copied from https://git.drupalcode.org/project/content_browser/-/blob/8.x-1.1/css/content_browser.view.css?ref_type=tags
+ * With some adjustments to just make the clickable area of the checkbox cover
+ * the view result, rather than hiding the checkbox and using javascript to
+ * achieve a similar UI/UX.
+ */
+
+/* Generic styles */
+
+.pager {
+  padding: 20px;
+}
+
+.customized-content-browser-form .eb-tabs {
+  display: none;
+}
+
+/* Hide contextual links when using Content Browser. */
+.customized-content-browser-form .contextual {
+  display: none;
+}
+
+/* Increase the width of grid columns set by the gin theme */
+.gin-entity-browser .customized-content-browser-form.entity-browser-form .view-content {
+  grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+}
+
+/* Do some fancy things to allow users to click on content, not checkboxes. */
+.customized-content-browser-form .views-row {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 5px;
+  margin: 0 0 10px 0;
+  transition: .2s;
+  background: transparent;
+  border: 1px solid lightgray;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.13);
+}
+
+.customized-content-browser-form .views-row:hover {
+  background: rgba(142, 222, 142, 0.16);
+}
+
+.customized-content-browser-form .views-field-entity-browser-select {
+  height: calc(100% - 2 * var(--gin-spacing-s, 0.75rem));
+  width: calc(100% - 2 * var(--gin-spacing-s, 0.75rem));
+  margin: 0;
+  margin: var(--gin-spacing-s, 0.75rem);
+}
+
+.customized-content-browser-form .views-field-entity-browser-select .field-content input::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
+}
+
+/* prevent overlap of rendered entity with checkbox */
+.customized-content-browser-form .views-field-rendered-entity {
+  margin-top: 2rem;
+}
