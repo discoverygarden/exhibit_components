@@ -1,7 +1,7 @@
 langcode: en
 status: true
 dependencies: {  }
-name: large
+name: exhibit_large
 label: 'Large (625x625)'
 effects:
   ddd73aa7-4bd6-4c85-b600-bdf2b1628d1d:

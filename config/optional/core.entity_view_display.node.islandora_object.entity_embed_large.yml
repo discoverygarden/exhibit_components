@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.entity_embed_large
-    - image.style.large
+    - image.style.exhibit_large
     - node.type.islandora_object
   module:
     - media
@@ -19,7 +19,7 @@ content:
     label: visually_hidden
     settings:
       image_link: content
-      image_style: large
+      image_style: exhibit_large
       image_loading:
         attribute: lazy
     third_party_settings: {  }

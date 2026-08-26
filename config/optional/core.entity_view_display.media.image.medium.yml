@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.medium
+    - image.style.exhibit_medium
+    - media.type.image
+  module:
+    - image
+id: media.image.medium
+targetEntityType: media
+bundle: image
+mode: medium
+content:
+  field_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: exhibit_medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  addtoany: true
+  created: true
+  field_access_terms: true
+  field_file_size: true
+  field_height: true
+  field_media_of: true
+  field_media_use: true
+  field_mime_type: true
+  field_original_name: true
+  field_width: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

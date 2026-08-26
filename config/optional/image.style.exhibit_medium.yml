@@ -1,7 +1,7 @@
 langcode: en
 status: true
 dependencies: {  }
-name: medium
+name: exhibit_medium
 label: 'Medium (480x480)'
 effects:
   bddf0d06-42f9-4c75-a700-a33cafa25ea0:
