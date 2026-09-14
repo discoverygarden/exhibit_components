@@ -52,8 +52,6 @@
 
 {% block paragraph_block %}
   <div{{ attributes.addClass(classes) }}>
-    {{ dump(content.field_uikit_grid_item) }}
-    {{ dump(paragraph.field_uikit_grid_item) }}
     {% block content_block %}
       {# content.field_uikit_grid_item is a render array. If iterating through
       a render array, you get all the array elements like '#title', and all we
