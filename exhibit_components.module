@@ -144,36 +144,36 @@ function exhibit_components_theme($existing, $type, $theme, $path) {
  * Implements hook_preprocess_node__BUNDLE().
  */
 function exhibit_components_preprocess_node__exhibit(&$variables) : void {
-  $banner_image_field = $variables['content']['field_banner_image'] ?? [];
-  $banner_image_vars = _exhibit_components_get_image_uri_and_alt($banner_image_field);
-  $variables['banner_image'] = $banner_image_vars;
+  $variables['banner_image'] = _exhibit_components_get_image_uri_and_alt(
+    $variables['content']['field_banner_image'] ?? []
+  );
 }
 
 /**
  * Implements hook_preprocess_node__BUNDLE().
  */
 function exhibit_components_preprocess_paragraph__uikit_card(&$variables) : void {
-  $image_field = $variables['content']['field_uikit_card_media'] ?? [];
-  $image_vars = _exhibit_components_get_image_uri_and_alt($image_field);
-  $variables['card_media'] = $image_vars;
+  $variables['card_media'] = _exhibit_components_get_image_uri_and_alt(
+    $variables['content']['field_uikit_card_media'] ?? []
+  );
 }
 
 /**
  * Implements hook_preprocess_node__BUNDLE().
  */
 function exhibit_components_preprocess_paragraph__uikit_image_text_display(&$variables) : void {
-  $image_field = $variables['content']['field_uikit_image'] ?? [];
-  $image_vars = _exhibit_components_get_image_uri_and_alt($image_field);
-  $variables['card_image'] = $image_vars;
+  $variables['card_image'] = _exhibit_components_get_image_uri_and_alt(
+    $variables['content']['field_uikit_image'] ?? []
+  );
 }
 
 /**
  * Implements hook_preprocess_node__BUNDLE().
  */
 function exhibit_components_preprocess_paragraph__slideshow_slide(&$variables) : void {
-  $image_field = $variables['content']['field_uikit_slide_image'] ?? [];
-  $image_vars = _exhibit_components_get_image_uri_and_alt($image_field);
-  $variables['slide_image'] = $image_vars;
+  $variables['slide_image'] = _exhibit_components_get_image_uri_and_alt(
+    $variables['content']['field_uikit_slide_image'] ?? []
+  );
 }
 
 /**
