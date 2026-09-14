@@ -50,10 +50,22 @@
 
 {% set grid_items = []  %}
 
-{% block paragraph %}
+{% block paragraph_block %}
   <div{{ attributes.addClass(classes) }}>
-    {% block content %}
+    {{ dump(content.field_uikit_grid_item) }}
+    {{ dump(paragraph.field_uikit_grid_item) }}
+    {% block content_block %}
+      {# content.field_uikit_grid_item is a render array. If iterating through
+      a render array, you get all the array elements like '#title', and all we
+      want to get are the nested items of this multivalued field, so one way
+      to do that is to iterated through paragraph.field_uikit_grid_item to get
+      the keys for the nested render arrays was actually want to get from the
+      content.field_uikit_grid_item array, and put those items in a new array
+      that can simply be iterated and printed without the SDC needing to know
+      anything about the type of items being passed through. #}
+      {# Iterate through the EntityReferenceRevisionsFieldItemList #}
       {% for key, item in paragraph.field_uikit_grid_item %}
+        {# Get only the render arrays of items within the multivalued field #}
         {% set rendered_grid_item %}
           {{ attribute(content.field_uikit_grid_item, key) }}
         {% endset %}
@@ -73,6 +85,6 @@
         with_context = false)
       }}
 
-    {% endblock %}
+    {% endblock content_block %}
   </div>
-{% endblock paragraph %}
+{% endblock paragraph_block %}
