@@ -50,7 +50,7 @@ information, see
 If installing with composer and if you would like to install all the suggested
 modules noted in the composer.json:
 ```
-composer require discoverygarden/exhibit_components:^1 drupal/islandora:^2 drupal/field_group:^4 drupal/paragraphs:^2.1 drupal/layout_paragraphs:^2 drupal/entity_embed:^1.7 drupal/entity_browser:^2 drupal/entity_reference_display:^2 drupal/entity_reference_revisions:^1 drupal/smart_trim:^2
+composer require discoverygarden/exhibit_components:^1 drupal/islandora:^2 drupal/field_group:^4 drupal/paragraphs:^1 drupal/layout_paragraphs:^2 drupal/entity_embed:^1.7 drupal/entity_browser:^2 drupal/entity_reference_display:^2 drupal/entity_reference_revisions:^1 drupal/smart_trim:^2
 ```
 
 To ensure all the suggested dependencies are enabled before enabling this
