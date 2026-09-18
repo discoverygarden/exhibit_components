@@ -154,6 +154,8 @@ hidden:
   pdfjs_media_evas_entity_view_2: true
   pdfjs_media_evas_service_file: true
   repository_item_content_blocks_classification: true
+  repository_item_content_blocks_entity_view_2: true
+  repository_item_content_blocks_entity_view_3: true
   repository_item_content_blocks_metadata: true
   repository_item_page_title_entity_view_1: true
   search_api_excerpt: true

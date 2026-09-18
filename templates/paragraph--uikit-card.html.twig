@@ -3,6 +3,12 @@
  * @file
  * Default template for the card paragraph type SDC.
  *
+ * Available custom preprocessed variables:
+ * - card_media: An associative array with uri and alt elements. Empty if
+ *   field_uikit_card_media isn't using 'media_thumbnail' formatter.
+ *   - uri: The uri for the image using the configured image style.
+ *   - alt: The alt text for the image.
+ *
  * Available variables:
  * - paragraph: Full paragraph entity.
  *   Only method names starting with "get", "has", or "is" and a few common
@@ -51,8 +57,13 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {% set media_image = file_url(paragraph.field_uikit_card_media.entity.field_media_image.entity.uri.value) %}
-      {% set media_alt = paragraph.field_uikit_card_media.entity.field_media_image.alt ?? "" %}
+      {% if card_media is not empty %}
+        {% set media_image = file_url(card_media.uri) %}
+        {% set media_alt = card_media.alt ?? "" %}
+      {% else %}
+        {% set media_image = file_url(paragraph.field_uikit_card_media.entity.field_media_image.entity.uri.value) %}
+        {% set media_alt = paragraph.field_uikit_card_media.entity.field_media_image.alt ?? "" %}
+      {% endif %}
       {% set media_width = "" %}
       {% set media_height = "" %}
 

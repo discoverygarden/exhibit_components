@@ -28,19 +28,7 @@
 <div{{ grid_attributes }}>
   {% for key, item in items %}
     <div>
-      {% include 'exhibit_components:card' with {
-        heading: item.heading,
-        size_modifier: item.size_modifier,
-        image: item.image,
-        image_alt: item.image_alt,
-        media_position: item.media_position,
-        badge: item.badge,
-        card_body: item.card_body,
-        width_modifier: item.width_modifier,
-        image_width: item.image_width,
-        image_height: item.image_height,
-        title_link: item.title_link
-      } only %}
+      {{ item }}
     </div>
   {% endfor %}
 </div>

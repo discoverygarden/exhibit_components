@@ -25,14 +25,7 @@
 <div{{ attributes }}>
   <div class="uk-slideshow-items">
     {% for key, item in items %}
-      {% include 'exhibit_components:slide' with {
-        image: item.image,
-        title: item.title,
-        content: item.content,
-        alt: item.alt,
-        title_link: item.title_link,
-        slide_position: item.slide_position
-      } only %}
+      {{ item }}
     {% endfor %}
   </div>
   <a class="uk-position-center-left uk-position-small uk-hidden-hover" href uk-slidenav-previous uk-slideshow-item="previous"></a>

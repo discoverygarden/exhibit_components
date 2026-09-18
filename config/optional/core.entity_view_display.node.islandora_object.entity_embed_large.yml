@@ -1,0 +1,167 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.entity_embed_large
+    - image.style.exhibit_large
+    - node.type.islandora_object
+  module:
+    - media
+    - user
+third_party_settings: {  }
+id: node.islandora_object.entity_embed_large
+targetEntityType: node
+bundle: islandora_object
+mode: entity_embed_large
+content:
+  did_image:
+    type: media_thumbnail
+    label: visually_hidden
+    settings:
+      image_link: content
+      image_style: exhibit_large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  addtoany: true
+  collection_page_title_entity_view_1: true
+  display_media_entity_view_1: true
+  display_media_entity_view_2: true
+  display_media_entity_view_3: true
+  display_media_extracted_text: true
+  display_media_extracted_text_search_api: true
+  display_media_service_file: true
+  display_media_thumbnail: true
+  field_abstract: true
+  field_access_conditions: true
+  field_access_terms: true
+  field_admin_note: true
+  field_ark: true
+  field_change_note: true
+  field_comment: true
+  field_conference: true
+  field_conflict_of_interest: true
+  field_coordinates: true
+  field_copyright_holder: true
+  field_csl_type: true
+  field_ddc_classification: true
+  field_degree_level: true
+  field_degree_name: true
+  field_department: true
+  field_description: true
+  field_digital_origin: true
+  field_display_hints: true
+  field_doi: true
+  field_edtf_date_created: true
+  field_edtf_date_issued: true
+  field_electronic_locator: true
+  field_enumeration_and_chronology: true
+  field_extent: true
+  field_extent_first_page: true
+  field_extent_last_page: true
+  field_extent_total_pages: true
+  field_faceted_subject: true
+  field_form: true
+  field_funder: true
+  field_genre: true
+  field_geographic_code: true
+  field_geographic_subject: true
+  field_gpo_number: true
+  field_grant_id: true
+  field_handle: true
+  field_hierarchical_geographic_su: true
+  field_institution: true
+  field_isbn: true
+  field_ismn: true
+  field_issn: true
+  field_item_identifier: true
+  field_keywords: true
+  field_language: true
+  field_lcc_classification: true
+  field_linked_agent: true
+  field_local_identifier: true
+  field_member_of: true
+  field_model: true
+  field_note: true
+  field_note_location: true
+  field_note_paragraph: true
+  field_oclc_number: true
+  field_open_url: true
+  field_organizations: true
+  field_origin_information: true
+  field_part: true
+  field_peer_review_status: true
+  field_physical_form: true
+  field_physical_location: true
+  field_pid: true
+  field_publication_chapter_number: true
+  field_publication_genre: true
+  field_publication_identifier: true
+  field_publication_number: true
+  field_publication_section: true
+  field_publication_title: true
+  field_publication_url: true
+  field_publication_volume_title: true
+  field_pubmed_central_number: true
+  field_pubmed_number: true
+  field_purl: true
+  field_record_information: true
+  field_reformatting_quality: true
+  field_related_item_paragraph: true
+  field_repec: true
+  field_representative_image: true
+  field_resource_publication_statu: true
+  field_resource_type: true
+  field_restriction_on_access: true
+  field_rights_statement: true
+  field_serial_of: true
+  field_series_paragraph: true
+  field_shelf_locator: true
+  field_sponsorship_information: true
+  field_state_gov_classification: true
+  field_sub_location: true
+  field_subject: true
+  field_subject_name_organization: true
+  field_subject_name_person: true
+  field_sudoc_number: true
+  field_swank_classification: true
+  field_table_of_contents: true
+  field_target_audience: true
+  field_temporal_subject: true
+  field_title: true
+  field_url: true
+  field_use_and_reproduction: true
+  field_use_license: true
+  field_version_identifier: true
+  field_weight: true
+  langcode: true
+  latest_update_entity_view_1: true
+  links: true
+  mirador_evas_entity_view_1: true
+  mirador_evas_entity_view_2: true
+  mirador_evas_entity_view_3: true
+  mirador_paged_content_entity_view_1: true
+  openseadragon_media_evas_entity_view_1: true
+  openseadragon_media_evas_entity_view_2: true
+  openseadragon_media_evas_service_file: true
+  openseadragon_paged_content_entity_view_1: true
+  paged_content_text_entity_view_1: true
+  paged_content_text_page_text_eva_search_api: true
+  pdfjs_media_evas_entity_view_1: true
+  pdfjs_media_evas_entity_view_2: true
+  pdfjs_media_evas_service_file: true
+  repository_item_content_blocks_classification: true
+  repository_item_content_blocks_entity_view_2: true
+  repository_item_content_blocks_entity_view_3: true
+  repository_item_content_blocks_metadata: true
+  repository_item_page_title_entity_view_1: true
+  search_api_excerpt: true
+  solr_search_content_entity_view_1: true
+  solr_search_content_entity_view_1_form: true
+  solr_search_content_entity_view_2: true
+  solr_search_content_entity_view_2_form: true
+  solr_search_content_entity_view_3: true
+  solr_search_content_entity_view_3_form: true

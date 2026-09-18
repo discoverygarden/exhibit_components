@@ -5,6 +5,9 @@
  * Hook implementations for Exhibit Components module.
  */
 
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\image\Entity\ImageStyle;
+
 /**
  * Implements hook_library_info_alter().
  */
@@ -30,10 +33,66 @@ function exhibit_components_library_info_alter(&$libraries, $module) {
 }
 
 /**
+ * Implements hook_form_alter().
+ *
+ * Add content_browser styling where relevant.
+ */
+function exhibit_components_form_alter(&$form, FormStateInterface $form_state, $form_id) : void {
+  if ($form_id == 'entity_browser_browse_content_form' ||
+    $form_id == 'entity_browser_browse_content_iframe_form') {
+    // Attach library to fix styling similarly to how content_browser used to.
+    $form['#attached']['library'][] = 'exhibit_components/content_browser';
+    $form['#attributes']['class'][] = 'customized-content-browser-form';
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Attach basic styling for exhibit nodes via the module library.
+ */
+function exhibit_components_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'exhibit_components/exhibit_page';
+}
+
+/**
+ * Implements hook_preprocess_node__BUNDLE().
+ *
+ * Relevant when using the embedded repository item functionality in exhibits.
+ */
+function exhibit_components_preprocess_node__islandora_object(&$variables) {
+
+  // Denote all embed displays for modificaiton.
+  $entity_displays = [
+    'entity_embed_small',
+    'entity_embed_medium',
+    'entity_embed_large',
+  ];
+
+  // Hide the display_submitted & label rendering for these view modes (used in
+  // entity embed).
+  if (in_array($variables['view_mode'], $entity_displays)) {
+    $variables['display_submitted'] = FALSE;
+    unset($variables['label']);
+  }
+
+  // Ensure display submitted is hidden in the thumbnail view mode. This is
+  // already done in the dgi front end theme, but when using this view mode
+  // anywhere else it is still present.
+  if (in_array($variables['view_mode'], ['thumbnail'])) {
+    $variables['display_submitted'] = FALSE;
+  }
+}
+
+/**
  * Implements hook_theme().
  */
 function exhibit_components_theme($existing, $type, $theme, $path) {
   return [
+    'paragraph__slideshow_slide' => [
+      'template' => 'paragraph--slideshow-slide',
+      'base hook' => 'paragraph',
+    ],
     'paragraph__uikit_full_html' => [
       'template' => 'paragraph--uikit-full-html',
       'base hook' => 'paragraph',
@@ -79,4 +138,78 @@ function exhibit_components_theme($existing, $type, $theme, $path) {
       'base hook' => 'node',
     ],
   ];
+}
+
+/**
+ * Implements hook_preprocess_node__BUNDLE().
+ */
+function exhibit_components_preprocess_node__exhibit(&$variables) : void {
+  $variables['banner_image'] = _exhibit_components_get_image_uri_and_alt(
+    $variables['content']['field_banner_image'] ?? []
+  );
+}
+
+/**
+ * Implements hook_preprocess_node__BUNDLE().
+ */
+function exhibit_components_preprocess_paragraph__uikit_card(&$variables) : void {
+  $variables['card_media'] = _exhibit_components_get_image_uri_and_alt(
+    $variables['content']['field_uikit_card_media'] ?? []
+  );
+}
+
+/**
+ * Implements hook_preprocess_node__BUNDLE().
+ */
+function exhibit_components_preprocess_paragraph__uikit_image_text_display(&$variables) : void {
+  $variables['card_image'] = _exhibit_components_get_image_uri_and_alt(
+    $variables['content']['field_uikit_image'] ?? []
+  );
+}
+
+/**
+ * Implements hook_preprocess_node__BUNDLE().
+ */
+function exhibit_components_preprocess_paragraph__slideshow_slide(&$variables) : void {
+  $variables['slide_image'] = _exhibit_components_get_image_uri_and_alt(
+    $variables['content']['field_uikit_slide_image'] ?? []
+  );
+}
+
+/**
+ * Helper to get uri and alt from media reference field in preprocessing.
+ *
+ * @param array $media_thumb_field
+ *   An array from content in preprocess variables, for a field using the
+ *   media_thumbnail display formatter.
+ *
+ * @return array
+ *   An array with a 'uri' key and an 'alt' key. Populated if expected values
+ *   exist, or an empty array if values cannot be found for the given field.
+ */
+function _exhibit_components_get_image_uri_and_alt(array $media_thumb_field) : array {
+  $to_return = [];
+
+  $image = $media_thumb_field[0] ?? [];
+  $image_formatter = $media_thumb_field['#formatter'] ?? '';
+  if (!empty($image) && ($image_formatter === 'media_thumbnail')) {
+    /** @var \Drupal\image\Plugin\Field\FieldType\ImageItem */
+    $item = $image['#item'];
+    if (($entity = $item->entity) && empty($item->uri)) {
+      $file_uri = $entity->getFileUri();
+    }
+    else {
+      $file_uri = $item->uri;
+    }
+    if (!empty($image['#image_style'])) {
+      $image_uri = ImageStyle::load($image['#image_style'])?->buildUrl($file_uri) ?? $file_uri;
+    }
+    else {
+      $image_uri = $file_uri;
+    }
+    $to_return['uri'] = $image_uri;
+    $to_return['alt'] = $item->alt;
+  }
+
+  return $to_return;
 }

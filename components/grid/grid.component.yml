@@ -38,8 +38,10 @@ props:
       type: string
     items:
       title: Items
-      description: An array of items to render as a grid component.
+      description: An array of items to render in this grid component.
       type: array
+      items:
+        type: string
 libraryOverrides:
   dependencies:
     - exhibit_components/uikit

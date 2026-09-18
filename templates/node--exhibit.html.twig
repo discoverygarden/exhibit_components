@@ -3,7 +3,12 @@
  * @file
  * Theme override to display a node.
  *
- * Available variables:
+ * Available custom preprocessed variables:
+ * - banner_image: An associative array with uri and alt elements
+ *   - uri: The uri for the banner image using the configured image style.
+ *   - alt: The alt text for the banner image.
+ *
+ * Available node variables:
  * - node: The node entity with limited access to object properties and methods.
      Only "getter" methods (method names starting with "get", "has", or "is")
      and a few common methods such as "id" and "label" are available. Calling
@@ -79,49 +84,42 @@
 
 <article{{ attributes.addClass(classes) }}>
 
-  {% set banner_image = file_url(node.field_banner_image.entity.field_media_image_1.entity.uri.value) %}
-  {% set banner_alt_text = node.field_banner_image.entity.field_media_image_1.alt ?? "" %}
+  {% block banner_block %}
 
-  {#  Support pulling banner image from 'image' and 'local image resource'#}
-  {% if banner_image is empty %}
-    {% set banner_image = file_url(node.field_banner_image.entity.field_media_image.entity.uri.value) %}
-    {% set banner_alt_text = node.field_banner_image.entity.field_media_image.alt ?? "" %}
-  {% endif %}
-
-  {% set banner_summary = node.body.value %}
-  {% set banner_color_summary = node.field_color_mode.value %}
-
-  {#  Exclude title and summary from being printed in the banner, as it will be printed on the node page proper.#}
-  {% if banner_image is not empty %}
-    {{ include('exhibit_components:banner', {
-      banner_image: banner_image,
-      banner_alt_text: banner_alt_text,
-      banner_title: "",
-      banner_summary: "",
-      banner_color_mode: banner_color_summary,
-      banner_opacity: "1",
-      banner_caption: content.field_banner_caption|default(""),
-      banner_caption_classes: [
-        'uk-text-meta',
-        'uk-text-italic',
-        'uk-text-right',
-        'uk-padding-small',
-        'uk-padding-remove-top',
-        'uk-margin-auto-left',
-        'dg-width-fit-content'
-      ]
-    },
-      with_context = false)
-    }}
-  {% endif %}
-
-  <div{{ content_attributes.addClass('content').addClass('exhibit-container') }}>
-    {% if label %}
-      {{ title_prefix }}
-      <h1{{ title_attributes }}>{{ label }}</h1>
-      {{ title_suffix }}
+    {#  Exclude title and summary from being printed in the banner, as it will be printed on the node page proper.#}
+    {% if banner_image is not empty %}
+      {{ include('exhibit_components:banner', {
+        banner_image: banner_image.uri,
+        banner_alt_text: banner_image.alt,
+        banner_title: "",
+        banner_summary: "",
+        banner_color_mode: "",
+        banner_opacity: "1",
+        banner_caption: content.field_banner_caption|default(""),
+        banner_caption_classes: [
+          'uk-text-meta',
+          'uk-text-italic',
+          'uk-text-right',
+          'uk-padding-small',
+          'uk-padding-remove-top',
+          'uk-margin-auto-left',
+          'dg-width-fit-content'
+        ]
+      },
+        with_context = false)
+      }}
     {% endif %}
+  {% endblock %}
 
-    {{ content|without('field_banner_image', 'field_banner_caption') }}
-  </div>
+  {% block content_block %}
+    <div{{ content_attributes.addClass('content').addClass('exhibit-container') }}>
+      {% if label %}
+        {{ title_prefix }}
+        <h1{{ title_attributes }}>{{ label }}</h1>
+        {{ title_suffix }}
+      {% endif %}
+
+      {{ content|without('field_banner_image', 'field_banner_caption') }}
+    </div>
+  {% endblock %}
 </article>

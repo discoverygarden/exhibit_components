@@ -2,6 +2,14 @@ name: 'Exhibit Components'
 description: "Provides Single Directory Components for use in exhibit content."
 type: module
 package: DGI
-core_version_requirement: ^10.3 || ^11.2
+core_version_requirement: ^11.2
 dependencies:
+  - drupal:media
+  - drupal:user
   - drupal:media_library
+  - drupal:text
+  - drupal:options
+  - drupal:link
+  - drupal:editor
+  - drupal:ckeditor5
+  - drupal:views

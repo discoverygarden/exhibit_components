@@ -11,7 +11,7 @@ props:
       type: string
     items:
       title: Items
-      description: An array of items to render as Slide components. Each Slide expects 'image', 'title', 'content', 'alt', 'title_link' and 'slide_position' properties.
+      description: An array of Slide components.
       type: array
 
 libraryOverrides:

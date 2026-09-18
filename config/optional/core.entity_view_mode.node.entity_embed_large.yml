@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.entity_embed_large
+label: 'Islandora Object (Large)'
+description: ''
+targetEntityType: node
+cache: true

@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: exhibit_small
+label: 'Small (335x335)'
+effects:
+  7fe7f414-feb2-40ae-a672-7cce0147a6e8:
+    uuid: 7fe7f414-feb2-40ae-a672-7cce0147a6e8
+    id: image_scale
+    weight: 1
+    data:
+      width: 335
+      height: 335
+      upscale: true

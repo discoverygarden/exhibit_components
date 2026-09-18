@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: exhibit_medium
+label: 'Medium (480x480)'
+effects:
+  bddf0d06-42f9-4c75-a700-a33cafa25ea0:
+    uuid: bddf0d06-42f9-4c75-a700-a33cafa25ea0
+    id: image_scale
+    weight: 0
+    data:
+      width: 480
+      height: 480
+      upscale: true

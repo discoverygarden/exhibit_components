@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies: {  }
+name: representative_object_image_formatter
+label: 'Representative Object: Image Formatter'
+effects:
+  ebfb8785-f93f-4322-a7f1-078fca2f43ba:
+    uuid: ebfb8785-f93f-4322-a7f1-078fca2f43ba
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 1174
+      height: 425
+      anchor: center-center
+  cb8920f3-0f05-4925-8ef6-bc44ec3acd9b:
+    uuid: cb8920f3-0f05-4925-8ef6-bc44ec3acd9b
+    id: image_convert
+    weight: -10
+    data:
+      extension: jpeg

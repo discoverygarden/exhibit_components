@@ -19,3 +19,11 @@ dgi_two_column:
       layouts/dgi_two_column/dgi_two_column.css: {}
   dependencies:
     - core/jquery
+content_browser:
+  css:
+    theme:
+      css/content_browser.view.css: {}
+exhibit_page:
+  css:
+    theme:
+      css/exhibit-page.css: {}

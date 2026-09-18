@@ -6,8 +6,14 @@ dependencies:
     - node.type.exhibit
     - paragraphs.paragraphs_type.embeded_repository_item
     - paragraphs.paragraphs_type.layout
+    - paragraphs.paragraphs_type.uikit_card
     - paragraphs.paragraphs_type.uikit_full_html
+    - paragraphs.paragraphs_type.uikit_grid
     - paragraphs.paragraphs_type.uikit_heading
+    - paragraphs.paragraphs_type.uikit_image_text_display
+    - paragraphs.paragraphs_type.uikit_nav
+    - paragraphs.paragraphs_type.uikit_quote
+    - paragraphs.paragraphs_type.uikit_slideshow
   module:
     - entity_reference_revisions
 third_party_settings: {  }
@@ -27,74 +33,50 @@ settings:
     target_bundles:
       layout: layout
       embeded_repository_item: embeded_repository_item
+      uikit_card: uikit_card
       uikit_full_html: uikit_full_html
+      uikit_grid: uikit_grid
       uikit_heading: uikit_heading
+      uikit_image_text_display: uikit_image_text_display
+      uikit_nav: uikit_nav
+      uikit_quote: uikit_quote
+      uikit_slideshow: uikit_slideshow
     negate: 0
     target_bundles_drag_drop:
       embeded_repository_item:
         weight: 23
         enabled: true
-      faceted_subject:
-        weight: 12
-        enabled: false
-      hierarchical_geographic_subject:
-        weight: 13
-        enabled: false
       layout:
         weight: 14
         enabled: true
-      note:
-        weight: 15
-        enabled: false
-      origin_information:
-        weight: 16
-        enabled: false
-      part:
-        weight: 17
-        enabled: false
-      perspective_camera_settings:
-        weight: 18
-        enabled: false
-      record_information:
-        weight: 19
-        enabled: false
-      related_item:
-        weight: 20
-        enabled: false
-      series:
-        weight: 21
-        enabled: false
       slideshow_slide:
         weight: 32
         enabled: false
-      title:
-        weight: 22
-        enabled: false
       uikit_card:
         weight: 34
-        enabled: false
+        enabled: true
       uikit_full_html:
         weight: 35
         enabled: true
       uikit_grid:
         weight: 36
-        enabled: false
+        enabled: true
       uikit_heading:
         weight: 37
         enabled: true
       uikit_image_text_display:
         weight: 38
-        enabled: false
+        enabled: true
       uikit_nav:
         weight: 39
-        enabled: false
+        enabled: true
       uikit_nav_item:
         weight: 40
         enabled: false
       uikit_quote:
         weight: 41
-        enabled: false
+        enabled: true
       uikit_slideshow:
         weight: 42
-        enabled: false
+        enabled: true
 field_type: entity_reference_revisions

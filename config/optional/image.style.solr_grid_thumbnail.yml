@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies: {  }
+name: solr_grid_thumbnail
+label: 'Solr Grid Thumbnail'
+effects:
+  ab3b916f-0b8e-4b7a-8ee4-ce0fd1629abe:
+    uuid: ab3b916f-0b8e-4b7a-8ee4-ce0fd1629abe
+    id: image_scale
+    weight: -9
+    data:
+      width: 298
+      height: null
+      upscale: false
+  f460d614-7e78-454d-be6f-15351e2109fb:
+    uuid: f460d614-7e78-454d-be6f-15351e2109fb
+    id: image_convert
+    weight: -10
+    data:
+      extension: jpeg

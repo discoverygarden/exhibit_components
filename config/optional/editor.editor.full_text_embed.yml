@@ -26,7 +26,7 @@ settings:
       - insertTable
       - horizontalLine
       - '|'
-      - node
+      - repository_item
       - drupalMedia
       - heading
       - codeBlock
